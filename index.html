@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Appximo — Sistemas a la medida para su negocio, en días</title>
+<meta name="description" content="Deje de perder pedidos entre los chats y el Excel. Le hacemos un sistema a la medida para su negocio — pedidos, citas, inventario, clientes — y se lo mostramos funcionando antes de que pague. En días, no en meses.">
+<meta property="og:title" content="Appximo — Sistemas a la medida para su negocio, en días">
+<meta property="og:description" content="Le mostramos su proceso funcionando antes de que pague. Escríbanos por WhatsApp.">
+<meta property="og:image" content="https://appximo.com/assets/demo-pedidos.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a9c56'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#221c16; --ink-2:#54493f; --ink-3:#7d7166;
+    --bg:#faf7f2; --panel:#ffffff; --wash:#f3eee6;
+    --line:#e7dfd3; --line-2:#d9cfc0;
+    --green:#128c52; --green-dark:#0c6e3f; --green-wash:#e9f7ef;
+    --amber:#a16207; --amber-wash:#fdf6e7;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
+  img,video{max-width:100%;height:auto;display:block}
+  a{color:var(--green-dark)}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 1.15rem}
+  section{padding:3.4rem 0}
+  @media(min-width:760px){section{padding:4.4rem 0}}
+  h2{font-size:clamp(1.45rem,4.5vw,2rem);letter-spacing:-.02em;line-height:1.22;margin-bottom:.55rem}
+  .kicker{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:.5rem}
+  .lead{color:var(--ink-2);max-width:44rem;font-size:1.04rem}
+  .muted{color:var(--ink-3)}
+  .small{font-size:.88rem}
+
+  /* WhatsApp button — THE one CTA */
+  .btn-wa{display:inline-flex;align-items:center;gap:.6rem;background:var(--green);color:#fff;font-weight:700;font-size:1.02rem;padding:.85rem 1.5rem;border-radius:12px;text-decoration:none;box-shadow:0 2px 8px rgba(18,140,82,.28);transition:background .15s}
+  .btn-wa:hover{background:var(--green-dark)}
+  .btn-wa svg{width:1.35rem;height:1.35rem;flex:none}
+  .btn-wa.compact{font-size:.9rem;padding:.5rem .95rem;border-radius:10px;box-shadow:none}
+  .cta-note{margin-top:.6rem;font-size:.88rem;color:var(--ink-3)}
+
+  /* nav */
+  nav{position:sticky;top:0;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:3.5rem}
+  .logo{display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:1.08rem;color:var(--ink);text-decoration:none}
+  .logo-mark{width:1.5rem;height:1.5rem;border-radius:7px;background:var(--green);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800}
+
+  /* hero */
+  .hero{padding:3.6rem 0 3rem;border-bottom:1px solid var(--line)}
+  @media(min-width:760px){.hero{padding:5rem 0 3.8rem}}
+  .hero h1{font-size:clamp(1.8rem,6.5vw,2.9rem);letter-spacing:-.03em;line-height:1.13;max-width:44rem}
+  .hero .sub{margin:1.1rem 0 0;font-size:clamp(1.02rem,2.6vw,1.18rem);color:var(--ink-2);max-width:40rem}
+  .hero .cta-row{margin-top:1.7rem}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin-top:1.8rem;font-size:.88rem;color:var(--ink-3)}
+  .hero-grid{display:grid;gap:2rem}
+  .hero-visual{display:none}
+  @media(min-width:920px){
+    .hero-grid{grid-template-columns:11fr 9fr;align-items:center}
+    .hero-visual{display:block;border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:var(--panel);box-shadow:0 14px 34px rgba(34,28,22,.13)}
+  }
+
+  /* pains */
+  .pain-list{margin-top:1.5rem;display:grid;gap:.75rem;max-width:46rem}
+  .pain{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:.85rem 1.05rem;color:var(--ink-2);font-size:1rem}
+  .pain b{color:var(--ink)}
+  .pain-out{margin-top:1.4rem;font-size:1.04rem;color:var(--ink-2);max-width:46rem}
+
+  /* media frames */
+  .media{border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:var(--panel);box-shadow:0 2px 10px rgba(34,28,22,.07)}
+  .media video{width:100%;background:#0f1117}
+  .media figcaption{padding:.8rem 1rem;font-size:.9rem;color:var(--ink-2);border-top:1px solid var(--line);line-height:1.55}
+  .timeline{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin-top:.55rem;font-size:.84rem;color:var(--ink-3)}
+  .timeline .t{font-weight:700;color:var(--green-dark);background:var(--green-wash);border-radius:6px;padding:.03rem .45rem;font-variant-numeric:tabular-nums}
+  .shots{display:grid;gap:1.1rem;margin-top:1.4rem}
+  @media(min-width:760px){.shots{grid-template-columns:1fr 1fr}}
+  .shot{border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:var(--panel);box-shadow:0 2px 10px rgba(34,28,22,.06)}
+  .shot img{width:100%}
+  .shot figcaption{padding:.75rem 1rem;font-size:.88rem;color:var(--ink-2);border-top:1px solid var(--line);line-height:1.5}
+  .demo-note{margin-top:1rem;font-size:.86rem;color:var(--ink-3);max-width:44rem}
+
+  /* offer box */
+  .offer{margin-top:2rem;background:var(--green-wash);border:1.5px solid #bfe6d0;border-radius:14px;padding:1.3rem 1.4rem;max-width:46rem}
+  .offer h3{font-size:1.12rem;margin-bottom:.35rem}
+  .offer p{color:var(--ink-2);font-size:.98rem}
+  .offer .cta-row{margin-top:1rem}
+
+  /* steps */
+  .steps{margin-top:1.6rem;display:grid;gap:1.3rem;max-width:44rem}
+  .step{display:grid;grid-template-columns:2.4rem 1fr;gap:.95rem}
+  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .step h3{font-size:1.1rem;margin-bottom:.25rem}
+  .step p{color:var(--ink-2);font-size:.98rem}
+
+  /* trust */
+  .trust-grid{display:grid;gap:1.1rem;margin-top:1.6rem}
+  @media(min-width:860px){.trust-grid{grid-template-columns:7fr 5fr;align-items:start}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.35rem}
+  .card h3{font-size:1.1rem;margin-bottom:.4rem}
+  .card p{color:var(--ink-2);font-size:.96rem;margin-bottom:.6rem}
+  .card p:last-child{margin-bottom:0}
+  .cred-list{list-style:none;margin-top:.4rem}
+  .cred-list li{padding-left:1.5rem;position:relative;margin:.5rem 0;color:var(--ink-2);font-size:.96rem}
+  .cred-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+  .phone-shot{max-width:270px;margin:0 auto;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;box-shadow:0 2px 12px rgba(34,28,22,.09)}
+  .live-note{padding:.7rem .9rem;font-size:.85rem;color:var(--ink-2);border-top:1px solid var(--line);background:var(--panel)}
+  .live-note a{font-weight:700}
+
+  /* FAQ */
+  .faq{max-width:46rem;margin-top:1.4rem}
+  .faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;margin:.6rem 0;overflow:hidden}
+  .faq summary{cursor:pointer;padding:.9rem 1.1rem;font-weight:700;font-size:1rem;list-style:none;position:relative;padding-right:2.4rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:1.05rem;top:.72rem;font-size:1.25rem;color:var(--green-dark);font-weight:600}
+  .faq details[open] summary::after{content:"–"}
+  .faq .a{padding:0 1.1rem .95rem;color:var(--ink-2);font-size:.96rem}
+  .faq .a p{margin-bottom:.5rem}
+  .faq .a p:last-child{margin-bottom:0}
+
+  /* closing */
+  .closing{background:var(--wash);border-top:1px solid var(--line);text-align:center}
+  .closing h2{max-width:34rem;margin:0 auto .6rem}
+  .closing .lead{margin:0 auto}
+  .closing .cta-row{margin-top:1.5rem}
+
+  footer{border-top:1px solid var(--line);padding:2.2rem 0 3rem;font-size:.88rem;color:var(--ink-3)}
+  footer .foot-line{margin:.35rem 0}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-in">
+  <a class="logo" href="#"><span class="logo-mark">A</span>Appximo</a>
+  <a class="btn-wa compact" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
+    WhatsApp
+  </a>
+</div></nav>
+
+<header class="hero"><div class="wrap"><div class="hero-grid">
+<div>
+  <h1>¿Su negocio vive en el WhatsApp, el cuaderno y el Excel?</h1>
+  <p class="sub">Le hacemos un <strong>sistema a la medida</strong> — pedidos, citas, inventario, clientes — y <strong>se lo mostramos funcionando antes de que pague</strong>. En días, no en meses.</p>
+  <div class="cta-row">
+    <a class="btn-wa" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <p class="cta-note">Le responde una persona, no un robot. La primera demostración es gratis.</p>
+  </div>
+  <div class="hero-facts">
+    <span>Hecho en Colombia</span>
+    <span>Aplicaciones reales funcionando hoy</span>
+    <span>Sus datos quedan siendo suyos</span>
+  </div>
+</div>
+<div class="hero-visual" aria-hidden="true">
+  <img src="assets/demo-pedidos.png" alt="" width="1280" height="800">
+</div>
+</div></div></header>
+
+<section id="dolor"><div class="wrap">
+  <p class="kicker">¿Le suena?</p>
+  <h2>El negocio crece. El desorden también.</h2>
+  <div class="pain-list">
+    <div class="pain">Los pedidos llegan por WhatsApp y <b>se pierden entre los chats</b>. Nadie sabe qué falta por entregar.</div>
+    <div class="pain">El inventario vive en un Excel que <b>solo una persona entiende</b> — y a veces se daña.</div>
+    <div class="pain">Las citas se agendan por chat y <b>nadie sabe quién viene mañana</b>.</div>
+    <div class="pain">Las cuentas del mes se hacen a mano, tarde y <b>con sustos</b>.</div>
+    <div class="pain">Ya cotizó un programa a la medida: le dijeron <b>meses de espera</b> y un precio que asusta.</div>
+  </div>
+  <p class="pain-out">Nada de esto es culpa suya. Son procesos que crecieron más que las herramientas con las que empezaron. <strong>Eso se arregla con un sistema hecho para su negocio</strong> — no uno genérico al que usted se tiene que amoldar.</p>
+</div></section>
+
+<section id="demo" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <p class="kicker">Véalo con sus propios ojos</p>
+  <h2>Así se ve un negocio ordenado</h2>
+  <p class="lead">Este video es real y dura 22 segundos. Es el sistema de pedidos de una repostería de ejemplo: entra un pedido nuevo y queda confirmado, con su cliente, su detalle y su valor. Todo el que atiende ve la misma lista, al día.</p>
+
+  <figure class="media" style="margin-top:1.5rem;max-width:52rem">
+    <video controls muted playsinline preload="metadata" poster="assets/demo-poster.jpg" width="1280" height="800" aria-label="Video: el sistema de pedidos recibe un pedido nuevo y lo confirma">
+      <source src="assets/demo-clip.mp4" type="video/mp4">
+    </video>
+    <figcaption>
+      Grabación real, sin cortes, de una aplicación creada con nuestra herramienta.
+      <div class="timeline">
+        <span><span class="t">0:00</span> entra al sistema</span>
+        <span><span class="t">0:08</span> registra un pedido nuevo</span>
+        <span><span class="t">0:17</span> lo confirma</span>
+        <span><span class="t">0:20</span> la lista queda al día</span>
+      </div>
+    </figcaption>
+  </figure>
+
+  <div class="shots">
+    <figure class="shot">
+      <img src="assets/demo-pedidos.png" alt="Pantalla del sistema: lista de pedidos con cliente, detalle, teléfono, valor y estado de cada uno" width="1280" height="800" loading="lazy">
+      <figcaption><strong>Los pedidos, en orden.</strong> Quién pidió, qué pidió, cuánto vale y en qué va: nuevo, confirmado o entregado. El sistema no deja saltarse pasos — un pedido no puede aparecer «entregado» si nunca se confirmó.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/demo-citas.png" alt="Pantalla del sistema: agenda de citas con cliente, fecha, servicio y estado" width="1280" height="800" loading="lazy">
+      <figcaption><strong>Las citas, claras.</strong> Quién viene, cuándo y a qué. Se acabó el «¿usted sí me agendó?». La misma idea sirve para turnos, domicilios o entregas.</figcaption>
+    </figure>
+  </div>
+  <p class="demo-note">Las pantallas y el video salen de una aplicación de demostración creada con nuestra herramienta; los datos son de ejemplo. En la primera reunión le mostramos lo mismo, pero <strong>con su proceso y sus datos</strong>.</p>
+
+  <div class="offer">
+    <h3>La demostración es la propuesta</h3>
+    <p>Usted nos cuenta su proceso y <strong>lo ve funcionando en esa misma reunión</strong>, en menos de una hora. Gratis y sin compromiso: si no le sirve, no pasa nada y no debe nada. Así no tiene que creernos — lo ve.</p>
+    <div class="cta-row">
+      <a class="btn-wa" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
+        Pedir mi demostración
+      </a>
+    </div>
+  </div>
+</div></section>
+
+<section id="pasos"><div class="wrap">
+  <p class="kicker">Cómo funciona</p>
+  <h2>Tres pasos, sin enredos</h2>
+  <div class="steps">
+    <div class="step"><div class="step-n">1</div><div>
+      <h3>Nos cuenta su proceso</h3>
+      <p>Por WhatsApp o en una llamada. Con sus palabras: «los pedidos me llegan así, los apunto acá, se me pierden allá». Si prefiere, mande un audio.</p>
+    </div></div>
+    <div class="step"><div class="step-n">2</div><div>
+      <h3>Lo ve funcionando</h3>
+      <p>En una reunión se lo mostramos andando, con sus datos. Usted lo prueba, pide cambios, y ahí mismo decide si sigue. Recién entonces hablamos de precio — cerrado y por escrito.</p>
+    </div></div>
+    <div class="step"><div class="step-n">3</div><div>
+      <h3>Queda suyo y andando</h3>
+      <p>En días queda en internet, con su propio dominio y con acceso para su equipo, cada uno con su clave y sus permisos. Lo acompañamos después: los cambios se piden por WhatsApp, igual que todo.</p>
+    </div></div>
+  </div>
+</div></section>
+
+<section id="confianza" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <p class="kicker">Por qué confiar</p>
+  <h2>No somos una promesa: esto ya funciona</h2>
+  <div class="trust-grid">
+    <div>
+      <div class="card">
+        <h3>Quién le responde</h3>
+        <p><strong>Miguel Acosta</strong>. Casi 10 años trabajando en la infraestructura de bancos de América Latina — sistemas donde un error cuesta de verdad. Profesor de la Universidad Tecnológica de Pereira y fundador de <strong>Reto Tributario SAS</strong>, empresa colombiana con su propia plataforma en operación.</p>
+        <ul class="cred-list">
+          <li>Hoy hay <strong>cuatro aplicaciones distintas funcionando en internet</strong> con esta misma tecnología, cada una con su dominio y su candado de seguridad.</li>
+          <li>Una de ellas es una <strong>tienda de demostración pública</strong>: ábrala usted mismo y pruébela en <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tiendita.appximo.com</a>.</li>
+          <li>Un conjunto residencial maneja sus <strong>asambleas, votaciones y quejas</strong> con un sistema construido sobre esta misma base — quedó funcionando en una tarde de trabajo.</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:1.1rem">
+        <h3>¿Por qué podemos ir tan rápido?</h3>
+        <p>Porque no empezamos de cero cada vez. Trabajamos con una herramienta propia que ya trae resuelto lo que todos los sistemas repiten — las claves, los permisos, las listas, los respaldos — y el tiempo se invierte en lo que hace único a <em>su</em> negocio. Por eso lo que a otros les toma meses, acá toma días.</p>
+      </div>
+    </div>
+    <figure style="margin:0">
+      <div class="phone-shot">
+        <img src="assets/tiendita-movil.png" alt="La Tiendita vista en un celular: tienda con productos colombianos y precios en pesos" width="780" height="1688" loading="lazy">
+      </div>
+      <div class="live-note" style="max-width:270px;margin:0 auto;border:1px solid var(--line);border-top:none;border-radius:0 0 14px 14px">
+        Esta tienda está en internet ahora mismo: <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tiendita.appximo.com</a> — entre y pruébela desde su celular.
+      </div>
+    </figure>
+  </div>
+</div></section>
+
+<section id="preguntas"><div class="wrap">
+  <p class="kicker">Preguntas frecuentes</p>
+  <h2>Lo que todos preguntan</h2>
+  <div class="faq">
+    <details>
+      <summary>¿Cuánto cuesta?</summary>
+      <div class="a">
+        <p>Depende del tamaño del proceso: no cuesta lo mismo ordenar las citas de un consultorio que montar el sistema completo de una distribuidora. Por eso no publicamos una tarifa única — sería mentirle en alguna de las dos direcciones.</p>
+        <p>Lo que sí es fijo: <strong>la demostración es gratis</strong>, y antes de empezar usted recibe <strong>un precio cerrado, por escrito</strong>. Sin sorpresas ni cobros por horas que nadie controla.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Cuánto se demora?</summary>
+      <div class="a">
+        <p>La demostración: una reunión de menos de una hora. El sistema andando en internet: <strong>días</strong> en la mayoría de los casos. Un proceso grande, con varias partes, puede tomar algunas semanas. Lo que no va a escuchar de nosotros es «vuelva en seis meses».</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Y si después necesito cambios?</summary>
+      <div class="a">
+        <p>Los va a necesitar — los negocios cambian. El sistema está hecho para eso: agregar un campo, una regla o una pantalla es trabajo de poco tiempo, no un proyecto nuevo. Los cambios se piden por WhatsApp y se cotizan igual: precio cerrado antes de hacerlos.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿De quién son los datos?</summary>
+      <div class="a">
+        <p><strong>Suyos, siempre.</strong> El sistema queda instalado en un servidor a su nombre, con sus claves. Sus clientes, sus pedidos y sus números no viven en la plataforma de un tercero que mañana cambia las reglas. Y puede pedir una copia completa de todo cuando quiera.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Qué pasa si ustedes desaparecen?</summary>
+      <div class="a">
+        <p>Es la pregunta correcta y merece respuesta seria. El sistema no depende de que nosotros existamos: queda a su nombre, en su servidor, con sus claves. La tecnología de base es pública y está documentada — cualquier ingeniero de sistemas puede tomarla y seguir. Usted no queda amarrado a nadie, ni siquiera a nosotros.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Tengo que saber de tecnología?</summary>
+      <div class="a">
+        <p>No. Si usted maneja WhatsApp, maneja esto. Su equipo entra con una clave y ve listas y botones con los nombres de su negocio: pedidos, citas, clientes. De lo demás nos encargamos nosotros.</p>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<section class="closing"><div class="wrap">
+  <h2>Cuéntenos qué se le está volviendo un problema</h2>
+  <p class="lead">Con eso alcanza para empezar. Le respondemos, le hacemos las preguntas del caso y agendamos su demostración gratis.</p>
+  <div class="cta-row">
+    <a class="btn-wa" href="https://wa.me/{{WHATSAPP_NUMBER}}?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
+      Escribir por WhatsApp
+    </a>
+    <p class="cta-note">Si prefiere, mande un audio contando su caso. Así de simple.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p class="foot-line"><strong style="color:var(--ink-2)">Appximo</strong> — sistemas a la medida para negocios, hechos en Colombia.</p>
+  <p class="foot-line">La tienda de demostración: <a href="https://tiendita.appximo.com" rel="noopener">tiendita.appximo.com</a></p>
+  <p class="foot-line small">¿Trabaja en tecnología? La herramienta detrás de esto es un proyecto de código abierto: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a></p>
+</div></footer>
+
+</body>
+</html>

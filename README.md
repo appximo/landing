@@ -21,10 +21,10 @@ README.md      → este archivo
 Se sirve desde la raíz (no `/docs`) porque el repo solo contiene el sitio — no hay
 nada más de qué separarlo, y la raíz es la configuración con menos pasos.
 
-## ANTES de publicar: el número de WhatsApp
+## El número de WhatsApp
 
-Todos los botones de contacto apuntan a WhatsApp con el texto pre-escrito. El
-número **quedó como placeholder** — la página NO se publica hasta reemplazarlo:
+**Ya está puesto el número real** (desde 2026-08-17). Esta sección queda como
+referencia del mecanismo por si algún día hay que cambiarlo:
 
 ```bash
 # Reemplazar {{WHATSAPP_NUMBER}} por el número real, con indicativo de país,
@@ -114,11 +114,17 @@ Editar `index.html` (o `assets/`), commit, push a `main`. Pages redepliega solo
 
 Todo es real — nada de stock, nada de mockups:
 
-- `assets/demo-*.png|mp4` — capturas y clip de una app real generada con el motor
-  el 2026-08-17 en el servidor de desarrollo (schema en español: pedidos, citas,
-  productos, clientes; datos de ejemplo legibles sembrados por la API). Cómo se
-  generó quedó documentado en el repo interno de la sesión LANDING-COMMERCIAL-S1.
-- `assets/tiendita-*.png` — capturas de `tiendita.appximo.com`, tienda demo REAL
-  en producción (dominio y certificado propios).
-- `assets/crisblogs-*.png` — captura de `crisblogs.appximo.com`, app construida
-  por un tercero, en producción.
+- `assets/votaciones.webp`, `assets/casos.webp` — capturas de una app real de
+  administración de conjuntos (votaciones con % y quórum, casos PQRS) generada
+  con el motor el 2026-08-18 en el servidor de desarrollo, con datos de ejemplo
+  legibles sembrados por la API. La instancia y su base se borraron al cierre.
+- `assets/pedidos.webp`, `assets/citas.webp`, `assets/demo-clip.mp4`,
+  `assets/poster.webp` — la app demo de pedidos/citas (repostería) de la sesión
+  LANDING-COMMERCIAL-S1, mismo método. El clip lleva subtítulos en español
+  quemados (ffmpeg + libass).
+- `assets/tienda.webp` — captura de `tiendita.appximo.com`, tienda demo REAL en
+  producción (dominio y certificado propios).
+- `assets/og.jpg` — recorte de la captura de votaciones para el preview social.
+
+Los detalles de cómo se generaron: repo interno, sesiones LANDING-COMMERCIAL-S1
+y LANDING-REDESIGN-S1.

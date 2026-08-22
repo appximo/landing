@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Appximo — Plataformas y sistemas a la medida, en días</title>
-<meta name="description" content="Una plataforma de 18 módulos, con votaciones y quórum, quedó funcionando en 3 horas y media. Sistemas a la medida para empresas y organizaciones — y lo ve funcionando antes de pagar.">
+<meta name="description" content="Deje de perder pedidos, citas y cuentas: su negocio entero en un solo lugar. Sistemas hechos a su medida, andando en días — y lo ve funcionando antes de pagar.">
 <meta property="og:title" content="Appximo — Plataformas y sistemas a la medida, en días">
-<meta property="og:description" content="Una plataforma de 18 módulos quedó funcionando en 3 horas y media. Véalo funcionando antes de pagar — escríbanos por WhatsApp.">
+<meta property="og:description" content="Su negocio entero en un solo lugar, con un sistema hecho a su medida. Lo ve funcionando antes de pagar — escríbanos por WhatsApp.">
 <meta property="og:image" content="https://appximo.com/assets/og.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23153f2e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e9f5ee' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
@@ -77,6 +77,14 @@
   .stat span{display:block;margin-top:.3rem;font-size:.88rem;color:var(--cream-dim);max-width:16rem}
   .stat-foot{padding-bottom:1.6rem;font-size:.8rem;color:#7e9384;max-width:52rem}
   .stat-foot a{color:#8fd3ae}
+
+  /* ── auto-selección bajo el hero ──────── */
+  .picks{display:grid;gap:.9rem;margin-top:1.2rem}
+  @media(min-width:760px){.picks{grid-template-columns:repeat(3,1fr)}}
+  .pick{display:block;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:.9rem 1.05rem;text-decoration:none;box-shadow:0 2px 12px rgba(29,26,19,.05);transition:transform .1s,box-shadow .15s}
+  .pick:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(29,26,19,.1)}
+  .pick b{display:block;color:var(--ink);font-size:1.02rem;margin-bottom:.15rem}
+  .pick span{color:var(--ink-2);font-size:.9rem;line-height:1.5}
 
   /* ── tarjetas de sistemas (amplitud) ──── */
   .sys-grid{display:grid;gap:1.2rem;margin-top:1.8rem}
@@ -191,8 +199,8 @@
   <div class="hero-grid">
     <div>
       <p class="eyebrow">Sistemas a la medida para empresas y organizaciones</p>
-      <h1>Una plataforma de 18 módulos, con votaciones y quórum, quedó funcionando en <em>3 horas y media</em>.</h1>
-      <p class="sub">No es magia: <strong>lo difícil ya está construido</strong>. Son diez años de oficio en sistemas de bancos y una herramienta propia que carga con lo pesado. Por eso lo suyo queda andando en días — y <strong>lo ve funcionando antes de pagar</strong>.</p>
+      <h1 id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
+      <p class="sub" id="hero-sub">Hecho a su medida, no un programa genérico. Lo difícil ya está construido — diez años de oficio en sistemas de bancos — y queda andando en días: una plataforma entera salió en 3 horas y media. <strong>Lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
         <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
@@ -202,19 +210,86 @@
       </div>
     </div>
     <figure class="hero-visual">
-      <div class="hero-shot"><img src="assets/votaciones.webp" alt="Pantalla real: votaciones de una asamblea con porcentajes a favor, en contra, quórum y resultado" width="1080" height="295" fetchpriority="high"></div>
+      <div class="hero-shot"><img id="hero-img" src="assets/pedidos-hero.webp" alt="Lista real de pedidos de una repostería: cada pedido con su cliente, su detalle y su estado — nuevo, confirmado, entregado" width="704" height="406" fetchpriority="high"></div>
       <div class="hero-phone"><img src="assets/tienda.webp" alt="Una tienda en el celular, con productos y precios en pesos" width="640" height="1385" loading="lazy"></div>
-      <figcaption>Pantallas de aplicaciones reales.</figcaption>
+      <figcaption id="hero-cap">Pantalla real: los pedidos de una repostería de demostración, con su estado.</figcaption>
     </figure>
   </div>
 
   <div class="stats">
-    <div class="stat"><b>3½ horas</b><span>de cero a funcionando: 18 módulos, votaciones y quórum</span></div>
-    <div class="stat"><b>2 sistemas abiertos</b><span>una tienda y una agenda veterinaria — pruébelas hoy, sin registrarse</span></div>
+    <div class="stat"><b>3½ horas</b><span>de cero a funcionando: una plataforma entera de 18 módulos</span></div>
+    <div class="stat"><b>2 sistemas abiertos</b><span>entre y pruébelos hoy, sin registrarse</span></div>
     <div class="stat"><b>10 años</b><span>en sistemas de bancos detrás de quien le responde</span></div>
   </div>
-  <p class="stat-foot">La plataforma de 18 módulos la construyó un profesional independiente con nuestra herramienta — no nos crea a nosotros: <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a> (informe técnico, en inglés).</p>
+  <p class="stat-foot">La plataforma de 18 módulos la construyó un profesional independiente con nuestra herramienta — no nos crea a nosotros: <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a> (en inglés).</p>
 </div></header>
+
+<!-- ══ VARIANTES DE HERO (HERO-RECOGNITION-S1) ═══════════════════════════
+     Para cambiar el hero publicado: editar HERO_DEFAULT abajo
+     ('control' | 'retador' | 'puente') — una constante, nada más.
+     Para PREVISUALIZAR sin publicar: appximo.com/?hero=retador  |  ?hero=puente
+     El HTML estático es siempre el CONTROL (lo que ven buscadores y sin-JS). -->
+<template id="hero-retador">
+  <span class="v-h1">No le pedimos que nos crea: <em>véalo funcionando</em> ahora mismo.</span>
+  <span class="v-sub">Dos sistemas hechos con nuestra herramienta están abiertos en internet: una tienda y una agenda veterinaria. Éntreles sin registrarse y toque todo. El suyo se hace igual — a su medida, en días — y usted <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-img" data-src="assets/tienda-hero.webp" data-alt="La tienda de demostración, abierta en internet: puede entrar y probarla ahora mismo" data-w="640" data-h="600"></span>
+  <span class="v-cap">La tienda de demostración está en internet: entre y pruébela.</span>
+</template>
+<template id="hero-puente">
+  <span class="v-h1">Un sistema hecho para su negocio, <em>andando en días</em>.</span>
+  <span class="v-sub">¿Días de verdad? Una plataforma entera — 18 módulos — quedó funcionando en 3 horas y media. No es magia: lo difícil ya está construido, con diez años de oficio en sistemas de bancos detrás. Usted <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-img" data-src="assets/pedidos-hero.webp" data-alt="Lista real de pedidos de una repostería: cada pedido con su cliente, su detalle y su estado — nuevo, confirmado, entregado" data-w="704" data-h="406"></span>
+  <span class="v-cap">Pantalla real: los pedidos de una repostería de demostración, cada uno con su estado.</span>
+</template>
+<script>
+  (function(){
+    var HERO_DEFAULT = 'control'; // ← CAMBIAR AQUÍ para publicar otro hero
+    var v = new URLSearchParams(location.search).get('hero') || HERO_DEFAULT;
+    if (v === 'control') return;
+    var t = document.getElementById('hero-' + v);
+    if (!t) return;
+    var d = t.content;
+    document.getElementById('hero-h1').innerHTML = d.querySelector('.v-h1').innerHTML;
+    document.getElementById('hero-sub').innerHTML = d.querySelector('.v-sub').innerHTML;
+    var img = document.getElementById('hero-img'), vi = d.querySelector('.v-img');
+    img.src = vi.getAttribute('data-src'); img.alt = vi.getAttribute('data-alt');
+    img.width = vi.getAttribute('data-w'); img.height = vi.getAttribute('data-h');
+    document.getElementById('hero-cap').textContent = d.querySelector('.v-cap').textContent;
+  })();
+</script>
+
+<section id="pruebe" style="padding:2.6rem 0 2.2rem"><div class="wrap">
+  <p class="kicker">Elija lo suyo y pruébelo</p>
+  <div class="picks">
+    <a class="pick" href="https://tiendita.appximo.com" rel="noopener" target="_blank"><b>¿Vende productos?</b><span>Abra la tienda de demostración: catálogo, carrito y pedidos.</span></a>
+    <a class="pick" href="https://petfriendly.appximo.com" rel="noopener" target="_blank"><b>¿Trabaja con citas y clientes?</b><span>Toque la agenda veterinaria: nada se guarda.</span></a>
+    <a class="pick" href="#video"><b>¿Le entran pedidos todo el día?</b><span>Vea 22 segundos: un pedido entra y queda confirmado.</span></a>
+  </div>
+</div></section>
+
+<section id="video" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <p class="kicker">Véalo usted mismo</p>
+  <h2>Así se siente por dentro</h2>
+  <p class="lead">22 segundos, sin cortes: entra un pedido y queda confirmado. Con subtítulos.</p>
+  <figure class="media" style="margin-top:1.5rem">
+    <div class="vframe">
+      <video id="demovid" controls muted playsinline preload="none" poster="assets/poster.webp" width="1280" height="800" aria-label="Video: el sistema de pedidos recibe un pedido nuevo y lo confirma">
+        <source src="assets/demo-clip.mp4" type="video/mp4">
+      </video>
+      <button class="vplay" id="vplay" aria-label="Reproducir el video">
+        <span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el video · 22 s</span>
+      </button>
+    </div>
+    <figcaption>Grabación real. El sistema <strong>no deja saltarse pasos</strong>: un pedido no aparece «entregado» si nunca se confirmó.</figcaption>
+  </figure>
+  <div class="pains">
+    <div class="pain">¿Los pedidos llegan por WhatsApp y <b>se pierden entre los chats</b>?</div>
+    <div class="pain">¿El inventario vive en un Excel que <b>solo una persona entiende</b>?</div>
+    <div class="pain">¿Las cuentas del mes se hacen a mano, tarde y <b>con sustos</b>?</div>
+    <div class="pain">¿La factura electrónica y la DIAN <b>le quitan el sueño</b>?</div>
+  </div>
+  <p class="lead" style="margin-top:1.2rem">Todo eso se resuelve — se lo mostramos <strong>con su proceso y sus datos</strong>.</p>
+</div></section>
 
 <section id="sistemas"><div class="wrap">
   <p class="kicker">Lo que ya salió de aquí</p>
@@ -254,37 +329,14 @@
       </div>
     </article>
   </div>
-  <p class="sys-more">Otra muestra: una agenda veterinaria — <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">ábrala y toque el panel</a>; los cambios no se guardan. Lo suyo, sea lo que sea, se puede.</p>
+  <p class="sys-more">Lo suyo, sea lo que sea, se puede.</p>
 </div></section>
 
-<section id="video" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <p class="kicker">Véalo usted mismo</p>
-  <h2>Así se siente por dentro</h2>
-  <p class="lead">22 segundos, sin cortes: entra un pedido a una repostería y queda confirmado. Con subtítulos.</p>
-  <figure class="media" style="margin-top:1.5rem">
-    <div class="vframe">
-      <video id="demovid" controls muted playsinline preload="none" poster="assets/poster.webp" width="1280" height="800" aria-label="Video: el sistema de pedidos recibe un pedido nuevo y lo confirma">
-        <source src="assets/demo-clip.mp4" type="video/mp4">
-      </video>
-      <button class="vplay" id="vplay" aria-label="Reproducir el video">
-        <span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el video · 22 s</span>
-      </button>
-    </div>
-    <figcaption>Grabación real, sin montajes. El sistema <strong>no deja saltarse pasos</strong>: un pedido no aparece «entregado» si nunca se confirmó.</figcaption>
-  </figure>
-  <div class="pains">
-    <div class="pain">¿Los pedidos llegan por WhatsApp y <b>se pierden entre los chats</b>?</div>
-    <div class="pain">¿El inventario vive en un Excel que <b>solo una persona entiende</b>?</div>
-    <div class="pain">¿Las cuentas del mes se hacen a mano, tarde y <b>con sustos</b>?</div>
-    <div class="pain">¿La factura electrónica y la DIAN <b>le quitan el sueño</b>?</div>
-  </div>
-  <p class="lead" style="margin-top:1.2rem">Todo eso se resuelve — y se lo mostramos <strong>con su proceso y sus datos</strong>.</p>
-</div></section>
 
 <section id="pasos"><div class="wrap">
   <p class="kicker">Qué pasa cuando escribe</p>
   <h2>Escribir no lo compromete a nada</h2>
-  <p class="lead">Estos proyectos no se pierden por el precio: se pierden porque decidir da miedo. Por eso el primer paso es mínimo.</p>
+  <p class="lead">Estos proyectos se pierden porque decidir da miedo — no por el precio. Por eso el primer paso es mínimo.</p>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div>
       <h3>Escriba por WhatsApp — o mande un audio</h3>
@@ -300,7 +352,7 @@
     </div></div>
     <div class="step"><div class="step-n">4</div><div>
       <h3>Solo entonces, el precio</h3>
-      <p>Cerrado y por escrito, antes de empezar. Si sigue, en días su sistema queda en internet con su dominio y sus claves.</p>
+      <p>Cerrado y por escrito, antes de empezar. Si sigue, su sistema queda en internet con su dominio y sus claves.</p>
     </div></div>
   </div>
   <div class="no-risk">
@@ -327,19 +379,26 @@
            Formato pedido: 2 fotos cuadradas, mínimo 480×480, fondo simple, cara visible,
            convertidas a .webp ≤40 KB cada una, en assets/equipo-<nombre>.webp.
            Al tenerlas: <figure> con <img> + nombre + rol encima de este párrafo. -->
-      <p><strong>Miguel Acosta</strong>. Casi 10 años como programador analista en bancos de América Latina — sistemas donde un error cuesta de verdad. Profesor de la Universidad Tecnológica de Pereira.</p>
+      <p><strong>Miguel Acosta</strong>. Casi 10 años como programador analista en bancos de América Latina. Profesor de la Universidad Tecnológica de Pereira.</p>
       <ul class="cred-list">
-        <li>Dos sistemas de demostración <strong>abiertos al público hoy</strong>: la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda veterinaria</a>, cada una con su candado.</li>
+        <li>Dos sistemas de demostración <strong>abiertos al público hoy</strong>: la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda veterinaria</a>.</li>
         <li>La herramienta es <strong>pública y está documentada</strong>: usted nunca queda amarrado a nosotros.</li>
       </ul>
     </div>
     <figure class="quote">
       <blockquote>«Como consumidor, lo volvería a hacer.»</blockquote>
       <figcaption>Quien construyó la plataforma de 18 módulos — sin conocernos, solo con la herramienta. <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener" style="color:#8fd3ae">El caso, documentado</a>.</figcaption>
+      <!-- VIDEO-VECINGO-PENDIENTE (HERO-RECOGNITION-S1): el video del caso VecinGo
+           va AQUÍ, en la sección del caso — NO en el hero (quien llegó hasta acá ya
+           se reconoció arriba; la especificidad acá suma). Click-to-play, NUNCA autoplay.
+           Falta de Miguel el archivo: MP4 H.264 + audio AAC, máx 1080p, subtítulos en
+           español QUEMADOS, ideal ≤25 MB (WhatsApp y LinkedIn lo aceptan; WebM no).
+           Guardarlo como assets/vecingo-caso.mp4 y copiar el <figure class="media">
+           del bloque #video con su botón .vplay. -->
     </figure>
   </div>
   <div class="nots">
-    <div class="not"><b>No hacemos aplicaciones para las tiendas de los celulares.</b> El sistema se usa desde el navegador, también en el celular.</div>
+    <div class="not"><b>No hacemos aplicaciones para descargar.</b> El sistema se usa desde el navegador, también en el celular.</div>
     <div class="not"><b>No reemplazamos a su contador.</b> Le entregamos las ventas y el IVA claros para que trabaje con cifras de verdad.</div>
     <div class="not"><b>No cobramos por horas abiertas.</b> Precio cerrado por escrito antes de empezar — o no empezamos.</div>
     <div class="not"><b>Si solo necesita una página para mostrarse, se lo decimos de frente:</b> eso sale más barato en otro lado.</div>
@@ -413,7 +472,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
           Escribir por WhatsApp
         </a>
-        <p class="cta-note">Si prefiere, mande un audio contando su caso.</p>
+        <p class="cta-note">Si prefiere, mande un audio.</p>
       </div>
     </div>
   </div>

@@ -102,6 +102,14 @@
   .sys .tag a{color:inherit}
   .sys-more{margin-top:1.3rem;font-size:.92rem;color:var(--ink-3);max-width:46rem}
 
+  /* ── banda de automatización ──────────── */
+  .autom{display:grid;gap:1.4rem;margin-top:1.2rem;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.5rem;box-shadow:0 2px 14px rgba(29,26,19,.05);align-items:center}
+  @media(min-width:760px){.autom{grid-template-columns:3fr 2fr;gap:2rem;padding:1.8rem 2rem}}
+  .autom h3{font-family:var(--serif);font-weight:600;font-size:1.35rem;margin-bottom:.4rem}
+  .autom p{color:var(--ink-2);font-size:.97rem}
+  .autom-visual{margin:0 auto;max-width:24rem;width:100%}
+  .autom-visual svg{width:100%;height:auto;display:block}
+
   /* ── dolor compacto ───────────────────── */
   .pains{display:grid;gap:.7rem;margin-top:1.5rem;max-width:44rem}
   .pain{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:.75rem 1rem;color:var(--ink-2);font-size:.97rem}
@@ -212,7 +220,7 @@
     <figure class="hero-visual">
       <div class="hero-shot"><img id="hero-img" src="assets/pedidos-hero.webp" alt="Lista real de pedidos de una repostería: cada pedido con su cliente, su detalle y su estado — nuevo, confirmado, entregado" width="704" height="406" fetchpriority="high"></div>
       <div class="hero-phone"><img src="assets/tienda.webp" alt="Una tienda en el celular, con productos y precios en pesos" width="640" height="1385" loading="lazy"></div>
-      <figcaption id="hero-cap">Pantalla real: pedidos de una repostería de demostración.</figcaption>
+      <figcaption id="hero-cap">Pantalla real de una repostería de demostración.</figcaption>
     </figure>
   </div>
 
@@ -263,7 +271,7 @@
   <div class="picks">
     <a class="pick" href="https://tiendita.appximo.com" rel="noopener" target="_blank"><b>¿Vende productos?</b><span>Abra la tienda de demostración y recórrala.</span></a>
     <a class="pick" href="https://petfriendly.appximo.com" rel="noopener" target="_blank"><b>¿Trabaja con citas y clientes?</b><span>Toque la agenda veterinaria: nada se guarda.</span></a>
-    <a class="pick" href="#caso-vecingo"><b>¿Administra un conjunto?</b><span>Vea por dentro la plataforma de 18 módulos — 5 minutos.</span></a>
+    <a class="pick" href="#caso-vecingo"><b>¿Administra un conjunto?</b><span>Vea la plataforma de 18 módulos — 5 minutos.</span></a>
   </div>
 </div></section>
 
@@ -316,10 +324,44 @@
       </div>
       <div class="sys-body">
         <h3>Administración de conjuntos</h3>
-        <p>18 módulos: asambleas con votación por coeficiente, casos con radicado y cartera. Quedó andando en 3½ horas y sirve a una comunidad real — <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a>.</p>
+        <p>18 módulos — asambleas con votación por coeficiente, casos con radicado, cartera — andando en 3½ horas para una comunidad real. <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a>.</p>
         <span class="tag demo">Video con datos ficticios</span>
       </div>
     </article>
+  </div>
+  <div class="autom">
+    <div>
+      <h3>Sistemas que se comunican y trabajan solos</h3>
+      <p>Sistemas complejos que se hablan con otras herramientas y <strong>automatizan lo repetitivo</strong>: el pedido entra y el aviso sale solo, al chat o al correo del cliente.</p>
+    </div>
+    <figure class="autom-visual" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
+      <svg viewBox="0 0 520 340" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="16" y="128" width="150" height="84" rx="14" fill="#122b21"/>
+        <text x="91" y="164" text-anchor="middle" font-family="Georgia,serif" font-size="19" fill="#f2efe3">Su sistema</text>
+        <rect x="40" y="178" width="30" height="7" rx="3.5" fill="#1c9d5b"/>
+        <rect x="76" y="178" width="46" height="7" rx="3.5" fill="#39544a"/>
+        <rect x="128" y="178" width="18" height="7" rx="3.5" fill="#39544a"/>
+        <path d="M 170 170 C 214 170 230 168 282 168" stroke="#1c9d5b" stroke-width="3" stroke-dasharray="7 7" fill="none"/>
+        <path d="M 226 156 l 26 10 -26 10 6 -10 z" fill="#1c9d5b"/>
+        <rect x="296" y="24" width="208" height="292" rx="26" fill="#0d221a"/>
+        <rect x="308" y="38" width="184" height="264" rx="16" fill="#f7f4ec"/>
+        <rect x="318" y="56" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
+        <circle cx="340" cy="80" r="13" fill="#1c9d5b"/>
+        <path d="M 333 80 l 14 -6 -4 12 -3.5 -4 z" fill="#fff"/>
+        <text x="360" y="78" font-family="system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Pedido nuevo</text>
+        <text x="360" y="98" font-family="system-ui,Arial" font-size="12" fill="#564e3e">Marta · 2 tortas</text>
+        <rect x="318" y="136" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
+        <circle cx="340" cy="160" r="13" fill="#b98a2e"/>
+        <text x="340" y="166" text-anchor="middle" font-family="system-ui,Arial" font-size="16" font-weight="800" fill="#fff">!</text>
+        <text x="360" y="158" font-family="system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Inventario bajo</text>
+        <text x="360" y="178" font-family="system-ui,Arial" font-size="12" fill="#564e3e">Harina: quedan 3</text>
+        <rect x="318" y="216" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
+        <circle cx="340" cy="240" r="13" fill="#1c9d5b"/>
+        <path d="M 334 240 l 4.5 5 8 -10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <text x="360" y="238" font-family="system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Pago confirmado</text>
+        <text x="360" y="258" font-family="system-ui,Arial" font-size="12" fill="#564e3e">Aviso al cliente</text>
+      </svg>
+    </figure>
   </div>
 </div></section>
 
@@ -366,9 +408,9 @@
       <p>Más de <strong>diez años en sistemas de bancos</strong> — donde un error cuesta — y una <strong>tecnología propia, pionera</strong> en dejar sistemas completos andando en días.</p>
       <ul class="cred-list">
         <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda veterinaria</a> cargan al instante — compruébelo.</li>
-        <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados antes de aceptarse, cada usuario con su clave y sus permisos.</li>
-        <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro de lo que pasa — incluido, sin pagar servicios aparte.</li>
-        <li>La herramienta es <strong>pública y documentada</strong>: usted nunca queda amarrado.</li>
+        <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, cada usuario con su clave y sus permisos.</li>
+        <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido, sin pagar servicios aparte.</li>
+        <li><strong>Automatiza lo repetitivo:</strong> los avisos salen solos, al chat o al correo.</li>
       </ul>
     </div>
     <figure class="quote">
@@ -417,6 +459,12 @@
       <summary>¿Y si después necesito cambios?</summary>
       <div class="a">
         <p>Los va a necesitar — los negocios cambian. Agregar un campo, una regla o una pantalla es trabajo de poco tiempo, no un proyecto nuevo. Se piden por WhatsApp y se cotizan igual: precio cerrado antes de hacerlos.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Se conecta con lo que ya uso?</summary>
+      <div class="a">
+        <p>Sí. Los sistemas que construimos se comunican con otras herramientas: avisos automáticos al chat (Telegram) o al correo, y conexión con otros programas cuando su proceso lo necesita. En la demostración le mostramos cómo aplicaría a su caso.</p>
       </div>
     </details>
     <details>

@@ -18,7 +18,9 @@
     --dark:#122b21; --dark-2:#0d221a; --dark-line:rgba(233,245,238,.14);
     --cream:#f2efe3; --cream-dim:#b9c4b4;
     --green:#1c9d5b; --green-dark:#157a46; --green-wash:#e7f4ec;
-    --gold:#b98a2e;
+    --wa:#25D366; --wa-ink:#0d221a;
+    --gold:#b98a2e; --gold-deep:#96701f;
+    --teja:#b3452e;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
     --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   }
@@ -31,17 +33,30 @@
   section{padding:4rem 0}
   @media(min-width:760px){section{padding:5.5rem 0}}
   h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,4.6vw,2.35rem);letter-spacing:-.015em;line-height:1.18;margin-bottom:.6rem}
-  .kicker{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:.65rem}
+  .kicker{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:.65rem}
   .lead{color:var(--ink-2);max-width:46rem;font-size:1.05rem}
   .small{font-size:.88rem}
 
-  /* ── CTA ─────────────────────────────── */
-  .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--green);color:#fff;font-weight:700;font-size:1.04rem;padding:.9rem 1.6rem;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(18,80,48,.28),inset 0 1px 0 rgba(255,255,255,.18);transition:background .15s,transform .1s}
-  .btn-wa:hover{background:var(--green-dark)}
+  /* ── CTA — verde WhatsApp, píldora, texto oscuro (reservado SOLO para el CTA) ── */
+  .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--wa);color:var(--wa-ink);font-weight:800;font-size:1.04rem;padding:.9rem 1.7rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(13,60,35,.28),inset 0 1px 0 rgba(255,255,255,.28);transition:background .15s,transform .1s}
+  .btn-wa:hover{background:#1fc25b;outline:2px solid rgba(185,138,46,.5);outline-offset:3px}
   .btn-wa:active{transform:translateY(1px)}
   .btn-wa svg{width:1.35rem;height:1.35rem;flex:none}
-  .btn-wa.compact{font-size:.88rem;padding:.5rem 1rem;border-radius:10px;box-shadow:none}
+  .btn-wa.compact{font-size:.88rem;padding:.5rem 1.05rem;box-shadow:none}
   .cta-note{margin-top:.65rem;font-size:.88rem;color:var(--ink-3)}
+  .cta-trust{margin-top:.7rem;font-size:.82rem;color:#93a598;line-height:1.55;max-width:34rem}
+  .cta-trust b{color:#b9c4b4;font-weight:600}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes ctapulse{0%{box-shadow:0 6px 18px rgba(13,60,35,.28),0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 6px 18px rgba(13,60,35,.28),0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 6px 18px rgba(13,60,35,.28),0 0 0 0 rgba(37,211,102,0)}}
+    .btn-pulse{animation:ctapulse 1.6s ease-out 2}
+  }
+
+  /* ── punto EN VIVO (lo que está corriendo ahora mismo) ── */
+  .live-dot{display:inline-block;width:.55em;height:.55em;border-radius:50%;background:var(--green);margin-right:.45em;vertical-align:baseline;flex:none}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes livedot{0%,100%{box-shadow:0 0 0 0 rgba(28,157,91,.5)}60%{box-shadow:0 0 0 .45em rgba(28,157,91,0)}}
+    .live-dot{animation:livedot 1.8s ease-out infinite}
+  }
 
   /* ── nav (sticky = CTA siempre a mano) ── */
   nav{position:sticky;top:0;background:rgba(13,34,26,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--dark-line);z-index:50}
@@ -49,10 +64,10 @@
   .logo{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:700;font-size:1.14rem;color:var(--cream);text-decoration:none;letter-spacing:.01em}
   .logo-mark{width:1.55rem;height:1.55rem;border-radius:8px;background:var(--green);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:800;font-family:var(--sans)}
 
-  /* ── hero (oscuro, premium) ───────────── */
-  .hero{background:radial-gradient(90rem 42rem at 82% -18%,#1c4433 0%,var(--dark) 46%,var(--dark-2) 100%);color:var(--cream);padding:3.6rem 0 0;border-bottom:1px solid var(--line)}
+  /* ── hero (oscuro, premium, VIVO) ───────────── */
+  .hero{background:radial-gradient(90rem 42rem at 82% -18%,#1c4433 0%,var(--dark) 46%,var(--dark-2) 100%);color:var(--cream);padding:3.6rem 0 0;border-bottom:1px solid var(--line);overflow:hidden}
   @media(min-width:920px){.hero{padding-top:4.6rem}}
-  .hero-grid{display:grid;gap:2.2rem}
+  .hero-grid{display:grid;gap:2.6rem}
   @media(min-width:920px){.hero-grid{grid-template-columns:23fr 17fr;align-items:center;gap:3rem}}
   .eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#8fd3ae;margin-bottom:1rem}
   .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.75rem,5.6vw,3.05rem);letter-spacing:-.015em;line-height:1.14;max-width:42rem}
@@ -60,31 +75,86 @@
   .hero .sub{margin:1.2rem 0 0;font-size:clamp(1rem,2.5vw,1.14rem);color:var(--cream-dim);max-width:38rem}
   .hero .sub strong{color:var(--cream);font-weight:600}
   .hero .cta-row{margin-top:1.8rem}
-  .hero .cta-note{color:#93a598}
-  .hero-visual{position:relative;margin:0}
-  .hero-shot{border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px var(--dark-line)}
-  .hero-phone{display:none}
-  @media(min-width:920px){
-    .hero-phone{display:block;position:absolute;right:-.6rem;bottom:-2.4rem;width:34%;border-radius:16px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 1px var(--dark-line)}
-  }
-  .hero-visual figcaption{margin-top:.7rem;font-size:.8rem;color:#93a598}
-  @media(min-width:920px){.hero-visual figcaption{max-width:60%}}
 
-  /* stat strip dentro del hero */
-  .stats{display:grid;gap:1.1rem;margin-top:2.8rem;padding:1.6rem 0 1.8rem;border-top:1px solid var(--dark-line)}
+  .hero-visual{position:relative;margin:0;z-index:1}
+  /* glow de producto: el hero-shot iluminado desde atrás */
+  .hero-visual::before{content:"";position:absolute;top:-14%;left:-10%;right:-10%;height:120%;background:radial-gradient(closest-side,#245c40 0%,rgba(36,92,64,.35) 45%,rgba(36,92,64,0) 75%);z-index:0;pointer-events:none}
+  .hero-shot{position:relative;z-index:1}
+  .hero-phone{display:block;position:absolute;right:-.2rem;bottom:-1.1rem;width:27%;height:10.5rem;overflow:hidden;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px var(--dark-line);z-index:3}
+  .hero-phone img{object-fit:cover;object-position:top center;height:100%;width:100%}
+  @media(min-width:920px){
+    .hero-phone{right:-.6rem;bottom:-2.4rem;width:34%;height:auto;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.5),0 0 0 1px var(--dark-line)}
+    .hero-phone img{height:auto}
+  }
+  .hero-visual figcaption{position:relative;margin-top:.8rem;font-size:.8rem;color:#93a598;padding-right:32%;z-index:0}
+  @media(min-width:920px){.hero-visual figcaption{max-width:60%;padding-right:0}}
+
+  /* marco de navegador — la URL es la prueba */
+  .bframe{border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px var(--dark-line);background:#0b1d16}
+  .bbar{display:flex;align-items:center;gap:.7rem;padding:.45rem .8rem;background:#0b1d16;border-bottom:1px solid rgba(233,245,238,.09)}
+  .bdots{display:flex;gap:.3rem}
+  .bdots i{width:.5rem;height:.5rem;border-radius:50%;background:#2e4a3d;display:block}
+  .burl{display:inline-flex;align-items:center;gap:.4rem;background:#122b21;border-radius:999px;padding:.14rem .8rem;font-size:.74rem;color:#9fc3ad;letter-spacing:.02em;line-height:1.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .burl svg{width:.68rem;height:.68rem;flex:none}
+  .bframe img{width:100%}
+  .bframe.paper{background:var(--panel);box-shadow:none}
+  .bframe.paper .bbar{background:#122b21}
+
+  /* chips de notificación flotando alrededor del hero-shot */
+  .chip{position:absolute;display:flex;align-items:center;gap:.55rem;background:#fffdf8;border:1px solid var(--line);border-radius:12px;padding:.45rem .75rem;box-shadow:0 12px 28px rgba(0,0,0,.38);z-index:4;pointer-events:none}
+  .chip .ci{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+  .chip .ci svg{width:.85rem;height:.85rem}
+  .chip b{font-size:.78rem;color:var(--ink);display:block;line-height:1.25}
+  .chip span{display:block;font-size:.68rem;color:var(--ink-2);line-height:1.25}
+  .chip-1{top:38%;left:-.55rem}
+  .chip-2{display:none;bottom:3.2rem;left:-1.6rem}
+  @media(min-width:920px){
+    .chip-1{top:-1.2rem;left:-1.4rem}
+    .chip-2{display:flex}
+  }
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .chip-1{animation:floaty 7s ease-in-out infinite}
+    .chip-2{animation:floaty 9s ease-in-out 1.2s infinite}
+  }
+
+  /* stat strip dentro del hero — hairline dorada, cifras serif doradas */
+  .stats{display:grid;gap:1.4rem;margin-top:2.9rem;padding:1.7rem 0 1.5rem;border-top:1px solid rgba(185,138,46,.5)}
   @media(min-width:700px){.stats{grid-template-columns:repeat(3,1fr);gap:2rem}}
-  .stat b{display:block;font-family:var(--serif);font-weight:600;font-size:2rem;line-height:1.1;color:#fff;font-variant-numeric:tabular-nums}
-  .stat span{display:block;margin-top:.3rem;font-size:.88rem;color:var(--cream-dim);max-width:16rem}
-  .stat-foot{padding-bottom:1.6rem;font-size:.8rem;color:#7e9384;max-width:52rem}
+  .stat b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,6vw,3.4rem);line-height:1.05;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .stat b span{display:inline;font-size:1em;color:inherit;margin:0}
+  .stat b span.u{font-size:.5em;font-weight:600;margin-left:.12em}
+  .stat > span{display:block;margin-top:.35rem;font-size:.88rem;color:var(--cream-dim);max-width:17rem}
+  .stat > .stat-x{margin-top:.45rem;font-size:.8rem;color:#93a598;font-style:italic;max-width:17rem}
+  .stat-foot{padding-bottom:1.6rem;font-size:.8rem;color:#93a598;max-width:52rem}
   .stat-foot a{color:#8fd3ae}
 
-  /* ── auto-selección bajo el hero ──────── */
+  /* marquee de capacidades bajo los stats */
+  .cap-strip{overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:.15rem 0 1.1rem}
+  .cap-anim{display:inline-block}
+  .cap-track{display:inline-block;padding-right:2.4rem}
+  .cap-item{display:inline-block;margin:0 1.15rem 0 0;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#a9bcae;font-weight:600}
+  .cap-item::after{content:"·";margin-left:1.15rem;color:#3d5a4c}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes capslide{to{transform:translateX(-50%)}}
+    .cap-anim{animation:capslide 42s linear infinite}
+    .cap-strip:hover .cap-anim{animation-play-state:paused}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cap-strip{white-space:normal;-webkit-mask-image:none;mask-image:none}
+    .cap-track[aria-hidden]{display:none}
+  }
+
+  /* ── auto-selección bajo el hero: demos vivas protagonistas ── */
   .picks{display:grid;gap:.9rem;margin-top:1.2rem}
   @media(min-width:760px){.picks{grid-template-columns:repeat(3,1fr)}}
-  .pick{display:block;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:.9rem 1.05rem;text-decoration:none;box-shadow:0 2px 12px rgba(29,26,19,.05);transition:transform .1s,box-shadow .15s}
+  .pick{display:grid;grid-template-columns:3.6rem 1fr;gap:.9rem;align-items:center;background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:.85rem 1rem;text-decoration:none;box-shadow:0 2px 12px rgba(29,26,19,.05);transition:transform .1s,box-shadow .15s}
   .pick:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(29,26,19,.1)}
-  .pick b{display:block;color:var(--ink);font-size:1.02rem;margin-bottom:.15rem}
-  .pick span{color:var(--ink-2);font-size:.9rem;line-height:1.5}
+  .pk-img{width:3.6rem;height:3.6rem;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#f2f4f7}
+  .pk-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .pick b{display:block;color:var(--ink);font-size:1rem;line-height:1.3;margin-bottom:.1rem}
+  .pick span{display:block;color:var(--ink-2);font-size:.86rem;line-height:1.45}
+  .pk-live{display:flex;align-items:center;margin-top:.3rem;font-size:.76rem;font-weight:700;color:var(--green-dark);letter-spacing:.03em}
 
   /* ── tarjetas de sistemas (amplitud) ──── */
   .sys-grid{display:grid;gap:1.2rem;margin-top:1.8rem}
@@ -96,7 +166,7 @@
   .sys-body{padding:1.05rem 1.2rem 1.15rem}
   .sys h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;margin-bottom:.3rem}
   .sys p{color:var(--ink-2);font-size:.94rem}
-  .sys .tag{display:inline-block;margin-top:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.18rem .7rem}
+  .sys .tag{display:inline-flex;align-items:center;margin-top:.7rem;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.18rem .7rem}
   .tag.live{background:var(--green-wash);color:var(--green-dark);border:1px solid #bfe3cd}
   .tag.demo{background:var(--wash);color:var(--ink-3);border:1px solid var(--line-2)}
   .sys .tag a{color:inherit}
@@ -109,10 +179,14 @@
   .autom p{color:var(--ink-2);font-size:.97rem}
   .autom-visual{margin:0 auto;max-width:24rem;width:100%}
   .autom-visual svg{width:100%;height:auto;display:block}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes dashmove{to{stroke-dashoffset:-56}}
+    .dash-anim{animation:dashmove 2.6s linear infinite}
+  }
 
-  /* ── dolor compacto ───────────────────── */
+  /* ── dolor compacto: pérdida = cálido ───── */
   .pains{display:grid;gap:.7rem;margin-top:1.5rem;max-width:44rem}
-  .pain{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:.75rem 1rem;color:var(--ink-2);font-size:.97rem}
+  .pain{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--teja);border-radius:10px;padding:.75rem 1rem;color:var(--ink-2);font-size:.97rem}
   .pain b{color:var(--ink)}
 
   /* ── lo que no hacemos ────────────────── */
@@ -137,7 +211,7 @@
   .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--dark);color:#cfe8da;font-family:var(--serif);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
   .step h3{font-size:1.06rem;margin-bottom:.2rem}
   .step p{color:var(--ink-2);font-size:.96rem}
-  .no-risk{margin-top:1.6rem;background:var(--green-wash);border:1.5px solid #bfe3cd;border-radius:14px;padding:1.15rem 1.3rem;max-width:46rem}
+  .no-risk{margin-top:1.6rem;background:var(--green-wash);border:1.5px solid #9bd4b2;border-left:5px solid var(--green);border-radius:14px;padding:1.15rem 1.3rem;max-width:46rem}
   .no-risk p{color:#1f3d2d;font-size:.98rem}
 
   /* ── confianza ────────────────────────── */
@@ -188,6 +262,7 @@
   .mobile-cta{display:none}
   @media(max-width:759px){
     body{padding-bottom:4.6rem}
+    .hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}
     .mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,34,26,.97);backdrop-filter:blur(8px);border-top:1px solid var(--dark-line);padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom))}
     .mobile-cta .btn-wa{width:100%;font-size:.98rem;padding:.75rem 1rem}
   }
@@ -199,54 +274,76 @@
   <a class="logo" href="#"><span class="logo-mark">A</span>Appximo</a>
   <a class="btn-wa compact" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
-    WhatsApp
+    Demostración gratis
   </a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="hero-grid">
     <div>
-      <p class="eyebrow">Sistemas a la medida para empresas y organizaciones</p>
+      <p class="eyebrow">Para tiendas, ferreterías, consultorios y conjuntos</p>
       <h1 id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
-      <p class="sub" id="hero-sub">Hecho a su medida con tecnología propia: <strong>rápido de verdad</strong>, <strong>seguro</strong> bajo estándares OWASP y con monitoreo incluido. Queda andando en días — y <strong>lo ve funcionando antes de pagar</strong>.</p>
+      <p class="sub" id="hero-sub">A su medida, tecnología propia: <strong>rápido de verdad</strong>, <strong>seguro</strong> (estándares OWASP) y con monitoreo incluido. Andando en días — y <strong>lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
-        <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
+        <a class="btn-wa btn-pulse" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
-          Escribir por WhatsApp
+          Pedir mi demostración gratis
         </a>
-        <p class="cta-note">Le responde el equipo directamente, no un robot. La demostración es gratis.</p>
+        <p class="cta-trust">Gratis y sin compromiso · No pedimos claves ni pagos por adelantado · Si no le sirve, con decirlo basta<br><b>Le responde Miguel directamente, no un robot.</b></p>
       </div>
     </div>
     <figure class="hero-visual">
-      <div class="hero-shot"><img id="hero-img" src="assets/tablero-hero.webp" alt="Tablero real de una plataforma: indicadores de casos, cartera, reservas y una asamblea con su quórum en curso" width="1080" height="483" fetchpriority="high"></div>
+      <div class="chip chip-1" aria-hidden="true">
+        <span class="ci" style="background:var(--green)"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#fff"/></svg></span>
+        <span><b>Pedido nuevo</b></span>
+      </div>
+      <div class="chip chip-2" aria-hidden="true">
+        <span class="ci" style="background:var(--green)"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 5L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>Pago confirmado</b></span>
+      </div>
+      <div class="bframe hero-shot">
+        <div class="bbar" aria-hidden="true">
+          <span class="bdots"><i></i><i></i><i></i></span>
+          <span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg><span id="hero-url">vecingo — demo</span></span>
+        </div>
+        <img id="hero-img" src="assets/tablero-hero.webp" alt="Tablero real de una plataforma: indicadores de casos, cartera, reservas y una asamblea con su quórum en curso" width="1080" height="483" fetchpriority="high">
+      </div>
       <div class="hero-phone"><img src="assets/tienda.webp" alt="Una tienda en el celular, con productos y precios en pesos" width="640" height="1385" loading="lazy"></div>
-      <figcaption id="hero-cap">Pantalla real de un sistema hecho con nuestra tecnología.</figcaption>
+      <figcaption id="hero-cap">Pantalla real de un sistema nuestro.</figcaption>
     </figure>
   </div>
 
   <div class="stats">
-    <div class="stat"><b>1,6 ms</b><span>tarda el motor en responder, probado a 2.000 consultas por segundo</span></div>
-    <div class="stat"><b>Cientos</b><span>de sistemas generados con esta tecnología — dos abiertos para probarlos hoy</span></div>
-    <div class="stat"><b>10+ años</b><span>del equipo en sistemas de bancos, donde un error cuesta de verdad</span></div>
+    <div class="stat">
+      <b><span data-count="1.58" data-dec="2">1,58</span><span class="u">ms</span></b>
+      <span>tarda el motor en responder, probado a 2.000 consultas por segundo</span>
+      <span class="stat-x">responde antes de que su dedo suelte la pantalla — un parpadeo dura más de 60 veces eso</span>
+    </div>
+    <div class="stat">
+      <b>Cientos</b>
+      <span>de sistemas generados con esta tecnología — dos abiertos hoy</span>
+    </div>
+    <div class="stat">
+      <b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b>
+      <span>del equipo en sistemas de bancos, donde un error cuesta</span>
+    </div>
   </div>
-  <p class="stat-foot">La plataforma de 18 módulos la construyó un profesional independiente con nuestra herramienta: <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a> (en inglés).</p>
+  <div class="cap-strip" aria-hidden="true"><div class="cap-anim"><span class="cap-track"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Cartera</span><span class="cap-item">Asambleas</span><span class="cap-item">Facturas</span><span class="cap-item">PQRS</span><span class="cap-item">Reservas</span><span class="cap-item">Pagos</span></span><span class="cap-track" aria-hidden="true"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Cartera</span><span class="cap-item">Asambleas</span><span class="cap-item">Facturas</span><span class="cap-item">PQRS</span><span class="cap-item">Reservas</span><span class="cap-item">Pagos</span></span></div></div>
+  <p class="stat-foot">La plataforma de 18 módulos la construyó un profesional independiente, en 3½ horas: <a href="caso.html" rel="noopener">el caso, en español y con pantallas</a>.</p>
 </div></header>
 
-<!-- ══ VARIANTES DE HERO (HERO-RECOGNITION-S1) ═══════════════════════════
-     Para cambiar el hero publicado: editar HERO_DEFAULT abajo
-     ('control' | 'retador' | 'puente') — una constante, nada más.
-     Para PREVISUALIZAR sin publicar: appximo.com/?hero=retador  |  ?hero=puente
-     El HTML estático es siempre el CONTROL (lo que ven buscadores y sin-JS). -->
 <template id="hero-retador">
   <span class="v-h1">No le pedimos que nos crea: <em>véalo funcionando</em> ahora mismo.</span>
   <span class="v-sub">Dos sistemas hechos con nuestra tecnología están abiertos en internet: una tienda y una agenda veterinaria. Éntreles sin registrarse y mire cómo cargan al instante. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
   <span class="v-img" data-src="assets/tienda-hero.webp" data-alt="La tienda de demostración, abierta en internet: puede entrar y probarla ahora mismo" data-w="640" data-h="600"></span>
+  <span class="v-url">tiendita.appximo.com</span>
   <span class="v-cap">La tienda de demostración está en internet: entre y pruébela.</span>
 </template>
 <template id="hero-puente">
   <span class="v-h1">Un sistema hecho para su negocio, <em>andando en días</em>.</span>
   <span class="v-sub">¿Días de verdad? Una plataforma entera — 18 módulos — quedó funcionando en 3 horas y media. No es magia: es tecnología propia, rápida y segura, con años de oficio en sistemas de bancos detrás. <strong>Lo ve funcionando antes de pagar</strong>.</span>
   <span class="v-img" data-src="assets/tablero-hero.webp" data-alt="Tablero real de una plataforma: indicadores de casos, cartera, reservas y una asamblea con su quórum en curso" data-w="1080" data-h="483"></span>
+  <span class="v-url">vecingo — demo</span>
   <span class="v-cap">Pantalla real: los pedidos de una repostería de demostración, cada uno con su estado.</span>
 </template>
 <script>
@@ -262,6 +359,8 @@
     var img = document.getElementById('hero-img'), vi = d.querySelector('.v-img');
     img.src = vi.getAttribute('data-src'); img.alt = vi.getAttribute('data-alt');
     img.width = vi.getAttribute('data-w'); img.height = vi.getAttribute('data-h');
+    var u = d.querySelector('.v-url');
+    if (u) document.getElementById('hero-url').textContent = u.textContent;
     document.getElementById('hero-cap').textContent = d.querySelector('.v-cap').textContent;
   })();
 </script>
@@ -269,16 +368,25 @@
 <section id="pruebe" style="padding:2.6rem 0 2.2rem"><div class="wrap">
   <p class="kicker">Pruebe lo suyo</p>
   <div class="picks">
-    <a class="pick" href="https://tiendita.appximo.com" rel="noopener" target="_blank"><b>¿Vende productos?</b><span>Abra la tienda de demostración y recórrala.</span></a>
-    <a class="pick" href="https://petfriendly.appximo.com" rel="noopener" target="_blank"><b>¿Trabaja con citas y clientes?</b><span>Toque la agenda veterinaria: nada se guarda.</span></a>
-    <a class="pick" href="#caso-vecingo"><b>¿Administra un conjunto?</b><span>Vea la plataforma de 18 módulos — 5 minutos.</span></a>
+    <a class="pick" href="https://tiendita.appximo.com" rel="noopener" target="_blank">
+      <span class="pk-img"><img src="assets/tienda.webp" alt="" width="640" height="1385" loading="lazy"></span>
+      <span><b>¿Vende productos?</b><span>Abra la tienda y recórrala.</span><span class="pk-live"><i class="live-dot"></i>En internet ahora mismo</span></span>
+    </a>
+    <a class="pick" href="https://petfriendly.appximo.com" rel="noopener" target="_blank">
+      <span class="pk-img"><img src="assets/pf-thumb.webp" alt="" width="320" height="200" loading="lazy"></span>
+      <span><b>¿Trabaja con citas?</b><span>Toque la agenda: nada se guarda.</span><span class="pk-live"><i class="live-dot"></i>En internet ahora mismo</span></span>
+    </a>
+    <a class="pick" href="#caso-vecingo">
+      <span class="pk-img"><img src="assets/poster-vecingo.webp" alt="" width="320" height="180" loading="lazy"></span>
+      <span><b>¿Administra un conjunto?</b><span>Véala: 18 módulos.</span><span class="pk-live" style="color:var(--ink-3)">Video · 5 min</span></span>
+    </a>
   </div>
 </div></section>
 
 <section id="video" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
   <p class="kicker">Véalo usted mismo</p>
   <h2>Una idea escrita se vuelve sistema</h2>
-  <p class="lead">Grabación real, sin acelerar: la idea se escribe en español y el sistema queda andando.</p>
+  <p class="lead">Grabación real, sin acelerar: la idea se escribe en español y queda andando.</p>
   <figure class="media" style="margin-top:1.5rem">
     <div class="vframe">
       <video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real">
@@ -288,16 +396,16 @@
         <span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el video · 45 s</span>
       </button>
     </div>
-    <figcaption>Así <strong>empieza</strong> la demostración gratis: su idea, funcionando; después, <strong>a su medida</strong>. El tiempo es el real.</figcaption>
+    <figcaption>Así <strong>empieza</strong> la demostración gratis: su idea, funcionando. El tiempo es el real.</figcaption>
   </figure>
+  <p style="margin-top:1.2rem"><a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></p>
   <div class="pains">
     <div class="pain">¿Los pedidos llegan por WhatsApp y <b>se pierden entre los chats</b>?</div>
     <div class="pain">¿El inventario vive en un Excel que <b>solo una persona entiende</b>?</div>
-    <div class="pain">¿Las cuentas del mes se hacen a mano, tarde y <b>con sustos</b>?</div>
     <div class="pain">¿Su sistema actual <b>se queda «cargando…»</b> para mostrar cualquier dato?</div>
     <div class="pain">¿La factura electrónica y la DIAN <b>le quitan el sueño</b>?</div>
   </div>
-  <p class="lead" style="margin-top:1.2rem">Todo eso se resuelve — se lo mostramos <strong>con sus datos</strong>.</p>
+  <p class="lead" style="margin-top:1.2rem">Todo eso se resuelve, con datos de ejemplo de su negocio.</p>
 </div></section>
 
 <section id="sistemas"><div class="wrap">
@@ -306,14 +414,24 @@
   <p class="lead">No vendemos un programa genérico: construimos <strong>lo suyo</strong>.</p>
   <div class="sys-grid">
     <article class="sys">
-      <div class="img tall"><img src="assets/tienda.webp" alt="Tienda en línea con productos colombianos y precios en pesos" width="640" height="1385" loading="lazy"></div>
-      <div class="sys-body">
+      <div class="bframe paper">
+        <div class="bbar" aria-hidden="true">
+          <span class="bdots"><i></i><i></i><i></i></span>
+          <span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>tiendita.appximo.com</span>
+        </div>
+        <div class="img tall" style="border-bottom:0"><img src="assets/tienda.webp" alt="Tienda en línea con productos colombianos y precios en pesos" width="640" height="1385" loading="lazy"></div>
+      </div>
+      <div class="sys-body" style="border-top:1px solid var(--line)">
         <h3>Comercio con inventario</h3>
         <p>Catálogo, carrito, IVA por categoría e inventario que no se sobrevende.</p>
-        <span class="tag live"><a href="https://tiendita.appximo.com" rel="noopener" target="_blank">En internet ahora mismo — pruébela</a></span>
+        <span class="tag live"><i class="live-dot"></i><a href="https://tiendita.appximo.com" rel="noopener" target="_blank">En internet ahora mismo — pruébela</a></span>
       </div>
     </article>
     <article class="sys" id="caso-vecingo">
+      <div class="bbar" aria-hidden="true">
+        <span class="bdots"><i></i><i></i><i></i></span>
+        <span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — demo</span>
+      </div>
       <div class="vframe">
         <video class="demovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma de conjuntos de 18 módulos, en modo demostración">
           <source src="assets/vecingo-caso.mp4" type="video/mp4">
@@ -324,7 +442,7 @@
       </div>
       <div class="sys-body">
         <h3>Administración de conjuntos</h3>
-        <p>18 módulos — asambleas con votación por coeficiente, casos con radicado, cartera — andando en 3½ horas para una comunidad real. <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">el caso está documentado</a>.</p>
+        <p>18 módulos — asambleas con votación por coeficiente, casos con radicado, cartera — construida en una tarde, sirviendo hoy a una comunidad real. <a href="caso.html" rel="noopener">El caso está documentado</a>.</p>
         <span class="tag demo">Video con datos ficticios</span>
       </div>
     </article>
@@ -332,7 +450,7 @@
   <div class="autom">
     <div>
       <h3>Sistemas que se comunican y trabajan solos</h3>
-      <p>Sistemas complejos que se hablan con otras herramientas y <strong>automatizan lo repetitivo</strong>: el pedido entra y el aviso sale solo, al chat o al correo del cliente.</p>
+      <p>Se hablan con otras herramientas y <strong>automatizan lo repetitivo</strong>: el pedido entra y el aviso sale solo, al chat o al correo.</p>
     </div>
     <figure class="autom-visual" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
       <svg viewBox="0 0 520 340" role="img" xmlns="http://www.w3.org/2000/svg">
@@ -341,7 +459,7 @@
         <rect x="40" y="178" width="30" height="7" rx="3.5" fill="#1c9d5b"/>
         <rect x="76" y="178" width="46" height="7" rx="3.5" fill="#39544a"/>
         <rect x="128" y="178" width="18" height="7" rx="3.5" fill="#39544a"/>
-        <path d="M 170 170 C 214 170 230 168 282 168" stroke="#1c9d5b" stroke-width="3" stroke-dasharray="7 7" fill="none"/>
+        <path class="dash-anim" d="M 170 170 C 214 170 230 168 282 168" stroke="#1c9d5b" stroke-width="3" stroke-dasharray="7 7" fill="none"/>
         <path d="M 226 156 l 26 10 -26 10 6 -10 z" fill="#1c9d5b"/>
         <rect x="296" y="24" width="208" height="292" rx="26" fill="#0d221a"/>
         <rect x="308" y="38" width="184" height="264" rx="16" fill="#f7f4ec"/>
@@ -369,23 +487,23 @@
 <section id="pasos"><div class="wrap">
   <p class="kicker">Qué pasa cuando escribe</p>
   <h2>Escribir no lo compromete a nada</h2>
-  <p class="lead">Decidir da miedo; por eso el primer paso es mínimo.</p>
+  <p class="lead">Decidir da miedo: el primer paso es mínimo.</p>
   <div class="steps">
     <div class="step"><div class="step-n">1</div><div>
       <h3>Escriba, o mande un audio</h3>
-      <p>Cuéntenos qué se le volvió un problema. Responde una persona.</p>
+      <p>Cuéntenos qué se le volvió un problema.</p>
     </div></div>
     <div class="step"><div class="step-n">2</div><div>
       <h3>Una conversación corta</h3>
-      <p>Cómo trabaja hoy, quiénes usarían el sistema, qué no puede fallar.</p>
+      <p>Cómo trabaja hoy, quién lo usaría, qué no puede fallar. Sin claves ni cuentas de nada.</p>
     </div></div>
     <div class="step"><div class="step-n">3</div><div>
       <h3>La demostración — gratis</h3>
-      <p>En una reunión corta ve su proceso con sus datos y pide cambios.</p>
+      <p>En una reunión corta ve su proceso con datos de ejemplo de su negocio y pide cambios.</p>
     </div></div>
     <div class="step"><div class="step-n">4</div><div>
       <h3>Solo entonces, el precio</h3>
-      <p>Cerrado y por escrito. Si sigue, su sistema queda en internet con sus claves.</p>
+      <p>Cerrado y por escrito. Si sigue, su sistema queda en internet con sus claves. </p>
     </div></div>
   </div>
   <div class="no-risk">
@@ -405,24 +523,24 @@
   <div class="trust-grid">
     <div class="card">
       <h3>El equipo y la tecnología</h3>
-      <p>Más de <strong>diez años en sistemas de bancos</strong> — donde un error cuesta — y una <strong>tecnología propia, pionera</strong> en dejar sistemas completos andando en días.</p>
+      <p>Más de <strong>diez años en sistemas de bancos</strong> y una <strong>tecnología propia, pionera</strong> en dejar sistemas completos andando en días.</p>
       <ul class="cred-list">
         <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda veterinaria</a> cargan al instante — compruébelo.</li>
-        <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, cada usuario con su clave y sus permisos.</li>
-        <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido, sin pagar servicios aparte.</li>
+        <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, permisos por usuario.</li>
+        <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido.</li>
         <li><strong>Automatiza lo repetitivo:</strong> los avisos salen solos, al chat o al correo.</li>
       </ul>
     </div>
     <figure class="quote">
       <blockquote>«Como consumidor, lo volvería a hacer.»</blockquote>
-      <figcaption>Quien construyó la plataforma de 18 módulos — sin conocernos, solo con la herramienta. <a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener" style="color:#8fd3ae">El caso, documentado</a>.</figcaption>
+      <figcaption>— el ingeniero independiente que la construyó, <a href="caso.html" rel="noopener" style="color:#8fd3ae">en el informe del caso</a>.</figcaption>
     </figure>
   </div>
   <div class="nots">
     <div class="not"><b>No hacemos aplicaciones de tienda de celular:</b> va en el navegador.</div>
     <div class="not"><b>No reemplazamos a su contador:</b> le entregamos las ventas y el IVA claros.</div>
     <div class="not"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito, o no empezamos.</div>
-    <div class="not"><b>¿Solo necesita una página para mostrarse?</b> Eso sale más barato en otro lado.</div>
+    <div class="not"><b>¿Solo necesita una página?</b> Eso sale más barato en otro lado.</div>
   </div>
 </div></section>
 
@@ -433,14 +551,10 @@
     <details>
       <summary>¿Cuánto cuesta?</summary>
       <div class="a">
-        <!-- ═══ PRECIO-PENDIENTE (decisión A-16: no publicar precio hasta que Miguel
-             defina los valores). Cuando existan: REEMPLAZAR el primer <p> de esta
-             respuesta por UNA de las formulaciones candidatas del reporte
-             LANDING-COPY-S1 (estructura de dos números: implementación una vez +
-             mensualidad). Una línea, nada más. NO publicar cifras de ejemplo. ═══ -->
         <p>Depende del tamaño: no cuesta lo mismo ordenar las citas de un consultorio que una plataforma con inventario o votaciones. Una tarifa única sería mentirle en alguna de las dos direcciones.</p>
         <p>Lo que sí es fijo: <strong>la demostración es gratis</strong>, y antes de empezar usted recibe <strong>un precio cerrado, por escrito</strong>. Sin cobros por horas que nadie controla.</p>
-      </div>
+        <p>¿Prefiere un rango antes de cualquier reunión? Pregúntelo por WhatsApp y se lo damos el mismo día.</p>
+      <p><a href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20saber%20un%20rango%20de%20precio%20para%20mi%20caso.">Pregunte su rango por WhatsApp →</a></p></div>
     </details>
     <details>
       <summary>¿Sirve para la factura electrónica y la DIAN?</summary>
@@ -464,7 +578,13 @@
     <details>
       <summary>¿Se conecta con lo que ya uso?</summary>
       <div class="a">
-        <p>Sí. Los sistemas que construimos se comunican con otras herramientas: avisos automáticos al chat (Telegram) o al correo, y conexión con otros programas cuando su proceso lo necesita. En la demostración le mostramos cómo aplicaría a su caso.</p>
+        <p>Sí. Los sistemas que construimos se comunican con otras herramientas: avisos automáticos al chat (Telegram) o al correo, y conexión con otros programas cuando su proceso lo necesita. En la demostración le mostramos cómo aplicaría a su caso. Y los informes le salen para su contador cuando los necesite.</p>
+      </div>
+    </details>
+    <details>
+      <summary>¿Y mis datos actuales, quién los pasa?</summary>
+      <div class="a">
+        <p>Nosotros. Su Excel o su cuaderno se cargan al arrancar, y usted revisa todo antes de salir en vivo. Eso va dentro del precio cerrado — no es un cobro sorpresa.</p>
       </div>
     </details>
     <details>
@@ -476,7 +596,7 @@
     <details>
       <summary>¿De quién son los datos? ¿Y si ustedes desaparecen?</summary>
       <div class="a">
-        <p><strong>Los datos son suyos, siempre.</strong> El sistema queda instalado en un servidor a su nombre, con sus claves, y puede pedir una copia completa cuando quiera.</p>
+        <p><strong>Los datos son suyos, siempre.</strong> El sistema queda instalado en un servidor a su nombre, con sus claves, y puede pedir una copia completa cuando quiera. Para la demostración no pedimos claves ni cuentas de nada: se hace con datos de ejemplo.</p>
         <p>Y si nosotros no estamos, el sistema no se cae: la tecnología de base es pública y está documentada — cualquier ingeniero de sistemas puede tomarla y seguir. Usted no queda amarrado a nadie, ni siquiera a nosotros.</p>
       </div>
     </details>
@@ -497,7 +617,7 @@
       <div class="cta-row" style="margin-top:1.5rem">
         <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
-          Escribir por WhatsApp
+          Pedir mi demostración gratis
         </a>
         <p class="cta-note">Si prefiere, mande un audio.</p>
       </div>
@@ -508,12 +628,12 @@
 <section class="tech" id="tecnico"><div class="wrap">
   <p class="kicker">Para su equipo técnico</p>
   <h2>Lo que su ingeniero va a preguntar</h2>
-  <p>La base es Appximo, un proyecto de código abierto, público y documentado. Cada sistema se entrega instalado en un servidor a nombre del cliente, con sus claves. Los datos viven en PostgreSQL, con copia de seguridad y restauración probadas. Seguridad alineada con OWASP: argon2id, validación de archivos por contenido, RBAC por rol y aislamiento por inquilino. Observabilidad nativa: métricas, trazas y alertas de anomalías, sin servicios externos. La API queda documentada (REST, GraphQL y OpenAPI). Rendimiento publicado: p50 1,58 ms a 2.000 RPS.</p>
+  <p>La base es Appximo, un proyecto de código abierto, público y documentado. Cada sistema se entrega instalado en un servidor a nombre del cliente, con sus claves. Los datos viven en PostgreSQL, con copia de seguridad y restauración probadas. Seguridad alineada con OWASP: argon2id, validación de archivos por contenido, RBAC por rol y aislamiento por inquilino. Observabilidad nativa: métricas, trazas y alertas de anomalías, sin servicios externos. La API queda documentada (REST, GraphQL y OpenAPI). Rendimiento publicado: p50 1,58 ms a 2.000 RPS. La plataforma de 18 módulos quedó andando en 3½ horas (caso documentado).</p>
   <p class="small">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
 </div></section>
 
 <footer><div class="wrap">
-  <p class="foot-line"><strong style="color:var(--cream)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia.</p>
+  <p class="foot-line"><strong style="color:var(--cream)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. WhatsApp: <a href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">+57 311 517 5472</a></p>
   <p class="foot-line">Pruebe los sistemas abiertos: <a href="https://tiendita.appximo.com" rel="noopener">tiendita.appximo.com</a> · <a href="https://petfriendly.appximo.com" rel="noopener">petfriendly.appximo.com</a></p>
   <p class="foot-line small">¿Trabaja en tecnología? La herramienta detrás de esto es un proyecto de código abierto: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a></p>
 </div></footer>
@@ -531,6 +651,26 @@
       var v = f.querySelector('video.demovid'), b = f.querySelector('.vplay');
       if (v && b) b.addEventListener('click', function(){ b.style.display='none'; v.play(); });
     });
+  })();
+</script>
+<script>
+  /* count-up de los stats del hero: una sola vez, apagado con reduced-motion */
+  (function(){
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('[data-count]');
+    if (!els.length) return;
+    function fmt(v, dec, suf){ return v.toLocaleString('es-CO',{minimumFractionDigits:dec,maximumFractionDigits:dec})+suf; }
+    function run(el){
+      var target = parseFloat(el.dataset.count), dec = (el.dataset.dec|0), suf = el.dataset.suf||'', dur = 1400;
+      if (reduce) { el.textContent = fmt(target, dec, suf); return; }
+      var t0 = null;
+      function step(t){ if(!t0) t0=t; var p = Math.min((t-t0)/dur,1); p = 1-Math.pow(1-p,3);
+        el.textContent = fmt(target*p, dec, suf);
+        if (p<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ run(e.target); io.unobserve(e.target);} }); },{threshold:.6});
+    els.forEach(function(el){ io.observe(el); });
   })();
 </script>
 

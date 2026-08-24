@@ -273,6 +273,29 @@
     .hero-visual:hover .bframe{transform:perspective(1400px) rotateY(0) rotateX(0)}
   }
 
+
+  /* ── chip IA nativa ── */
+  .ia{margin:1.1rem 0 0;max-width:34rem}
+  .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#cfe8da;background:rgba(233,245,238,.07);border:1px solid rgba(37,211,102,.4);border-radius:999px;padding:.5rem 1rem;position:relative}
+  .ia summary::-webkit-details-marker{display:none}
+  .ia summary svg{width:.95rem;height:.95rem;transition:transform .3s}
+  .ia[open] summary svg{transform:rotate(180deg)}
+  .ia summary:hover{border-color:rgba(37,211,102,.75)}
+  .ia-dot{width:.5rem;height:.5rem;border-radius:50%;background:#25D366}
+  @media (prefers-reduced-motion: no-preference){
+    @keyframes iadot{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}60%{box-shadow:0 0 0 .5rem rgba(37,211,102,0)}}
+    .ia-dot{animation:iadot 2.2s ease-out infinite}
+  }
+  .ia-body{overflow:hidden}
+  .ia-body p{margin-top:.7rem;font-size:.95rem;color:var(--cream-dim);background:rgba(233,245,238,.06);border:1px solid var(--dark-line);border-radius:12px;padding:.8rem 1rem}
+  .ia-body a{color:#8fd3ae;font-weight:700}
+  /* ── nav fantasma: el CTA del hero es el único verde sólido del primer viewport ── */
+  nav .btn-wa.compact{background:transparent;color:#8fd3ae;border:1px solid rgba(37,211,102,.45);box-shadow:none}
+  nav .btn-wa.compact:hover{background:rgba(37,211,102,.14);outline:none}
+  /* ── barra móvil: aparece cuando el CTA del hero sale de vista ── */
+  html.js .mobile-cta{transform:translateY(110%);transition:transform .35s ease}
+  html.js.show-bar .mobile-cta{transform:none}
+
   /* ── barra fija móvil (CTA sticky) ────── */
   .mobile-cta{display:none}
   @media(max-width:759px){
@@ -296,15 +319,19 @@
 <header class="hero"><div class="wrap">
   <div class="hero-grid">
     <div>
-      <p class="eyebrow">Sistemas y plataformas a la medida · Tecnología propia</p>
+      <p class="eyebrow">Sistemas a la medida · IA nativa · Tecnología propia</p>
       <h1 id="hero-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</h1>
-      <p class="sub" id="hero-sub">Una tienda, su ERP a la medida o una plataforma de miles de consultas por segundo. <strong>Rápido</strong>, <strong>seguro</strong> (OWASP), con monitoreo — y <strong>lo ve funcionando antes de pagar</strong>.</p>
+      <details class="ia" id="ia">
+        <summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+        <div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#video">véalo abajo: la idea se vuelve sistema ↓</a></p></div>
+      </details>
+      <p class="sub" id="hero-sub">Una tienda, su ERP a la medida, procesamiento pesado de datos y archivos, o una plataforma de miles de consultas por segundo. <strong>Rápido</strong>, <strong>seguro</strong> (OWASP), con monitoreo — y <strong>lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
         <a class="btn-wa btn-pulse" href="https://wa.me/573115175472?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20Appximo.%20Quiero%20una%20demostraci%C3%B3n%20para%20mi%20negocio.">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
           Pedir mi demostración gratis
         </a>
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado · Si no le sirve, con decirlo basta<br><b>Le responde el equipo directamente, no un robot.</b></p>
+        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde el equipo directamente, no un robot.</b></p>
       </div>
     </div>
     <figure class="hero-visual">
@@ -336,14 +363,14 @@
     </div>
     <div class="stat">
       <b>Cientos</b>
-      <span>de sistemas generados con esta tecnología — dos abiertos hoy</span>
+      <span>de sistemas generados con esta tecnología</span>
     </div>
     <div class="stat">
       <b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b>
       <span>del equipo en sistemas de bancos</span>
     </div>
   </div>
-  <div class="cap-strip" aria-hidden="true"><div class="cap-anim"><span class="cap-track"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Asambleas</span><span class="cap-item">Facturas</span><span class="cap-item">Pagos</span></span><span class="cap-track" aria-hidden="true"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Asambleas</span><span class="cap-item">Facturas</span><span class="cap-item">Pagos</span></span></div></div>
+  <div class="cap-strip" aria-hidden="true"><div class="cap-anim"><span class="cap-track"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Facturas</span><span class="cap-item">Pagos</span></span><span class="cap-track" aria-hidden="true"><span class="cap-item">Pedidos</span><span class="cap-item">Inventario</span><span class="cap-item">Citas</span><span class="cap-item">Facturas</span><span class="cap-item">Pagos</span></span></div></div>
   <p class="stat-foot">La plataforma de 18 módulos: un independiente, 3½ horas — <a href="caso.html" rel="noopener">el caso, en español</a>.</p>
 </div></header>
 
@@ -704,6 +731,7 @@
 </script>
 
 
+<script>document.documentElement.classList.add('js');</script>
 <script src="assets/gsap.min.js" defer></script>
 <script src="assets/ScrollTrigger.min.js" defer></script>
 <script>
@@ -732,6 +760,21 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     gsap.from('.autom-visual svg',{x:26,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:'.autom',start:'top 80%',once:true}});
   });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var cta=document.querySelector('.hero .cta-row'), root=document.documentElement;
+  if (cta && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ root.classList.toggle('show-bar', !en[0].isIntersecting); },{threshold:0}).observe(cta);
+  } else { root.classList.add('show-bar'); }
+  var ia=document.getElementById('ia');
+  if (ia && window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    ia.addEventListener('toggle', function(){
+      if (ia.open) gsap.from('.ia-body p',{y:-8,opacity:0,duration:.4,ease:'power2.out'});
+    });
+  }
 });
 </script>
 </body>

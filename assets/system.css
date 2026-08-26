@@ -150,7 +150,7 @@ html.js .bar:not(.in) .fill{transform:scaleX(0)}
 .nav-links a{color:var(--ink-text-dim);text-decoration:none}
 .nav-links a:hover{color:#fff}
 @media(max-width:860px){.nav-links{display:none}}
-.hero{position:relative;overflow:hidden;background:var(--color-ink);color:#fff;padding:clamp(3rem,8vw,6.5rem) 0 0}
+.hero{position:relative;overflow:hidden;background:var(--color-ink);color:#fff;padding:clamp(1.6rem,3.5vw,3rem) 0 0}
 .hero-tex{position:absolute;inset:0;background:url("hero-tex.webp") center 30%/cover no-repeat;opacity:.3;pointer-events:none}
 .hero-grid-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr);gap:2px;pointer-events:none}
 .hero-grid-bg>div:nth-child(4){display:none}
@@ -161,7 +161,7 @@ html.js .bar:not(.in) .fill{transform:scaleX(0)}
 @media(min-width:900px){.hero-grid-bg{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr)}.hero-grid-bg>div:nth-child(4){display:block}}
 .hero-veil{position:absolute;inset:0;background:radial-gradient(60rem 30rem at 85% 20%,color-mix(in srgb,var(--color-brand-800) 38%,transparent) 0%,transparent 60%),linear-gradient(180deg,color-mix(in srgb,var(--color-ink) 62%,transparent) 0%,color-mix(in srgb,var(--color-ink) 78%,transparent) 50%,var(--color-ink) 100%);pointer-events:none}
 .hero .container-x{position:relative;z-index:2}
-.hero-copy{max-width:44rem;padding-top:clamp(1.5rem,5vw,3.5rem)}
+.hero-copy{max-width:44rem;padding-top:0}
 .hero-layout{display:grid;gap:2.2rem;align-items:center}
 @media(min-width:1000px){.hero-layout{grid-template-columns:11fr 9fr;gap:3rem}}
 .hero h1{max-width:15ch;font-size:clamp(2.3rem,5.6vw,3.7rem)}

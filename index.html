@@ -86,6 +86,16 @@
   .autom p{color:var(--ink-text-dim);font-size:.96rem}
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
+  /* ── chip IA (solo en la variante ?hero=idea) ── */
+  .ia{margin:1rem 0 0;max-width:34rem}
+  .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
+  .ia summary::-webkit-details-marker{display:none}
+  .ia summary svg{width:.95rem;height:.95rem;transition:transform .28s var(--ease)}
+  .ia[open] summary svg{transform:rotate(180deg)}
+  .ia summary:hover{border-color:var(--color-brand)}
+  .ia-dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--color-brand)}
+  .ia-body p{margin-top:.7rem;font-size:.95rem;color:var(--ink-text-dim);background:rgba(255,255,255,.05);border:1px solid var(--ink-line);border-radius:12px;padding:.8rem 1rem}
+  .ia-body a{color:var(--color-brand-300);font-weight:700}
   /* ── el collage de componentes del hero ── */
   .collage{position:relative;min-height:22rem;display:none}
   @media(min-width:1000px){.collage{display:block}}
@@ -205,6 +215,11 @@
   <span class="v-h1">No le pedimos que nos crea: <em>véalo funcionando</em> ahora mismo.</span>
   <span class="v-sub">Dos sistemas hechos con nuestra tecnología están abiertos en internet: una tienda y una agenda veterinaria. Éntreles sin registrarse y mire cómo cargan al instante. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
 </template>
+<template id="hero-idea">
+  <span class="v-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
+  <span class="v-sub">Una tienda, su ERP a la medida, procesamiento pesado de datos y archivos, o una plataforma de miles de consultas por segundo. <strong>Rápido</strong>, <strong>seguro</strong> (OWASP), con monitoreo — y <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-chip"><details class="ia" id="ia"><summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#como">véalo abajo: la idea se vuelve sistema ↓</a></p></div></details></span>
+</template>
 <template id="hero-puente">
   <span class="v-h1">Un sistema hecho para su negocio, <em>andando en días</em>.</span>
   <span class="v-sub">¿Días de verdad? Una plataforma entera — 18 módulos — quedó funcionando en 3 horas y media. No es magia: es tecnología propia, rápida y segura, con años de oficio en sistemas de bancos detrás. <strong>Lo ve funcionando antes de pagar</strong>.</span>
@@ -218,6 +233,8 @@
     var d = t.content;
     document.getElementById('hero-h1').innerHTML = d.querySelector('.v-h1').innerHTML;
     document.getElementById('hero-sub').innerHTML = d.querySelector('.v-sub').innerHTML;
+    var chip = d.querySelector('.v-chip');
+    if (chip) document.getElementById('hero-h1').insertAdjacentHTML('afterend', chip.innerHTML);
   })();
 </script>
 

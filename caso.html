@@ -84,6 +84,16 @@
   .autom p{color:var(--ink-text-dim);font-size:.96rem}
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
+  /* ── chip IA (solo en la variante ?hero=idea) ── */
+  .ia{margin:1rem 0 0;max-width:34rem}
+  .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
+  .ia summary::-webkit-details-marker{display:none}
+  .ia summary svg{width:.95rem;height:.95rem;transition:transform .28s var(--ease)}
+  .ia[open] summary svg{transform:rotate(180deg)}
+  .ia summary:hover{border-color:var(--color-brand)}
+  .ia-dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--color-brand)}
+  .ia-body p{margin-top:.7rem;font-size:.95rem;color:var(--ink-text-dim);background:rgba(255,255,255,.05);border:1px solid var(--ink-line);border-radius:12px;padding:.8rem 1rem}
+  .ia-body a{color:var(--color-brand-300);font-weight:700}
   /* ── el collage de componentes del hero ── */
   .collage{position:relative;min-height:22rem;display:none}
   @media(min-width:1000px){.collage{display:block}}

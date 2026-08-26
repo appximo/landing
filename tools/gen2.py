@@ -399,7 +399,7 @@ index=f'''<!doctype html>
         <p class="cta-alt"><a href="#pruebe">¿Prefiere mirar antes de escribir? Abra un sistema, sin registrarse ↓</a></p>
       </div>
       <div class="flow flow-m" id="flow-m" aria-hidden="true">
-        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-segs='[{"t": "Quiero un sistema para mi negocio: mis "}, {"t": "productos con inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": ", que me avise cuando "}, {"t": "paguen", "k": "cuentas"}, {"t": "."}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
+        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-segs='[{{"t": "Quiero un sistema para mi negocio: mis "}}, {{"t": "productos con inventario", "k": "inventario"}}, {{"t": ", mis "}}, {{"t": "clientes", "k": "clientes"}}, {{"t": " y sus "}}, {{"t": "pedidos", "k": "pedidos"}}, {{"t": ", que me avise cuando "}}, {{"t": "paguen", "k": "cuentas"}}, {{"t": "."}}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
         <div class="fl-arrow fl-after"><span>en días, y después solo</span></div>
         <div class="fl-step fl-after"><span class="fl-k">Su plataforma, trabajando sola</span>
           <div class="plat">
@@ -411,7 +411,7 @@ index=f'''<!doctype html>
     </div>
     <div class="stage" aria-hidden="true"><div class="flow" id="flow">
       <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span>
-        <div class="fl-bubble"><span class="fl-type" data-segs='[{"t": "Quiero un sistema para mi negocio: mis "}, {"t": "productos con inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": ", que me avise cuando "}, {"t": "paguen", "k": "cuentas"}, {"t": "."}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
+        <div class="fl-bubble"><span class="fl-type" data-segs='[{{"t": "Quiero un sistema para mi negocio: mis "}}, {{"t": "productos con inventario", "k": "inventario"}}, {{"t": ", mis "}}, {{"t": "clientes", "k": "clientes"}}, {{"t": " y sus "}}, {{"t": "pedidos", "k": "pedidos"}}, {{"t": ", que me avise cuando "}}, {{"t": "paguen", "k": "cuentas"}}, {{"t": "."}}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
       <div class="fl-arrow"><span>en días</span></div>
       <div class="fl-step fl-after"><span class="fl-k">2 · Su plataforma, andando</span>
         <div class="plat">
@@ -532,7 +532,7 @@ index=f'''<!doctype html>
     <div>
       <div class="build" id="build" aria-hidden="true">
         <div class="b-head"><span class="chip"><i class="dot"></i>Así se construye</span><span class="b-time tnum">00:00</span></div>
-        <div class="b-chat"><span class="b-who">Usted</span><div class="b-bubble"><span class="b-type" data-segs='[{"t": "Quiero un sistema para mi ferretería: mis "}, {"t": "productos con precio e inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": "."}]'>Quiero un sistema para mi ferretería: mis <span class="k">productos con precio e inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>.</span><span class="b-caret"></span></div></div>
+        <div class="b-chat"><span class="b-who">Usted</span><div class="b-bubble"><span class="b-type" data-segs='[{{"t": "Quiero un sistema para mi ferretería: mis "}}, {{"t": "productos con precio e inventario", "k": "inventario"}}, {{"t": ", mis "}}, {{"t": "clientes", "k": "clientes"}}, {{"t": " y sus "}}, {{"t": "pedidos", "k": "pedidos"}}, {{"t": "."}}]'>Quiero un sistema para mi ferretería: mis <span class="k">productos con precio e inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>.</span><span class="b-caret"></span></div></div>
         <ol class="b-proc">
           <li><i></i><span>Entendiendo su negocio</span></li>
           <li><i></i><span>Armando la base: productos, clientes, pedidos, permisos</span></li>

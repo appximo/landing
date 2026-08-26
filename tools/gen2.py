@@ -256,7 +256,6 @@ PAGE_CSS='''<style>
   .cred b{display:block;font-size:.98rem;line-height:1.25}
   .cred span{display:block;font-size:.84rem;color:var(--text-2);margin-top:.25rem;line-height:1.4}
   .cred .k{display:block;font-weight:800;font-size:1.7rem;letter-spacing:-.04em;color:var(--color-brand-ink);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:.45rem}
-  .team-photo{min-height:11rem;border-radius:var(--radius-2xl);background:linear-gradient(135deg,var(--color-ink-700),var(--color-ink-900));color:var(--ink-text-mute);display:flex;align-items:center;justify-content:center;text-align:center;padding:1.2rem;font-size:.86rem}
   /* ── segmento para empresas con equipo técnico ── */
   .tec-grid{display:grid;gap:1.6rem;align-items:start;margin-top:2rem}
   @media(min-width:900px){.tec-grid{grid-template-columns:6fr 6fr;gap:2.6rem}}
@@ -502,7 +501,7 @@ index=f'''<!doctype html>
       </div>
     </div>
     <div class="reveal" style="--d:.1s">
-      <div class="team-photo" data-pendiente="FOTO-PENDIENTE" aria-hidden="true"><span>Foto del equipo o del trabajo real — cuando exista. Nunca de archivo.</span></div>
+      <figure class="bframe media-skel" data-pendiente="FOTO-PENDIENTE">{bbar('atina.appximo.com')}<img src="assets/poster-atina.webp" alt="Trabajo real: el panel de procesos de una plataforma hecha con nuestra tecnología, con sus candidaturas por fase" width="1280" height="720" loading="lazy"><figcaption style="padding:.7rem .95rem;font-size:.84rem;color:var(--text-2);background:var(--white)">Trabajo real, no de archivo: el panel de una plataforma construida con nuestra tecnología.</figcaption></figure>
       <ul class="cred-list" style="margin-top:1rem">
         <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda</a> abren al instante.</li>
         <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, permisos por usuario.</li>

@@ -89,7 +89,7 @@
   /* ── el bombillo que se enciende (una pasada) ── */
   .bulb{display:inline-block;width:.78em;height:.78em;vertical-align:-.06em;margin-right:.12em;overflow:visible}
   .bulb path{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-  .bulb .bulb-ray{stroke:var(--color-brand-400);opacity:0}
+  .bulb .bulb-ray{stroke:var(--color-brand-400)}
   @media (prefers-reduced-motion:no-preference){
     @keyframes bulbDraw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
     @keyframes bulbOn{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
@@ -289,7 +289,7 @@
   @media (prefers-reduced-motion:no-preference){
     @keyframes procPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--color-brand) 45%,transparent)}70%{box-shadow:0 0 0 .5rem transparent}}
     html.js .build.p1 .b-caret{display:inline-block;animation:caret .9s steps(1) infinite}
-    html.js .b-proc li.on i{animation:procPulse 1s ease-out infinite}
+    html.js .b-proc li.on i{animation:procPulse 1s ease-out 3}
     html.js .build.p3 .b-out{animation:platIn .7s var(--ease) both}
     html.js .build.p3 .b-plat::after{animation:sweep 1.5s var(--ease) .3s 1 both}
   }

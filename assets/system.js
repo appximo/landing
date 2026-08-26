@@ -26,6 +26,16 @@
     setTimeout(function () { document.querySelectorAll('.reveal, .bar, .ring').forEach(function (el) { el.classList.add('in'); }); }, 2500);
   } else { rv.forEach(function (el) { el.classList.add('in'); }); document.querySelectorAll('.bar, .ring').forEach(function (el) { el.classList.add('in'); }); }
 
+  /* el hero: la idea se ESCRIBE una vez; después se arma la plataforma (sin JS o con reduced-motion: todo visible, quieto) */
+  document.querySelectorAll('.flow').forEach(function (flow) {
+    var t = flow.querySelector('.fl-type'); if (!t) return;
+    if (reduce || getComputedStyle(flow).display === 'none') { flow.classList.add('typed'); return; }
+    var full = t.getAttribute('data-text') || t.textContent, i = 0; t.textContent = ''; flow.classList.add('typing');
+    var start = function () { (function step() { i += 1; t.textContent = full.slice(0, i); if (i < full.length) setTimeout(step, 28 + Math.random() * 30); else { flow.classList.remove('typing'); flow.classList.add('typed'); } })(); };
+    setTimeout(start, 700);
+    setTimeout(function () { if (!flow.classList.contains('typed')) { t.textContent = full; flow.classList.remove('typing'); flow.classList.add('typed'); } }, 9000);
+  });
+
   /* skeleton → imagen cargada */
   document.querySelectorAll('.media-skel > img').forEach(function (img) {
     var done = function () { img.classList.add('is-loaded'); };

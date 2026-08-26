@@ -128,10 +128,23 @@ PAGE_CSS='''<style>
   .co-order .price{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.25rem;letter-spacing:-.03em;margin-top:.3rem}
   .co-order .row{display:flex;justify-content:space-between;align-items:center;margin-top:.55rem;gap:.5rem}
   .co-notif{width:100%;padding:.8rem .95rem}
+  .plat{background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:.8rem .9rem .9rem}
+  .plat-tabs{display:flex;gap:.9rem;font-size:.74rem;font-weight:600;color:var(--text-3);border-bottom:1px solid var(--zinc-100);padding-bottom:.5rem;margin-bottom:.6rem}
+  .plat-tabs .on{color:var(--color-brand-ink);border-bottom:2px solid var(--color-brand);margin-bottom:-.55rem;padding-bottom:.45rem}
+  .plat-kpis{display:grid;grid-template-columns:repeat(3,auto);gap:.9rem;justify-content:start;margin-bottom:.7rem}
+  .plat-kpis b{display:block;font-weight:800;font-size:1.02rem;letter-spacing:-.03em;line-height:1.1}
+  .plat-kpis span{display:block;font-size:.68rem;color:var(--text-3);line-height:1.2}
+  .plat .co-order{box-shadow:none;border:1px solid var(--zinc-200);padding:.7rem .8rem}
+  .fl-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
+  .fl-caret{display:inline-block;width:2px;height:1em;background:var(--color-brand-400);vertical-align:-.15em;margin-left:2px;opacity:0}
   @media (prefers-reduced-motion:no-preference){
     @keyframes coIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-    html.js .flow>*{animation:coIn .6s var(--ease) both}
-    html.js .flow>*:nth-child(1){animation-delay:.25s}html.js .flow>*:nth-child(2){animation-delay:.45s}html.js .flow>*:nth-child(3){animation-delay:.6s}html.js .flow>*:nth-child(4){animation-delay:.8s}html.js .flow>*:nth-child(5){animation-delay:.95s}
+    @keyframes caret{0%,100%{opacity:0}50%{opacity:1}}
+    html.js .flow>.fl-step:first-child{animation:coIn .5s var(--ease) both;animation-delay:.2s}
+    html.js .flow.typing .fl-caret{opacity:1;animation:caret .9s steps(1) infinite}
+    html.js .flow:not(.typed) .fl-after{opacity:0}
+    html.js .flow.typed .fl-after{animation:coIn .6s var(--ease) both}
+    html.js .flow.typed .fl-after:nth-of-type(2){animation-delay:.05s}html.js .flow.typed .fl-after:nth-of-type(3){animation-delay:.25s}html.js .flow.typed .fl-after:nth-of-type(4){animation-delay:.5s}html.js .flow.typed .fl-after:nth-of-type(5){animation-delay:.7s}
   }
   .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
   .notif:first-child{border-top:none;padding-top:0}
@@ -237,7 +250,7 @@ PAGE_CSS='''<style>
   .team-grid{display:grid;gap:1.2rem;margin-top:1.6rem}
   @media(min-width:860px){.team-grid{grid-template-columns:3fr 2fr;align-items:start}}
   .creds{display:grid;gap:.7rem;margin-top:1.1rem}
-  @media(min-width:600px){.creds{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:600px){.creds{grid-template-columns:repeat(2,1fr)}}
   .cred{padding:1rem 1.05rem}
   .cred b{display:block;font-size:.98rem;line-height:1.25}
   .cred span{display:block;font-size:.84rem;color:var(--text-2);margin-top:.25rem;line-height:1.4}
@@ -312,35 +325,37 @@ index=f'''<!doctype html>
         <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p>
         <p class="cta-alt">¿Prefiere mirar antes de escribir? <a href="#pruebe">Abra un sistema funcionando, sin registrarse ↓</a></p>
       </div>
-      <div class="flow flow-m" aria-hidden="true">
-        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble">«Quiero una tienda con mis productos y el inventario, que me avise cuando entre un pedido y cuando paguen.»</div></div>
-        <div class="fl-arrow"><span>en días, y después solo</span></div>
-        <div class="fl-step"><span class="fl-k">3 · Trabajando solo</span>
-          <div class="card-dark co-notif">
-            <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas · aviso enviado</span></span></div>
-            <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Cobrado y avisado, sin que usted haga nada</span></span></div>
-          </div></div>
+      <div class="flow flow-m" id="flow-m" aria-hidden="true">
+        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-text="Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.">Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.</span><span class="fl-caret"></span></div></div>
+        <div class="fl-arrow fl-after"><span>en días, y después solo</span></div>
+        <div class="fl-step fl-after"><span class="fl-k">Su plataforma, trabajando sola</span>
+          <div class="plat">
+            <div class="plat-kpis"><div><b class="tnum">$$ 2.379.570</b><span>ventas confirmadas</span></div><div><b class="tnum">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo</span></div></div>
+            <div class="card-dark co-notif" style="margin-top:.6rem"><div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Cobrado y avisado, sin que usted haga nada</span></span></div></div>
+          </div>
+          <div class="fl-chips"><span class="chip chip-ghost">2.000 consultas/segundo</span><span class="chip chip-ghost">Seguro · OWASP</span><span class="chip chip-ghost">En días</span></div></div>
       </div>
     </div>
-    <div class="flow" aria-hidden="true">
+    <div class="flow" id="flow" aria-hidden="true">
       <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span>
-        <div class="fl-bubble">«Quiero una tienda con mis productos y el inventario, que me avise cuando entre un pedido y cuando paguen.»</div></div>
+        <div class="fl-bubble"><span class="fl-type" data-text="Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.">Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.</span><span class="fl-caret"></span></div></div>
       <div class="fl-arrow"><span>en días</span></div>
-      <div class="fl-step"><span class="fl-k">2 · Su sistema, andando</span>
-        <div class="co-order">
-          <p class="eyebrow">Pedido · pagado</p>
-          <b>Ruana de lana</b>
-          <span class="t-xs muted">1 unidad · envío a domicilio</span>
-          <div class="price">$$ 220.000</div>
-          <div class="row"><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span><span class="t-xs muted tnum">IVA incluido</span></div>
+      <div class="fl-step fl-after"><span class="fl-k">2 · Su plataforma, andando</span>
+        <div class="plat">
+          <div class="plat-tabs"><span class="on">Pedidos</span><span>Clientes</span><span>Inventario</span><span>Cuentas</span></div>
+          <div class="plat-kpis"><div><b class="tnum">$$ 2.379.570</b><span>ventas confirmadas</span></div><div><b class="tnum">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
+          <div class="co-order">
+            <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Ruana de lana</b><span class="t-xs muted" style="display:block">1 unidad · envío a domicilio</span></span><span class="price tnum" style="margin:0">$$ 220.000</span></div>
+            <div class="row"><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span><span class="t-xs muted">IVA incluido</span></div>
+          </div>
         </div></div>
-      <div class="fl-arrow"><span>y después, solo</span></div>
-      <div class="fl-step"><span class="fl-k">3 · Trabajando solo</span>
+      <div class="fl-arrow fl-after"><span>y después, solo</span></div>
+      <div class="fl-step fl-after"><span class="fl-k">3 · Trabajando solo</span>
         <div class="card-dark co-notif">
           <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas · aviso enviado</span></span></div>
           <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Cobrado y avisado, sin que usted haga nada</span></span></div>
-          <div class="notif"><span class="ci" style="background:var(--color-ink-500)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6l4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2.2"/></svg></span><span><b>Cita de mañana</b><span>Recordatorio enviado al cliente</span></span></div>
-        </div></div>
+        </div>
+        <div class="fl-chips"><span class="chip chip-ghost">2.000 consultas por segundo · probado</span><span class="chip chip-ghost">Seguro · OWASP</span><span class="chip chip-ghost">Andando en días</span></div></div>
     </div>
     <div class="stats">
       <div class="stat"><b>3½<span class="u">h</span></b><span>en que quedó andando una plataforma de 18 módulos</span><span class="stat-x"><a href="caso.html">el caso, documentado paso a paso</a></span></div>
@@ -380,9 +395,31 @@ index=f'''<!doctype html>
 <section class="section s-white" id="casos"><div class="container-x">
   <p class="eyebrow reveal">Lo que ya salió de aquí</p>
   <h2 class="t-5xl reveal" style="max-width:18ch">Plataformas completas, la misma tecnología</h2>
-  <p class="lead reveal" style="margin-top:1rem">No es una maqueta: le sirve a un conjunto residencial real, y usted puede abrirla y recorrerla. Cada cifra aguanta un clic.</p>
+  <p class="lead reveal" style="margin-top:1rem">No son maquetas: las dos están abiertas en internet y una le sirve a un conjunto residencial real. Cada cifra aguanta un clic.</p>
 
-  <article class="case" id="caso-vecingo" style="margin-top:clamp(2.4rem,6vw,4rem)">
+  <article class="case" style="margin-top:clamp(2.4rem,6vw,4rem)">
+    <div class="case-media">
+      <div class="bframe reveal media-skel">{bbar('atina.appximo.com')}<img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
+      <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn">{PLAY}Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
+    </div>
+    <div class="reveal" style="--d:.15s">
+      <span class="chip chip-brand">Prueba de capacidad</span>
+      <h3>atina: una plataforma completa de selección de personal</h3>
+      <p>Portal público, área del candidato, panel de la empresa y consola — <strong>construida por un desarrollador externo con nuestra tecnología y la documentación pública</strong>, sin nuestra dirección. Está en internet: puede abrirla.</p>
+      <div class="card case-panel">
+        <p class="eyebrow">Qué tiene, contado en su contrato público</p>
+        <div class="bars">
+          {bar('Módulos (tablas de datos)','32',67,d=0)}
+          {bar('Funciones propias, además de lo generado','48',100,d=.1)}
+          {bar('Pantallas: portal, candidato, panel y consola','30+',63,d=.2)}
+        </div>
+      </div>
+      <div class="meaning"><b>Qué significa para usted:</b> su sistema no depende de una sola persona. Si otro construyó esto sobre esta base, cualquier ingeniero puede mantener el suyo.</div>
+      <div class="case-links"><a class="btn btn-ghost" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
+    </div>
+  </article>
+
+  <article class="case flip" id="caso-vecingo">
     <div class="case-media">
       <div class="bframe reveal media-skel">{bbar('demovecingo.appximo.com')}<img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"></div>
       <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma de conjuntos de 18 módulos, en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video del caso"><span class="vplay-btn">{PLAY}Ver el sistema · 5 min</span></button></div><figcaption>Video con datos ficticios. <a href="caso.html">El caso, pantalla por pantalla</a>.</figcaption></figure>
@@ -402,15 +439,6 @@ index=f'''<!doctype html>
       <div class="case-links">$VECINGO_OPEN<a class="btn btn-ghost" href="conjuntos.html">¿Administra un conjunto? Su página →</a><a class="btn btn-ghost" href="caso.html">El caso, en español</a></div>
     </div>
   </article>
-</div></section>
-
-<section class="band s-brand door" id="conjuntos"><div class="container-x door-grid">
-  <div class="reveal">
-    <p class="eyebrow">Para administradores de propiedad horizontal</p>
-    <h2>¿Administra un conjunto? Esta es su página.</h2>
-    <p>Asambleas con quórum por coeficiente, cartera y mora a la vista, PQRS con radicado. Un sistema hecho para su oficio, no para «cualquier negocio».</p>
-  </div>
-  <a class="btn btn-ghost reveal" style="--d:.1s" href="conjuntos.html">Ver el sistema para conjuntos →</a>
 </div></section>
 
 <section class="band s-zinc" id="pruebe" style="border-top:1px solid var(--zinc-200);border-bottom:1px solid var(--zinc-200)"><div class="container-x">
@@ -465,7 +493,6 @@ index=f'''<!doctype html>
       <p class="lead">Le responde directamente <strong>el equipo que construye su sistema</strong>, no un robot ni un centro de llamadas. Un equipo de ingeniería en Pereira y Dosquebradas — <strong>desde Pereira, Colombia, para todo el país</strong>, por videollamada donde haga falta.</p>
       <div class="creds">
         <div class="card cred"><span class="k">10+</span><b>años en sistemas bancarios</b><span>donde un error cuesta dinero de verdad</span></div>
-        <div class="card cred" style="--d:.06s"><span class="k">UTP</span><b>docencia universitaria en ingeniería</b><span>enseñar obliga a explicar claro</span></div>
         <div class="card cred" style="--d:.12s"><span class="k">Abierta</span><b>tecnología propia, de código abierto</b><span>pública y documentada: nadie queda amarrado</span></div>
       </div>
       <div class="contact">
@@ -534,29 +561,24 @@ index=f'''<!doctype html>
   <p class="lead reveal" style="margin-top:1rem">Su ERP o plataforma va sobre una tecnología propia, pública y documentada: <strong>su gente la administra, la audita y la extiende</strong> — y si nosotros no estamos, cualquier ingeniero puede seguir. La prueba más fuerte que tenemos no la hicimos nosotros:</p>
   <div class="tec-grid">
     <div class="reveal">
-      <div class="bframe media-skel">{bbar('atina.appximo.com')}<img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
-      <figure class="media" style="margin-top:.9rem"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn">{PLAY}Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
-    </div>
-    <div class="reveal" style="--d:.12s">
-      <span class="chip chip-ghost">Construida por un desarrollador externo</span>
-      <h3>atina: una plataforma completa de selección de personal, construida por un desarrollador externo con la documentación pública</h3>
-      <p>Sin nuestra dirección y sin acceso a nuestro código: solo la documentación publicada. Portal público, área del candidato, panel de la empresa y consola. Está en internet y puede abrirla.</p>
-      <div class="card-dark card-pad" style="margin-top:1rem">
-        <p class="eyebrow">Qué tiene, contado en su contrato público</p>
+      <div class="card-dark card-pad">
+        <p class="eyebrow">La prueba: atina, contada en su contrato público</p>
+        <p style="margin-bottom:.9rem">Una plataforma completa <strong style="color:#fff">construida por un desarrollador externo con la documentación pública</strong>, sin nuestra dirección — <a href="#casos">arriba, en los casos</a>, o <a href="https://atina.appximo.com" rel="noopener" target="_blank">abierta en internet ↗</a>.</p>
         <div class="bars">
           {bar('Módulos (tablas de datos)','32',67,d=0)}
           {bar('Funciones propias, además de lo generado','48',100,d=.1)}
           {bar('Pantallas: portal, candidato, panel y consola','30+',63,d=.2)}
         </div>
       </div>
-      <ul class="tec-args">
+    </div>
+    <div class="reveal" style="--d:.12s">
+      <ul class="tec-args" style="margin-top:0">
         <li><strong>Suyo de verdad:</strong> servidor a su nombre, PostgreSQL, copia y restauración probadas.</li>
         <li><strong>Seguridad alineada con OWASP:</strong> argon2id, validación de archivos por contenido, RBAC por rol, aislamiento por inquilino.</li>
         <li><strong>Observabilidad nativa:</strong> métricas, trazas y alertas de anomalías, sin servicios externos.</li>
         <li><strong>API documentada</strong> (REST, GraphQL y OpenAPI) y rendimiento publicado: p50 1,58 ms a 2.000 RPS.</li>
         <li><strong>Pensada para IA:</strong> generar o desplegar la base no quema tokens — el motor la trae.</li>
       </ul>
-      <div class="case-links"><a class="btn btn-ghost" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
       <p style="margin-top:1.2rem">$CTA_TEC</p>
       <p class="tec-foot">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
     </div>

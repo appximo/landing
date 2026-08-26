@@ -84,6 +84,65 @@
   .autom p{color:var(--ink-text-dim);font-size:.96rem}
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
+  /* ── el collage de componentes del hero ── */
+  .collage{position:relative;min-height:22rem;display:none}
+  @media(min-width:1000px){.collage{display:block}}
+  .collage>*{position:absolute}
+  .co-order{left:0;top:1.2rem;width:17rem;padding:1rem 1.1rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
+  .co-order .eyebrow{margin-bottom:.4rem}
+  .co-order b{display:block;font-size:1.02rem;line-height:1.25}
+  .co-order .price{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.3rem;letter-spacing:-.03em;margin-top:.35rem}
+  .co-order .row{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;gap:.5rem}
+  .co-notif{right:0;top:0;width:15.5rem;padding:.9rem 1rem}
+  .co-ring{left:2.5rem;bottom:0;width:20rem;padding:.9rem 1rem 1rem;display:flex;align-items:center;gap:.9rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
+  .co-ring b{display:block;font-size:.9rem;line-height:1.25}
+  .co-ring span{display:block;font-size:.76rem;color:var(--text-2);margin-top:.15rem}
+  .co-stat{right:0;bottom:.4rem;text-align:right;width:8.5rem}
+  .co-stat b{display:block;font-weight:800;font-size:2.6rem;line-height:1;letter-spacing:-.04em;color:var(--color-brand-400);font-variant-numeric:tabular-nums}
+  .co-stat span{display:block;font-size:.78rem;color:var(--ink-text-dim);max-width:11rem}
+  .collage-m{display:grid;gap:.8rem;margin-top:1.8rem}
+  @media(min-width:1000px){.collage-m{display:none}}
+  .collage-m .co-ring{position:static;padding:.8rem .9rem}
+  .collage-m .co-notif{position:static;width:auto}
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes coIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+    html.js .collage>*,html.js .collage-m>*{animation:coIn .7s var(--ease) both}
+    html.js .co-order{animation-delay:.25s}html.js .co-notif{animation-delay:.45s}html.js .co-ring{animation-delay:.65s}html.js .co-stat{animation-delay:.85s}
+    html.js .collage-m>*:nth-child(1){animation-delay:.3s}html.js .collage-m>*:nth-child(2){animation-delay:.5s}
+  }
+  .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
+  .notif:first-child{border-top:none;padding-top:0}
+  .notif:last-child{padding-bottom:0}
+  .notif .ci{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--color-brand-500);display:flex;align-items:center;justify-content:center;flex:none}
+  .notif .ci svg{width:.9rem;height:.9rem}
+  .notif b{display:block;font-size:.84rem;line-height:1.2}
+  .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
+  /* ── la franja de demos ── */
+  .strip{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;font-size:.95rem;color:var(--text-2)}
+  .strip b{color:var(--text)}
+  .strip a{font-weight:700;text-decoration:none;color:var(--color-brand-ink);white-space:nowrap}
+  .strip a:hover{text-decoration:underline}
+  .strip .sep{color:var(--zinc-400)}
+  /* ── bloque de equipo ── */
+  .team-grid{display:grid;gap:1.2rem;margin-top:1.6rem}
+  @media(min-width:860px){.team-grid{grid-template-columns:3fr 2fr;align-items:start}}
+  .creds{display:grid;gap:.7rem;margin-top:1.1rem}
+  @media(min-width:600px){.creds{grid-template-columns:repeat(3,1fr)}}
+  .cred{padding:1rem 1.05rem}
+  .cred b{display:block;font-size:.98rem;line-height:1.25}
+  .cred span{display:block;font-size:.84rem;color:var(--text-2);margin-top:.25rem;line-height:1.4}
+  .cred .k{display:block;font-weight:800;font-size:1.7rem;letter-spacing:-.04em;color:var(--color-brand-ink);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:.45rem}
+  .team-photo{min-height:11rem;border-radius:var(--radius-2xl);background:linear-gradient(135deg,var(--color-ink-700),var(--color-ink-900));color:var(--ink-text-mute);display:flex;align-items:center;justify-content:center;text-align:center;padding:1.2rem;font-size:.86rem}
+  /* ── segmento para empresas con equipo técnico ── */
+  .tec-grid{display:grid;gap:1.6rem;align-items:start;margin-top:2rem}
+  @media(min-width:900px){.tec-grid{grid-template-columns:6fr 6fr;gap:2.6rem}}
+  .tec-grid h3{font-size:1.35rem;color:#fff;margin:.6rem 0 .5rem}
+  .tec-grid p{color:var(--ink-text-dim);font-size:.98rem}
+  .tec-args{list-style:none;margin-top:1rem;display:grid;gap:.55rem}
+  .tec-args li{padding-left:1.5rem;position:relative;color:var(--ink-text-dim);font-size:.95rem}
+  .tec-args li::before{content:"✓";position:absolute;left:0;color:var(--color-brand-400);font-weight:800}
+  .tec-args li strong{color:#fff}
+  .tec-foot{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--ink-line);font-size:.9rem;color:var(--ink-text-mute)}
 </style>
 <style>
   .shots{display:grid;gap:1.2rem;margin-top:1.6rem}

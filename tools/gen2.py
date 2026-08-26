@@ -103,6 +103,65 @@ PAGE_CSS='''<style>
   .autom p{color:var(--ink-text-dim);font-size:.96rem}
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
+  /* ── el collage de componentes del hero ── */
+  .collage{position:relative;min-height:22rem;display:none}
+  @media(min-width:1000px){.collage{display:block}}
+  .collage>*{position:absolute}
+  .co-order{left:0;top:1.2rem;width:17rem;padding:1rem 1.1rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
+  .co-order .eyebrow{margin-bottom:.4rem}
+  .co-order b{display:block;font-size:1.02rem;line-height:1.25}
+  .co-order .price{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.3rem;letter-spacing:-.03em;margin-top:.35rem}
+  .co-order .row{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;gap:.5rem}
+  .co-notif{right:0;top:0;width:15.5rem;padding:.9rem 1rem}
+  .co-ring{left:2.5rem;bottom:0;width:20rem;padding:.9rem 1rem 1rem;display:flex;align-items:center;gap:.9rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
+  .co-ring b{display:block;font-size:.9rem;line-height:1.25}
+  .co-ring span{display:block;font-size:.76rem;color:var(--text-2);margin-top:.15rem}
+  .co-stat{right:0;bottom:.4rem;text-align:right;width:8.5rem}
+  .co-stat b{display:block;font-weight:800;font-size:2.6rem;line-height:1;letter-spacing:-.04em;color:var(--color-brand-400);font-variant-numeric:tabular-nums}
+  .co-stat span{display:block;font-size:.78rem;color:var(--ink-text-dim);max-width:11rem}
+  .collage-m{display:grid;gap:.8rem;margin-top:1.8rem}
+  @media(min-width:1000px){.collage-m{display:none}}
+  .collage-m .co-ring{position:static;padding:.8rem .9rem}
+  .collage-m .co-notif{position:static;width:auto}
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes coIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+    html.js .collage>*,html.js .collage-m>*{animation:coIn .7s var(--ease) both}
+    html.js .co-order{animation-delay:.25s}html.js .co-notif{animation-delay:.45s}html.js .co-ring{animation-delay:.65s}html.js .co-stat{animation-delay:.85s}
+    html.js .collage-m>*:nth-child(1){animation-delay:.3s}html.js .collage-m>*:nth-child(2){animation-delay:.5s}
+  }
+  .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
+  .notif:first-child{border-top:none;padding-top:0}
+  .notif:last-child{padding-bottom:0}
+  .notif .ci{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--color-brand-500);display:flex;align-items:center;justify-content:center;flex:none}
+  .notif .ci svg{width:.9rem;height:.9rem}
+  .notif b{display:block;font-size:.84rem;line-height:1.2}
+  .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
+  /* ── la franja de demos ── */
+  .strip{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;font-size:.95rem;color:var(--text-2)}
+  .strip b{color:var(--text)}
+  .strip a{font-weight:700;text-decoration:none;color:var(--color-brand-ink);white-space:nowrap}
+  .strip a:hover{text-decoration:underline}
+  .strip .sep{color:var(--zinc-400)}
+  /* ── bloque de equipo ── */
+  .team-grid{display:grid;gap:1.2rem;margin-top:1.6rem}
+  @media(min-width:860px){.team-grid{grid-template-columns:3fr 2fr;align-items:start}}
+  .creds{display:grid;gap:.7rem;margin-top:1.1rem}
+  @media(min-width:600px){.creds{grid-template-columns:repeat(3,1fr)}}
+  .cred{padding:1rem 1.05rem}
+  .cred b{display:block;font-size:.98rem;line-height:1.25}
+  .cred span{display:block;font-size:.84rem;color:var(--text-2);margin-top:.25rem;line-height:1.4}
+  .cred .k{display:block;font-weight:800;font-size:1.7rem;letter-spacing:-.04em;color:var(--color-brand-ink);font-variant-numeric:tabular-nums;line-height:1;margin-bottom:.45rem}
+  .team-photo{min-height:11rem;border-radius:var(--radius-2xl);background:linear-gradient(135deg,var(--color-ink-700),var(--color-ink-900));color:var(--ink-text-mute);display:flex;align-items:center;justify-content:center;text-align:center;padding:1.2rem;font-size:.86rem}
+  /* ── segmento para empresas con equipo técnico ── */
+  .tec-grid{display:grid;gap:1.6rem;align-items:start;margin-top:2rem}
+  @media(min-width:900px){.tec-grid{grid-template-columns:6fr 6fr;gap:2.6rem}}
+  .tec-grid h3{font-size:1.35rem;color:#fff;margin:.6rem 0 .5rem}
+  .tec-grid p{color:var(--ink-text-dim);font-size:.98rem}
+  .tec-args{list-style:none;margin-top:1rem;display:grid;gap:.55rem}
+  .tec-args li{padding-left:1.5rem;position:relative;color:var(--ink-text-dim);font-size:.95rem}
+  .tec-args li::before{content:"✓";position:absolute;left:0;color:var(--color-brand-400);font-weight:800}
+  .tec-args li strong{color:#fff}
+  .tec-foot{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--ink-line);font-size:.9rem;color:var(--ink-text-mute)}
 </style>'''
 
 FOOT_I=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. WhatsApp: <a href="$M_PIE">+57 311 517 5472</a></p>
@@ -117,6 +176,8 @@ m=dict(
  M_TEL=wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (teléfono).'),
  M_PRECIO=wa('Hola, quiero saber un rango de precio para mi caso antes de una reunión. (appximo.com · precio)'),
  M_PIE=wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (pie de página).'),
+ VECINGO_OPEN='<a class="btn btn-ghost" href="https://demovecingo.appximo.com" rel="noopener" target="_blank">Abrir el sistema ↗</a>',
+ CTA_TEC=cta(wa('Hola, tenemos equipo técnico y queremos evaluar la tecnología de Appximo para nuestro sistema. (appximo.com · equipo técnico)'),'Hablar con el equipo de ingeniería'),
  CTA_INICIO=cta(wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (inicio).'),extra=' btn-pulse'),
  M_VIDEO=wa('Hola, vi el video de la idea que se vuelve sistema y quiero una demostración gratis para mi negocio. (appximo.com · video)'),
  CTA_PASOS=cta(wa('Hola, quiero contarles qué se me volvió un problema y pedir la demostración gratis. (appximo.com · pasos)')),
@@ -147,27 +208,48 @@ index=f'''<!doctype html>
 {nav('$M_MENU','<a href="#casos">Casos</a><a href="#pruebe">Pruébelo</a><a href="#como">Cómo funciona</a><a href="#preguntas">Preguntas</a>')}
 
 <header class="hero grain">
-  {hero_grid([('tienda-hero.webp',640,600),('pf-panel.webp',1280,640),('tablero-hero.webp',1080,483),('atina-portal.webp',1280,640)])}
-  <div class="hero-float" aria-hidden="true"><div class="card-dark">
-    <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
-    <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
-    <div class="notif"><span class="ci" style="background:var(--color-ink-500)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6l4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2.2"/></svg></span><span><b>Cita de mañana</b><span>Recordatorio enviado</span></span></div>
-  </div></div>
+  <div class="hero-tex" aria-hidden="true"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
   <div class="container-x">
+    <div class="hero-layout">
     <div class="hero-copy">
-      <p class="eyebrow">Sistemas a la medida para empresas y organizaciones</p>
-      <h1 class="t-6xl" id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
-      <p class="sub" id="hero-sub">Hecho a su medida, no un programa genérico. Lo difícil ya está construido — diez años de oficio en sistemas de bancos — y queda andando en días: una plataforma entera salió en 3 horas y media. <strong>Lo ve funcionando antes de pagar</strong>.</p>
+      <p class="eyebrow">Sistemas a la medida · IA nativa · Tecnología propia</p>
+      <h1 id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
+      <p class="sub" id="hero-sub">Hecho a su medida, no un programa genérico. Lo difícil ya está construido — diez años de oficio en sistemas bancarios — y queda andando en días. Y queda <strong>trabajando solo</strong>: avisa, cobra y recuerda por usted. <strong>Lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
         $CTA_INICIO
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde Miguel Acosta, no un robot.</b> Pereira y Dosquebradas, Colombia · <a href="$M_TEL">+57 311 517 5472</a></p>
+        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p>
         <p class="cta-alt">¿Prefiere mirar antes de escribir? <a href="#pruebe">Abra un sistema funcionando, sin registrarse ↓</a></p>
       </div>
+      <div class="collage-m" aria-hidden="true">
+        <div class="card-dark co-notif">
+          <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
+          <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
+        </div>
+        <div class="co-ring">{ring(58.2,'quórum','5rem')}<div><b>Asamblea en curso</b><span>Quórum por coeficiente, en tiempo real</span></div></div>
+      </div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <div class="co-order">
+        <p class="eyebrow">Pedido · pagado</p>
+        <b>Ruana de lana</b>
+        <span class="t-xs muted">1 unidad · envío a domicilio</span>
+        <div class="price">$$ 220.000</div>
+        <div class="row"><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span><span class="t-xs muted tnum">IVA incluido</span></div>
+      </div>
+      <div class="card-dark co-notif">
+        <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
+        <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
+        <div class="notif"><span class="ci" style="background:var(--color-ink-500)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6l4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2.2"/></svg></span><span><b>Cita de mañana</b><span>Recordatorio enviado</span></span></div>
+      </div>
+      <div class="co-ring">{ring(58.2,'quórum','5.5rem')}<div><b>Asamblea en curso</b><span>Quórum por coeficiente, en tiempo real</span></div></div>
+      <div class="co-stat"><b>18</b><span>módulos en un solo sistema</span></div>
+    </div>
     </div>
     <div class="stats">
       <div class="stat"><b>3½<span class="u">h</span></b><span>en que quedó andando una plataforma de 18 módulos</span><span class="stat-x"><a href="caso.html">el caso, documentado paso a paso</a></span></div>
-      <div class="stat"><b><span data-count="32" data-dec="0">32</span></b><span>módulos tiene la plataforma que otro desarrollador construyó con nuestra tecnología</span><span class="stat-x"><a href="#casos">contados en su contrato público</a></span></div>
-      <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>en sistemas de bancos detrás de quien le responde</span></div>
+      <div class="stat"><b><span data-count="18" data-dec="0">18</span></b><span>módulos en un solo sistema: asambleas, cartera, PQRS, parqueaderos, reservas…</span><span class="stat-x"><a href="#casos">véalo por dentro</a></span></div>
+      <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>del equipo en sistemas bancarios</span></div>
     </div>
   </div>
 </header>
@@ -194,40 +276,18 @@ index=f'''<!doctype html>
 
 <section class="section s-white" id="casos"><div class="container-x">
   <p class="eyebrow reveal">Lo que ya salió de aquí</p>
-  <h2 class="t-5xl reveal" style="max-width:18ch">Dos plataformas completas, la misma tecnología</h2>
-  <p class="lead reveal" style="margin-top:1rem">No son maquetas: una está abierta en internet y la otra le sirve a un conjunto residencial. Cada cifra aguanta un clic.</p>
+  <h2 class="t-5xl reveal" style="max-width:18ch">Plataformas completas, la misma tecnología</h2>
+  <p class="lead reveal" style="margin-top:1rem">No es una maqueta: le sirve a un conjunto residencial real, y usted puede abrirla y recorrerla. Cada cifra aguanta un clic.</p>
 
-  <article class="case" style="margin-top:clamp(2.4rem,6vw,4rem)">
+  <article class="case" id="caso-vecingo" style="margin-top:clamp(2.4rem,6vw,4rem)">
     <div class="case-media">
-      <div class="bframe reveal media-skel">{bbar('atina.appximo.com')}<img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
-      <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn">{PLAY}Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
-    </div>
-    <div class="reveal" style="--d:.15s">
-      <span class="chip chip-brand">Prueba de capacidad</span>
-      <h3>atina: la construyó otro desarrollador — sin nosotros</h3>
-      <p>Una plataforma completa de selección de personal — portal público, área del candidato y panel de la empresa. <strong>La construyó un desarrollador externo</strong> con nuestra tecnología y la documentación publicada. Está en internet: puede abrirla.</p>
-      <div class="card case-panel">
-        <p class="eyebrow">Qué tiene, contado en su contrato público</p>
-        <div class="bars">
-          {bar('Módulos (tablas de datos)','32',67,d=0)}
-          {bar('Funciones propias, además de lo generado','48',100,d=.1)}
-          {bar('Pantallas: portal, candidato, panel y consola','30+',63,d=.2)}
-        </div>
-      </div>
-      <div class="meaning"><b>Qué significa para usted:</b> su sistema no depende de una sola persona. Si otro construyó esto sin nuestra ayuda, cualquier ingeniero puede mantener el suyo.</div>
-      <div class="case-links"><a class="btn btn-ghost" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
-    </div>
-  </article>
-
-  <article class="case flip" id="caso-vecingo">
-    <div class="case-media">
-      <div class="bframe reveal media-skel">{bbar('vecingo — demo')}<img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"></div>
+      <div class="bframe reveal media-skel">{bbar('demovecingo.appximo.com')}<img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"></div>
       <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma de conjuntos de 18 módulos, en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video del caso"><span class="vplay-btn">{PLAY}Ver el sistema · 5 min</span></button></div><figcaption>Video con datos ficticios. <a href="caso.html">El caso, pantalla por pantalla</a>.</figcaption></figure>
     </div>
     <div class="reveal" style="--d:.15s">
-      <span class="chip chip-brand">El caso documentado</span>
+      <span class="chip chip-brand">Nuestro caso</span>
       <h3>VecinGo: la administración de un conjunto, en una tarde</h3>
-      <p>18 módulos — asambleas por coeficiente, radicados, cartera, parqueaderos sobre el plano — construida en una tarde para un conjunto residencial. El problema que resolvió: la asamblea que se impugna, la cartera en un Excel y las PQRS que se vencen.</p>
+      <p>18 módulos — asambleas por coeficiente, radicados, cartera, parqueaderos sobre el plano — hecha con nuestra tecnología, en una tarde, para un conjunto residencial. El problema que resolvió: la asamblea que se impugna, la cartera en un Excel y las PQRS que se vencen. Del tamaño de un negocio real.</p>
       <div class="card case-panel ring-row">
         {ring(58.2,'quórum')}
         <div>
@@ -236,7 +296,7 @@ index=f'''<!doctype html>
           <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem"><span class="chip">18 módulos</span><span class="chip">3½ h documentadas</span><span class="chip">Asambleas · cartera · PQRS</span></div>
         </div>
       </div>
-      <div class="case-links"><a class="btn btn-ghost" href="conjuntos.html">¿Administra un conjunto? Su página →</a><a class="btn btn-ghost" href="caso.html">El caso, en español</a></div>
+      <div class="case-links">$VECINGO_OPEN<a class="btn btn-ghost" href="conjuntos.html">¿Administra un conjunto? Su página →</a><a class="btn btn-ghost" href="caso.html">El caso, en español</a></div>
     </div>
   </article>
 </div></section>
@@ -250,20 +310,8 @@ index=f'''<!doctype html>
   <a class="btn btn-ghost reveal" style="--d:.1s" href="conjuntos.html">Ver el sistema para conjuntos →</a>
 </div></section>
 
-<section class="section-tight s-zinc" id="pruebe"><div class="container-x">
-  <p class="eyebrow reveal">Y además, puede entrar a tocar</p>
-  <h2 class="t-3xl reveal">Dos sistemas abiertos en internet, sin registrarse</h2>
-  <p class="lead reveal t-sm" style="margin-top:.5rem">No le pedimos que nos crea. Entre, toque, y mire cómo cargan.</p>
-  <div class="invite">
-    <a class="card card-hover pick reveal" href="https://tiendita.appximo.com" rel="noopener" target="_blank">
-      <span class="pk-img"><img src="assets/tienda-hero.webp" alt="" width="640" height="600" loading="lazy"></span>
-      <span><b>¿Vende productos?</b><span>Una tienda con inventario e IVA: compre algo, es de prueba.</span><span class="chip chip-brand"><i class="dot"></i>En internet ahora mismo</span></span>
-    </a>
-    <a class="card card-hover pick reveal" style="--d:.08s" href="https://petfriendly.appximo.com" rel="noopener" target="_blank">
-      <span class="pk-img"><img src="assets/pf-panel.webp" alt="" width="1280" height="640" loading="lazy"></span>
-      <span><b>¿Citas y clientes?</b><span>Una agenda veterinaria: toque el panel, nada se guarda.</span><span class="chip chip-brand"><i class="dot"></i>En internet ahora mismo</span></span>
-    </a>
-  </div>
+<section class="band s-zinc" id="pruebe" style="border-top:1px solid var(--zinc-200);border-bottom:1px solid var(--zinc-200)"><div class="container-x">
+  <p class="strip reveal"><b>¿Prefiere tocar antes de hablar?</b> <span>Dos sistemas abiertos, sin registro:</span> <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">la tienda ↗</a> <span class="sep">·</span> <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">la agenda veterinaria ↗</a> <span class="sep">·</span> <a href="https://demovecingo.appximo.com" rel="noopener" target="_blank">el conjunto ↗</a></p>
 </div></section>
 
 <section class="section s-ink" id="como"><div class="container-x">
@@ -309,24 +357,26 @@ index=f'''<!doctype html>
 <section class="section s-white" id="quien"><div class="container-x">
   <p class="eyebrow reveal">Quién responde</p>
   <h2 class="t-4xl reveal">No somos una promesa: ya funciona</h2>
-  <div class="who-grid">
+  <div class="team-grid">
     <div class="reveal">
-      <p class="lead">El WhatsApp lo contesta quien construye el sistema. <strong>Diez+ años en sistemas de bancos</strong> y una tecnología propia pionera: sistemas completos en días.</p>
-      <div class="people">
-        <div class="card person" data-pendiente="FOTO-PENDIENTE"><span class="avatar" aria-hidden="true">MA</span><span><b>Miguel Acosta</b><span>Parte técnica · 10 años en sistemas de bancos · Pereira</span></span></div>
-        <div class="card person" data-pendiente="SOCIA-PENDIENTE FOTO-PENDIENTE"><span class="avatar" aria-hidden="true" style="--g:1;background:linear-gradient(135deg,var(--color-ink-600),var(--color-ink-800))">·</span><span><b>Ingeniera de sistemas</b><span>La otra mitad del proyecto · Dosquebradas</span></span></div>
+      <p class="lead">Le responde directamente <strong>el equipo que construye su sistema</strong>, no un robot ni un centro de llamadas. Un equipo de ingeniería en Pereira y Dosquebradas — <strong>desde Pereira, Colombia, para todo el país</strong>, por videollamada donde haga falta.</p>
+      <div class="creds">
+        <div class="card cred"><span class="k">10+</span><b>años en sistemas bancarios</b><span>donde un error cuesta dinero de verdad</span></div>
+        <div class="card cred" style="--d:.06s"><span class="k">UTP</span><b>docencia universitaria en ingeniería</b><span>enseñar obliga a explicar claro</span></div>
+        <div class="card cred" style="--d:.12s"><span class="k">Abierta</span><b>tecnología propia, de código abierto</b><span>pública y documentada: nadie queda amarrado</span></div>
       </div>
       <div class="contact">
         <div><b>WhatsApp</b><a href="$M_TEL">+57 311 517 5472</a></div>
-        <div><b>Dónde</b><span>Pereira y Dosquebradas, Colombia — y en todo el país por videollamada</span></div>
+        <div><b>Alcance</b><span>Desde Pereira, Colombia — para todo el país</span></div>
       </div>
     </div>
-    <div class="card card-pad reveal" style="--d:.1s">
-      <ul class="cred-list" style="margin-top:0">
+    <div class="reveal" style="--d:.1s">
+      <div class="team-photo" data-pendiente="FOTO-PENDIENTE" aria-hidden="true"><span>Foto del equipo o del trabajo real — cuando exista. Nunca de archivo.</span></div>
+      <ul class="cred-list" style="margin-top:1rem">
         <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda</a> abren al instante.</li>
         <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, permisos por usuario.</li>
         <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido.</li>
-        <li><strong>Suyo de verdad:</strong> queda en un servidor a su nombre, con sus claves; su equipo técnico, si lo tiene, puede administrarlo.</li>
+        <li><strong>Suyo de verdad:</strong> queda en un servidor a su nombre, con sus claves.</li>
       </ul>
     </div>
   </div>
@@ -336,9 +386,9 @@ index=f'''<!doctype html>
   <p class="eyebrow reveal">Para que no haya sorpresas</p>
   <h2 class="t-4xl reveal">Lo que no hacemos</h2>
   <div class="nots">
-    <div class="not reveal"><b>No hacemos aplicaciones de celular:</b> va en el navegador.</div>
-    <div class="not reveal" style="--d:.06s"><b>No reemplazamos a su contador:</b> las ventas y el IVA salen claros.</div>
-    <div class="not reveal" style="--d:.12s"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito, o no empezamos.</div>
+    <div class="not reveal"><b>No publicamos en las tiendas de aplicaciones:</b> su sistema abre en el celular desde el navegador — sin instalar nada y siempre actualizado.</div>
+    <div class="not reveal" style="--d:.06s"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito, o no empezamos.</div>
+    <div class="not reveal" style="--d:.12s"><b>No empezamos sin demostración:</b> primero lo ve funcionando con datos de ejemplo; después hablamos de precio.</div>
     <div class="not reveal" style="--d:.18s"><b>¿Solo necesita una página?</b> Eso sale más barato en otro lado.</div>
   </div>
   <p class="eyebrow reveal" style="margin-top:2.6rem">Preguntas frecuentes</p>
@@ -371,15 +421,43 @@ index=f'''<!doctype html>
     <h2 class="t-5xl">Cuéntenos qué se le volvió un problema</h2>
     <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos y agendamos su demostración gratis.</p>
     <div class="cta-row">$CTA_FINAL
-      <p class="cta-trust">Le responde Miguel Acosta directamente · Pereira y Dosquebradas, Colombia · <a href="$M_TEL">+57 311 517 5472</a></p></div>
+      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p></div>
   </div>
 </div></section>
 
-<section class="tech s-white" id="tecnico"><div class="container-x">
-  <p class="eyebrow">Para su equipo técnico</p>
-  <h2 class="t-2xl">Lo que su ingeniero va a preguntar</h2>
-  <p>La base es Appximo, un proyecto de código abierto, público y documentado. Cada sistema se entrega instalado en un servidor a nombre del cliente, con sus claves. Los datos viven en PostgreSQL, con copia de seguridad y restauración probadas. Seguridad alineada con OWASP: argon2id, validación de archivos por contenido, RBAC por rol y aislamiento por inquilino. Observabilidad nativa: métricas, trazas y alertas de anomalías, sin servicios externos. La API queda documentada (REST, GraphQL y OpenAPI). Rendimiento publicado: p50 1,58 ms a 2.000 RPS. La plataforma de 18 módulos quedó andando en 3½ horas (caso documentado).</p>
-  <p class="t-sm">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
+<section class="section s-ink" id="tecnico"><div class="container-x">
+  <p class="eyebrow reveal">Para empresas con equipo técnico</p>
+  <h2 class="t-4xl reveal" style="max-width:20ch">¿Tiene ingenieros? Mejor: la tecnología es abierta y aguanta plataformas completas</h2>
+  <p class="lead reveal" style="margin-top:1rem">Su ERP o plataforma va sobre una tecnología propia, pública y documentada: <strong>su gente la administra, la audita y la extiende</strong> — y si nosotros no estamos, cualquier ingeniero puede seguir. La prueba más fuerte que tenemos no la hicimos nosotros:</p>
+  <div class="tec-grid">
+    <div class="reveal">
+      <div class="bframe media-skel">{bbar('atina.appximo.com')}<img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
+      <figure class="media" style="margin-top:.9rem"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn">{PLAY}Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
+    </div>
+    <div class="reveal" style="--d:.12s">
+      <span class="chip chip-ghost">Construida por un desarrollador externo</span>
+      <h3>atina: una plataforma completa de selección de personal, construida por un desarrollador externo con la documentación pública</h3>
+      <p>Sin nuestra dirección y sin acceso a nuestro código: solo la documentación publicada. Portal público, área del candidato, panel de la empresa y consola. Está en internet y puede abrirla.</p>
+      <div class="card-dark card-pad" style="margin-top:1rem">
+        <p class="eyebrow">Qué tiene, contado en su contrato público</p>
+        <div class="bars">
+          {bar('Módulos (tablas de datos)','32',67,d=0)}
+          {bar('Funciones propias, además de lo generado','48',100,d=.1)}
+          {bar('Pantallas: portal, candidato, panel y consola','30+',63,d=.2)}
+        </div>
+      </div>
+      <ul class="tec-args">
+        <li><strong>Suyo de verdad:</strong> servidor a su nombre, PostgreSQL, copia y restauración probadas.</li>
+        <li><strong>Seguridad alineada con OWASP:</strong> argon2id, validación de archivos por contenido, RBAC por rol, aislamiento por inquilino.</li>
+        <li><strong>Observabilidad nativa:</strong> métricas, trazas y alertas de anomalías, sin servicios externos.</li>
+        <li><strong>API documentada</strong> (REST, GraphQL y OpenAPI) y rendimiento publicado: p50 1,58 ms a 2.000 RPS.</li>
+        <li><strong>Pensada para IA:</strong> generar o desplegar la base no quema tokens — el motor la trae.</li>
+      </ul>
+      <div class="case-links"><a class="btn btn-ghost" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
+      <p style="margin-top:1.2rem">$CTA_TEC</p>
+      <p class="tec-foot">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
+    </div>
+  </div>
 </div></section>
 
 {FOOT_I}
@@ -392,7 +470,8 @@ index=f'''<!doctype html>
 html=string.Template(index).substitute(m)
 old=open(''+OUT+'index.html',encoding='utf-8').read()
 a=set(re.findall(r'https://wa\.me/[^"]+',old)); b=set(re.findall(r'https://wa\.me/[^"]+',html))
-assert a==b, ('wa set changed', a^b)
+assert a<=b, ('wa origins LOST', a-b)
+if b-a: print('new wa origins:', len(b-a), sorted(b-a))
 open(OUT+'index.html','w',encoding='utf-8').write(html); print('index ok',len(html))
 
 # ============================================================ conjuntos.html
@@ -452,7 +531,7 @@ conj=f'''<!doctype html>
       <p class="sub">Quórum por coeficiente calculado al instante, cartera con la mora a la vista, PQRS con radicado y respuesta en plazo. <strong>Lo ve funcionando antes de pagar</strong>, con los datos de un conjunto de ejemplo.</p>
       <div class="cta-row">
         $CTA_HERO
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde Miguel Acosta, no un robot.</b> Pereira y Dosquebradas, Colombia · <a href="$M_TEL">+57 311 517 5472</a></p>
+        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p>
       </div>
     </div>
     <div class="stats">
@@ -492,6 +571,7 @@ conj=f'''<!doctype html>
         <p class="eyebrow">Los 18 módulos</p>
         <div class="mods"><span class="chip chip-ghost">Asambleas y votaciones</span><span class="chip chip-ghost">Cartera y mora</span><span class="chip chip-ghost">PQRS con radicado</span><span class="chip chip-ghost">Parqueaderos con plano</span><span class="chip chip-ghost">Reservas de zonas comunes</span><span class="chip chip-ghost">Visitantes</span><span class="chip chip-ghost">Obras</span><span class="chip chip-ghost">Comunicados</span><span class="chip chip-ghost">Muro del conjunto</span><span class="chip chip-ghost">Unidades y residentes</span><span class="chip chip-ghost">Paz y salvos</span><span class="chip chip-ghost">Paquetes en recepción</span><span class="chip chip-ghost">Roles y permisos</span><span class="chip chip-ghost">Copias de seguridad</span><span class="chip chip-ghost">+ 4 de operación</span></div>
       </div>
+      <div class="case-links" style="margin-top:1rem"><a class="btn btn-ghost" href="https://demovecingo.appximo.com" rel="noopener" target="_blank">Abrir el sistema ↗</a></div>
       <p style="margin-top:1.2rem">$CTA_MID</p>
     </div>
   </div>
@@ -501,8 +581,8 @@ conj=f'''<!doctype html>
   <p class="eyebrow reveal">Para que no haya sorpresas</p>
   <h2 class="t-4xl reveal">Lo que este sistema no hace</h2>
   <div class="nots">
-    <div class="not reveal"><b>No reemplaza al contador ni al revisor fiscal:</b> la cartera y los recaudos quedan claros y exportables; la contabilidad sigue siendo de ellos.</div>
-    <div class="not reveal" style="--d:.06s"><b>No es una aplicación de celular de tienda:</b> se usa en el navegador del celular o del computador, sin instalar nada.</div>
+    <div class="not reveal"><b>No hacemos la contabilidad:</b> eso sigue siendo de su contador y su revisor fiscal — el sistema les entrega la cartera y los recaudos claros y exportables.</div>
+    <div class="not reveal" style="--d:.06s"><b>No publicamos en las tiendas de aplicaciones:</b> el sistema abre en el celular del administrador, la portería y los residentes desde el navegador — sin instalar nada y siempre actualizado.</div>
     <div class="not reveal" style="--d:.12s"><b>No es un programa enlatado:</b> se arma sobre cómo trabaja su conjunto — sus módulos, sus reglas de reserva, sus tipos de cuota. Lo que no usa, no se construye.</div>
     <div class="not reveal" style="--d:.18s"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito antes de empezar, o no empezamos.</div>
   </div>
@@ -526,7 +606,7 @@ conj=f'''<!doctype html>
     <h2 class="t-5xl">Cuéntenos qué se le volvió un problema en su conjunto</h2>
     <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos lo demás y agendamos su demostración gratis.</p>
     <div class="cta-row">$CTA_END
-      <p class="cta-trust">Le responde Miguel Acosta directamente · Pereira y Dosquebradas, Colombia · <a href="$M_TEL">+57 311 517 5472</a></p></div>
+      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p></div>
   </div>
 </div></section>
 

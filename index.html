@@ -285,6 +285,7 @@
   .b-out{margin-top:.9rem;border-radius:14px;overflow:hidden;border:1px solid var(--zinc-200);box-shadow:var(--shadow-soft)}
   .b-out .bbar{background:var(--color-ink-800)}
   .b-plat{border-radius:0;box-shadow:none}
+  .b-order{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
   .b-plat::after{border-radius:0}
   html.js .build:not(.p3) .b-out{display:none}
   html.js .build:not(.p2) .b-proc{opacity:.45}
@@ -489,9 +490,7 @@
           <div class="plat b-plat">
             <div class="plat-tabs"><span class="on" data-k="pedidos">Pedidos</span><span data-k="clientes">Clientes</span><span data-k="inventario">Inventario</span><span data-k="cuentas">Cuentas</span></div>
             <div class="plat-kpis"><div><b class="tnum">$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
-            <div class="co-order">
-              <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Martillo de uña 16 oz</b><span class="t-xs muted" style="display:block">2 unidades · recoge en tienda</span></span><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span></div>
-            </div>
+            <div class="co-order b-order"><span><b style="font-size:.95rem;display:block">Martillo de uña 16 oz</b><span class="t-xs muted">2 unidades · recoge en tienda</span></span><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span></div>
           </div>
         </div>
       </div>

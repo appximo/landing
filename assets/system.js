@@ -43,7 +43,7 @@
       var w = document.createElement('source'); w.src = hv.getAttribute('data-webm'); w.type = 'video/webm';
       var m = document.createElement('source'); m.src = hv.getAttribute('data-mp4'); m.type = 'video/mp4';
       hv.appendChild(w); hv.appendChild(m); hv.load();
-      hv.addEventListener('playing', function () { hv.classList.add('is-on'); }, { once: true });
+      hv.addEventListener('playing', function () { hv.classList.add('is-ready'); requestAnimationFrame(function () { hv.classList.add('is-on'); }); }, { once: true });
       var pr = hv.play(); if (pr && pr.catch) pr.catch(function () {});
     }, 800); });
   }

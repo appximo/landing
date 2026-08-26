@@ -394,7 +394,7 @@ index=f'''<!doctype html>
 </template>
 <template id="hero-idea">
   <span class="v-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
-  <span class="v-sub">De la tienda al ERP o la plataforma de alto tráfico: <strong>rápido</strong>, <strong>seguro</strong>, y <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-sub">Una tienda, su ERP o CRM a la medida, el Excel que hoy lo sostiene convertido en sistema, o una plataforma para miles de usuarios: <strong>rápido</strong>, <strong>seguro</strong>, y <strong>lo ve funcionando antes de pagar</strong>.</span>
   <span class="v-chip"><details class="ia" id="ia"><summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#como">véalo abajo: la idea se vuelve sistema ↓</a></p></div></details></span>
 </template>
 <template id="hero-puente">

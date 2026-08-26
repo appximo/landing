@@ -39,6 +39,9 @@ a{color:var(--color-brand-ink)}
 h1,h2,h3,h4{font-weight:800;letter-spacing:-.03em;text-wrap:balance;line-height:1.08}
 h3,h4{font-weight:700;letter-spacing:-.02em}
 .tnum{font-variant-numeric:tabular-nums}
+/* resalte sofisticado: marcador suave bajo la palabra clave, sin cambiar el color del texto */
+.hl{font-weight:600;color:var(--text);background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%);border-radius:2px;padding:0 .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.s-ink .hl{color:#fff;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%)}
 .s-ink{background:var(--color-ink);color:var(--ink-text)}
 .s-white{background:var(--white);color:var(--text)}
 .s-zinc{background:var(--zinc-50);color:var(--text)}

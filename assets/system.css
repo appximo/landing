@@ -150,7 +150,7 @@ html.js .bar:not(.in) .fill{transform:scaleX(0)}
 .nav-links a:hover{color:#fff}
 @media(max-width:860px){.nav-links{display:none}}
 .hero{position:relative;overflow:hidden;background:var(--color-ink);color:#fff;padding:clamp(3rem,8vw,6.5rem) 0 0}
-.hero-tex{position:absolute;inset:-6%;background:url("tablero-hero.webp") center 30%/cover no-repeat;opacity:.22;filter:blur(14px) saturate(.5);pointer-events:none}
+.hero-tex{position:absolute;inset:0;background:url("hero-tex.webp") center 30%/cover no-repeat;opacity:.3;pointer-events:none}
 .hero-grid-bg{position:absolute;inset:0;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,1fr);gap:2px;pointer-events:none}
 .hero-grid-bg>div:nth-child(4){display:none}
 .hero-grid-bg>div{position:relative;overflow:hidden}

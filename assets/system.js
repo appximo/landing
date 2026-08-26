@@ -63,6 +63,7 @@
       var target = parseFloat(el.dataset.count), dec = (el.dataset.dec | 0), suf = el.dataset.suf || '', dur = 1400;
       if (reduce) { el.textContent = fmt(target, dec, suf); return; }
       var t0 = null;
+      setTimeout(function () { el.textContent = fmt(target, dec, suf); }, dur + 80);
       (function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1); p = 1 - Math.pow(1 - p, 3); el.textContent = fmt(target * p, dec, suf); if (p < 1) requestAnimationFrame(step); })(performance.now());
     };
     runCount = run;

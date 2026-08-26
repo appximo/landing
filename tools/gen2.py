@@ -406,7 +406,7 @@ index=f'''<!doctype html>
     <div class="reveal" style="--d:.15s">
       <span class="chip chip-brand">Prueba de capacidad</span>
       <h3>atina: una plataforma completa de selección de personal</h3>
-      <p>Portal público, área del candidato, panel de la empresa y consola — <span class="hl">construida por un desarrollador externo</span> con nuestra tecnología y la documentación pública, sin nuestra dirección. <span class="hl">Está en internet: puede abrirla.</span></p>
+      <p>Portal público, área del candidato, panel de la empresa y consola — <span class="hl">construida sobre nuestra tecnología únicamente con la documentación publicada</span>, sin nuestra intervención: la prueba de que la base se sostiene sola. <span class="hl">Está en internet: puede abrirla.</span></p>
       <div class="card case-panel">
         <p class="eyebrow">Qué tiene, contado en su contrato público</p>
         <div class="bars">

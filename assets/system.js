@@ -56,16 +56,16 @@
     if (reduce || !('IntersectionObserver' in window)) finish();
     else {
       var started = false, t0 = 0, tick = null;
-      var run = function () {
+      var startBuild = function () {
         if (started) return; started = true; t0 = performance.now();
         tick = setInterval(function () { var s = Math.floor((performance.now() - t0) / 1000); clock.textContent = '00:' + (s < 10 ? '0' : '') + s; }, 250);
         var full = bt.getAttribute('data-text'), i = 0; bt.textContent = ''; build.classList.add('p1');
         (function type() { i += 1; bt.textContent = full.slice(0, i); if (i < full.length) setTimeout(type, 26 + Math.random() * 28); else { build.classList.remove('p1'); build.classList.add('p2'); proc(0); } })();
         function proc(k) { if (k > 0) steps[k - 1].classList.replace('on', 'done'); if (k >= steps.length) { build.classList.add('p3'); clearInterval(tick); setTimeout(function () { build.querySelectorAll('.late-count').forEach(runCount); }, 600); return; } steps[k].classList.add('on'); setTimeout(function () { proc(k + 1); }, 650 + k * 120); }
       };
-      var bo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { bo.disconnect(); run(); } }); }, { threshold: .45 });
+      var bo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { bo.disconnect(); startBuild(); } }); }, { threshold: .35 });
       bo.observe(build);
-      setTimeout(function () { if (!started && build.getBoundingClientRect().top < innerHeight) run(); }, 4000);
+      setTimeout(function () { if (!started && build.getBoundingClientRect().top < innerHeight) startBuild(); }, 4000);
     }
   }
 

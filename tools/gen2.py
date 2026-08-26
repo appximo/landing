@@ -125,7 +125,7 @@ PAGE_CSS='''<style>
   .co-order{width:100%;padding:.9rem 1rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
   .co-order .eyebrow{margin-bottom:.35rem}
   .co-order b{display:block;font-size:1rem;line-height:1.25}
-  .co-order .price{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.25rem;letter-spacing:-.03em;margin-top:.3rem}
+  .co-order .price{font-weight:800;font-variant-numeric:tabular-nums;font-size:1.25rem;letter-spacing:-.03em;margin-top:.3rem;white-space:nowrap}
   .co-order .row{display:flex;justify-content:space-between;align-items:center;margin-top:.55rem;gap:.5rem}
   .co-notif{width:100%;padding:.8rem .95rem}
   .plat{background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:.8rem .9rem .9rem}

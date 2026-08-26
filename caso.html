@@ -12,83 +12,70 @@
 <meta property="og:url" content="https://appximo.com/caso.html">
 <link rel="canonical" href="https://appximo.com/caso.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0d221a">
+<link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/system.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23153f2e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e9f5ee' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --ink:#1d1a13; --ink-2:#564e3e; --ink-3:#837a67;
-    --bg:#f7f4ec; --panel:#fffdf8; --wash:#efeadd;
-    --line:#e3dcca; --line-2:#d3cab4;
-    --dark:#122b21; --dark-2:#0d221a; --dark-line:rgba(233,245,238,.14);
-    --cream:#f2efe3; --cream-dim:#b9c4b4;
-    --green:#1c9d5b; --green-dark:#157a46; --green-wash:#e7f4ec;
-    --gold:#b98a2e; --gold-deep:#96701f;
-    --wa:#25D366;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
-  img,video{max-width:100%;height:auto;display:block}
-  a{color:var(--green-dark)}
-  .wrap{max-width:920px;margin:0 auto;padding:0 1.2rem}
-  section{padding:3.4rem 0}
-  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.015em;line-height:1.18;margin-bottom:.6rem}
-  .kicker{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:.65rem}
-  .lead{color:var(--ink-2);max-width:44rem;font-size:1.05rem}
-  .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--wa);color:#0d221a;font-weight:700;font-size:1.04rem;padding:.9rem 1.7rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(18,80,48,.3)}
-  .btn-wa:hover{filter:brightness(1.06);outline:2px solid rgba(185,138,46,.55);outline-offset:3px}
-  .btn-wa svg{width:1.3rem;height:1.3rem;flex:none}
-  nav{position:sticky;top:0;background:rgba(13,34,26,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--dark-line);z-index:50}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:3.6rem}
-  .logo{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:700;font-size:1.14rem;color:var(--cream);text-decoration:none}
-  .logo-mark{width:1.55rem;height:1.55rem;border-radius:8px;background:var(--green);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:800;font-family:var(--sans)}
-  .nav-back{color:#8fd3ae;font-size:.9rem;text-decoration:none}
-  .hero{background:radial-gradient(70rem 36rem at 78% -14%,#245c40 0%,var(--dark) 48%,var(--dark-2) 100%);color:var(--cream);padding:3.6rem 0 3rem;border-bottom:1px solid var(--line)}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,5.2vw,2.7rem);letter-spacing:-.015em;line-height:1.15;max-width:38rem}
-  .hero h1 em{font-style:normal;color:#9fe0bc}
-  .hero .sub{margin:1.1rem 0 0;color:var(--cream-dim);max-width:38rem;font-size:1.08rem}
-  .hero .sub strong{color:var(--cream)}
-  .casestats{display:grid;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(185,138,46,.35)}
+  .hero{position:relative;background:var(--color-ink-900);color:var(--ink-text);overflow:hidden;margin-top:-3.7rem;padding:calc(3.7rem + clamp(2.2rem,6vw,4rem)) 0 clamp(2.4rem,6vw,3.6rem)}
+  .hero-veil{position:absolute;inset:0;background:radial-gradient(70rem 36rem at 80% -10%,color-mix(in srgb,var(--color-ink-600) 70%,transparent) 0%,transparent 60%);pointer-events:none}
+  .hero .container-x{position:relative;z-index:2}
+  .hero-grid{display:grid;gap:2.2rem}
+  @media(min-width:900px){.hero-grid{grid-template-columns:11fr 9fr;align-items:center;gap:3rem}}
+  .hero h1{max-width:16ch;font-variation-settings:"opsz" 144}
+  .hero h1 em{font-style:normal;color:var(--ink-accent-2)}
+  .hero .sub{margin:1.1rem 0 0;color:var(--ink-text-dim);max-width:38rem}
+  .hero .sub strong{color:var(--ink-text)}
+  .cta-row{margin-top:1.7rem}
+  .hero figcaption{margin-top:.7rem;font-size:.8rem;color:var(--ink-text-mute)}
+  @media(min-width:900px) and (prefers-reduced-motion:no-preference){.hero .bframe{transform:perspective(1400px) rotateY(-5deg) rotateX(1.2deg);transition:transform .6s var(--ease)}.hero figure:hover .bframe{transform:none}}
+  .casestats{display:grid;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid color-mix(in srgb,var(--color-brand) 40%,transparent)}
   @media(min-width:700px){.casestats{grid-template-columns:repeat(3,1fr)}}
-  .casestats b{display:block;font-family:var(--serif);font-weight:600;font-size:2.4rem;line-height:1.05;color:var(--gold);font-variant-numeric:tabular-nums}
-  .casestats span{display:block;margin-top:.25rem;font-size:.88rem;color:var(--cream-dim);max-width:16rem}
-  .shots{display:grid;gap:1.6rem;margin-top:1.6rem}
-  .shot{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(29,26,19,.1)}
-  .chrome{display:flex;align-items:center;gap:.5rem;background:var(--wash);border-bottom:1px solid var(--line);padding:.45rem .8rem;font-size:.78rem;color:var(--ink-3)}
-  .chrome .dots i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--line-2);margin-right:.25rem}
-  .chrome .url{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:.1rem .8rem}
-  .shot figcaption{padding:.8rem 1.05rem;font-size:.92rem;color:var(--ink-2);border-top:1px solid var(--line)}
-  .shot figcaption b{color:var(--ink)}
-  .media{border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:0 4px 22px rgba(29,26,19,.08);margin-top:1.4rem}
-  .vframe{position:relative;background:#0f1117}
-  .vframe video{width:100%}
-  .vplay{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(10,20,15,.08),rgba(10,20,15,.34));padding:0}
-  .vplay-btn{display:flex;align-items:center;gap:.7rem;background:rgba(13,34,26,.92);color:#fff;font-weight:700;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-  .vplay-btn svg{width:1.1rem;height:1.1rem}
-  .media figcaption{padding:.85rem 1.05rem;font-size:.9rem;color:var(--ink-2);border-top:1px solid var(--line)}
-  .quote{background:var(--dark);color:var(--cream);border-radius:16px;padding:1.4rem 1.5rem;max-width:40rem;margin-top:1.6rem}
-  .quote blockquote{font-family:var(--serif);font-size:1.25rem;line-height:1.4}
-  .quote figcaption{margin-top:.8rem;font-size:.85rem;color:var(--cream-dim)}
-  .quote a{color:#8fd3ae}
-  .closing{background:radial-gradient(60rem 26rem at 22% -18%,#245c40 0%,var(--dark) 52%,var(--dark-2) 100%);color:var(--cream)}
-  .closing h2{color:#fff}
-  .closing .lead{color:var(--cream-dim)}
-  footer{background:var(--dark-2);color:#93a598;padding:2rem 0 2.6rem;font-size:.88rem}
-  footer a{color:#8fd3ae}
+  .casestats b{display:block;font-family:var(--font-display);font-variation-settings:"opsz" 144;font-weight:600;font-size:2.5rem;line-height:1.02;color:var(--color-brand-bright);font-variant-numeric:tabular-nums}
+  .casestats span{display:block;margin-top:.25rem;font-size:.88rem;color:var(--ink-text-dim);max-width:16rem}
+  .pains{display:grid;gap:1rem;margin-top:1.6rem}
+  @media(min-width:760px){.pains{grid-template-columns:repeat(3,1fr)}}
+  .pain{border-top:4px solid var(--color-warn);padding:1.1rem 1.15rem}
+  .pain h3{font-family:var(--font-display);font-variation-settings:"opsz" 48;font-weight:600;font-size:1.15rem;margin-bottom:.35rem}
+  .pain p{color:var(--text-2);font-size:.95rem}
+  .pain p b{color:var(--color-ok-ink)}
+  .shots{display:grid;gap:1.2rem;margin-top:1.6rem}
+  @media(min-width:760px){.shots.two{grid-template-columns:1fr 1fr}}
+  .shot{overflow:hidden}
+  .shot img{aspect-ratio:16/7;object-fit:cover;object-position:top}
+  .shot.natural img{aspect-ratio:auto}
+  .shot figcaption{padding:.8rem 1.05rem;font-size:.92rem;color:var(--text-2);border-top:1px solid var(--line)}
+  .shot figcaption b{color:var(--text)}
+  .nots{display:grid;gap:.7rem;margin-top:1.4rem;max-width:46rem}
+  .not{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--color-ink-800);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
+  .not b{color:var(--text)}
+  .steps{margin-top:1.4rem;max-width:46rem}
+  .step{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+  .step:first-child{border-top:none}
+  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--color-ink-800);color:#cfe8da;font-family:var(--font-display);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .step h3{font-size:1.06rem;margin-bottom:.2rem}
+  .step p{color:var(--text-2);font-size:.96rem}
+  .closing{position:relative;overflow:hidden;background:radial-gradient(60rem 26rem at 22% -18%,var(--color-ink-600) 0%,var(--color-ink-800) 52%,var(--color-ink-900) 100%)}
+  .closing h2{color:#fff;max-width:18ch}
+  .close-mark{position:absolute;right:-.15em;bottom:-.5em;font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,26vw,22rem);line-height:.8;letter-spacing:-.06em;color:rgba(242,239,227,.04);pointer-events:none;user-select:none}
+  .quote{max-width:40rem;margin-top:1.6rem;position:relative}
+  .quote blockquote{font-family:var(--font-display);font-variation-settings:"opsz" 72;font-size:1.25rem;line-height:1.4;font-weight:500;color:#fff}
+  .quote figcaption{margin-top:.8rem;font-size:.88rem;color:var(--ink-text-dim)}
+  .quote::before{content:"«";position:absolute;top:-.3rem;left:.7rem;font-family:var(--font-display);font-size:5rem;line-height:1;color:var(--color-brand-bright);opacity:.25;pointer-events:none}
 </style>
 </head>
 <body>
-
-<nav><div class="wrap nav-in">
+<nav class="nav" id="nav"><div class="container-x nav-in">
   <a class="logo" href="/"><span class="logo-mark">A</span>Appximo</a>
-  <a class="nav-back" href="/">← Volver a la página principal</a>
+  <a class="nav-links" href="/" style="text-decoration:none;color:var(--ink-text-dim)">← Volver a la página principal</a>
+  <a class="btn btn-wa compact btn-ghost-ink" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
 </div></nav>
 
-<header class="hero"><div class="wrap">
-  <p class="kicker" style="color:#8fd3ae">El caso, en español y con pruebas</p>
-  <h1>Una plataforma de 18 módulos para un conjunto real, <em>construida en una tarde</em>.</h1>
-  <p class="sub">Se llama VecinGo: la administración completa de un conjunto residencial, construida con nuestra tecnología. Su construcción está <strong>documentada paso a paso</strong> en un informe público. Estas son sus pantallas, tal cual.</p>
+<header class="hero grain"><div class="hero-veil" aria-hidden="true"></div><div class="container-x">
+  <p class="eyebrow" style="color:var(--ink-accent)">El caso, en español y con pruebas</p>
+  <h1 class="t-5xl" style="max-width:20ch">Una plataforma de 18 módulos para un conjunto real, <em>construida en una tarde</em>.</h1>
+  <p class="sub t-xl">Se llama VecinGo: la administración completa de un conjunto residencial, construida con nuestra tecnología. Su construcción está <strong>documentada paso a paso</strong> en un informe público. Estas son sus pantallas, tal cual.</p>
   <div class="casestats">
     <div><b>18</b><span>módulos: asambleas, cartera, PQRS, parqueaderos, reservas, obras…</span></div>
     <div><b>3½ h</b><span>de construcción, documentadas paso a paso en el informe del caso</span></div>
@@ -96,75 +83,48 @@
   </div>
 </div></header>
 
-<section><div class="wrap">
-  <p class="kicker">Por dentro, pantalla por pantalla</p>
-  <h2>Lo que la administración ve todos los días</h2>
+<section class="section"><div class="container-x">
+  <p class="eyebrow reveal">Por dentro, pantalla por pantalla</p>
+  <h2 class="t-4xl h-rule reveal">Lo que la administración ve todos los días</h2>
   <div class="shots">
-    <figure class="shot">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy">
-      <figcaption><b>El tablero.</b> Todo el estado del conjunto en una pantalla: PQRS abiertas, cartera en mora con su valor, obras, reservas, visitantes — y la asamblea en curso con su quórum.</figcaption>
-    </figure>
-    <figure class="shot">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/caso-asamblea.webp" alt="Asambleas y votaciones: quórum por coeficiente y voto ponderado en tiempo real, 58,2 % presente, con quórum" width="1080" height="245" loading="lazy">
-      <figcaption><b>Asambleas y votaciones.</b> Quórum por coeficiente y voto ponderado, calculados en tiempo real. Se acabó contar papelitos a medianoche.</figcaption>
-    </figure>
-    <figure class="shot">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy">
-      <figcaption><b>El plano de parqueaderos.</b> Los cupos se dibujan sobre el plano del conjunto: 106 cupos, 144 vehículos registrados, visitantes vigentes y zonas prohibidas.</figcaption>
-    </figure>
-    <figure class="shot">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/caso-muro.webp" alt="Muro del conjunto: publicaciones de los residentes con etiquetas de agradecimiento y convivencia" width="1080" height="498" loading="lazy">
-      <figcaption><b>El muro del conjunto.</b> Lo que los vecinos publican, con moderación y registro de quién leyó cada comunicado.</figcaption>
-    </figure>
+    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"><figcaption><b>El tablero.</b> Todo el estado del conjunto en una pantalla: PQRS abiertas, cartera en mora con su valor, obras, reservas, visitantes — y la asamblea en curso con su quórum.</figcaption></figure>
+    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-asamblea.webp" alt="Asambleas y votaciones: quórum por coeficiente y voto ponderado en tiempo real, 58,2 % presente, con quórum" width="1080" height="245" loading="lazy"><figcaption><b>Asambleas y votaciones.</b> Quórum por coeficiente y voto ponderado, calculados en tiempo real. Se acabó contar papelitos a medianoche.</figcaption></figure>
+    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy"><figcaption><b>El plano de parqueaderos.</b> Los cupos se dibujan sobre el plano del conjunto: 106 cupos, 144 vehículos registrados, visitantes vigentes y zonas prohibidas.</figcaption></figure>
+    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-muro.webp" alt="Muro del conjunto: publicaciones de los residentes con etiquetas de agradecimiento y convivencia" width="1080" height="498" loading="lazy"><figcaption><b>El muro del conjunto.</b> Lo que los vecinos publican, con moderación y registro de quién leyó cada comunicado.</figcaption></figure>
   </div>
-  <p class="lead" style="margin-top:1.2rem">Las pantallas son del <strong>modo demostración</strong> de la plataforma: los datos son ficticios a propósito — la comunidad real no se expone.</p>
+  <p class="lead reveal" style="margin-top:1.2rem">Las pantallas son del <strong>modo demostración</strong> de la plataforma: los datos son ficticios a propósito — la comunidad real no se expone.</p>
 </div></section>
 
-<section style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <p class="kicker">El recorrido completo</p>
-  <h2>Véala funcionando, 5 minutos</h2>
-  <figure class="media">
+<section class="section on-ink"><div class="container-x">
+  <p class="eyebrow reveal">El recorrido completo</p>
+  <h2 class="t-4xl h-rule reveal" style="color:#fff">Véala funcionando, 5 minutos</h2>
+  <figure class="media reveal" style="margin-top:1.4rem;max-width:52rem">
     <div class="vframe">
-      <video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración">
-        <source src="assets/vecingo-caso.mp4" type="video/mp4">
-      </video>
-      <button class="vplay" id="vplay" aria-label="Reproducir el recorrido">
-        <span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span>
-      </button>
+      <video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video>
+      <button class="vplay" aria-label="Reproducir el recorrido"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span></button>
     </div>
     <figcaption>El recorrido lo grabó el autor de la plataforma, con sus propios rótulos.</figcaption>
   </figure>
-  <figure class="quote">
+  <figure class="card-dark card-pad quote reveal">
     <blockquote>El informe técnico completo — qué se construyó, cuánto tardó cada parte y qué falló — está publicado.</blockquote>
     <figcaption><a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">Léalo aquí</a> (en inglés). ¿Administra un conjunto? <a href="conjuntos.html">Esta es su página</a>.</figcaption>
   </figure>
 </div></section>
 
-<section class="closing"><div class="wrap">
-  <h2>¿Su conjunto — o su negocio — necesita algo así?</h2>
-  <p class="lead">Cuéntenos qué se le está volviendo un problema. La demostración es gratis, y el precio se cierra por escrito antes de empezar.</p>
-  <div style="margin-top:1.4rem">
-    <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>
-      Pedir mi demostración gratis
-    </a>
+<section class="section on-ink closing grain" style="border-top:1px solid var(--ink-line)"><div class="container-x">
+  <div class="reveal">
+    <h2 class="t-5xl h-rule">¿Su conjunto — o su negocio — necesita algo así?</h2>
+    <p class="lead" style="margin-top:1rem">Cuéntenos qué se le está volviendo un problema. La demostración es gratis, y el precio se cierra por escrito antes de empezar.</p>
+    <div class="cta-row"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
   </div>
+  <span class="close-mark" aria-hidden="true">Appximo</span>
 </div></section>
 
-<footer><div class="wrap">
-  <p><strong style="color:var(--cream)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>
+<footer class="foot"><div class="container-x">
+  <p><strong style="color:var(--ink-text)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>
+  <span class="foot-mark" aria-hidden="true">Appximo</span>
 </div></footer>
-
-<script>
-  (function(){
-    var v = document.getElementById('casovid'), b = document.getElementById('vplay');
-    if (v && b) b.addEventListener('click', function(){ b.style.display='none'; v.play(); });
-  })();
-</script>
-
+<script>document.documentElement.classList.add('js');</script>
+<script src="assets/system.js" defer></script>
 </body>
 </html>

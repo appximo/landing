@@ -13,143 +13,81 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://appximo.com/conjuntos.html">
 <meta property="og:locale" content="es_CO">
+<meta name="theme-color" content="#0d221a">
+<link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/system.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23153f2e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e9f5ee' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Software para administración de conjuntos residenciales","serviceType":"Sistema de administración de propiedad horizontal a la medida","provider":{"@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","telephone":"+57 311 517 5472","address":{"@type":"PostalAddress","addressLocality":"Pereira","addressRegion":"Risaralda","addressCountry":"CO"}},"areaServed":[{"@type":"City","name":"Pereira"},{"@type":"City","name":"Dosquebradas"},{"@type":"Country","name":"Colombia"}],"audience":{"@type":"Audience","audienceType":"Administradores de propiedad horizontal"},"url":"https://appximo.com/conjuntos.html","offers":{"@type":"Offer","description":"Demostración gratis con datos de ejemplo; precio cerrado por escrito antes de empezar","url":"https://wa.me/573115175472"}}</script>
 <style>
-  :root{
-    --ink:#1d1a13; --ink-2:#564e3e; --ink-3:#837a67;
-    --bg:#f7f4ec; --panel:#fffdf8; --wash:#efeadd;
-    --line:#e3dcca; --line-2:#d3cab4;
-    --dark:#122b21; --dark-2:#0d221a; --dark-line:rgba(233,245,238,.14);
-    --cream:#f2efe3; --cream-dim:#b9c4b4;
-    --green:#1c9d5b; --green-dark:#157a46; --green-wash:#e7f4ec;
-    --wa:#25D366; --wa-ink:#0d221a;
-    --gold:#b98a2e; --gold-deep:#96701f;
-    --teja:#b3452e;
-    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased}
-  img,video{max-width:100%;height:auto;display:block}
-  a{color:var(--green-dark)}
-  .wrap{max-width:980px;margin:0 auto;padding:0 1.2rem}
-  section{padding:3.6rem 0}
-  @media(min-width:760px){section{padding:4.8rem 0}}
-  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.55rem,4.4vw,2.2rem);letter-spacing:-.015em;line-height:1.18;margin-bottom:.6rem}
-  h2::after{content:"";display:block;width:3.2rem;height:3px;border-radius:2px;background:linear-gradient(90deg,#d9ab4e,var(--gold));margin-top:.55rem}
-  .kicker{font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:.65rem}
-  .lead{color:var(--ink-2);max-width:46rem;font-size:1.05rem}
-  p+p{margin-top:.8rem}
-  .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--wa);color:var(--wa-ink);font-weight:800;font-size:1.04rem;padding:.9rem 1.7rem;border-radius:999px;text-decoration:none;box-shadow:0 6px 18px rgba(13,60,35,.28),inset 0 1px 0 rgba(255,255,255,.28);transition:background .15s,transform .1s}
-  .btn-wa:hover{background:#1fc25b;outline:2px solid rgba(185,138,46,.5);outline-offset:3px}
-  .btn-wa:active{transform:translateY(1px)}
-  .btn-wa svg{width:1.35rem;height:1.35rem;flex:none}
-  .btn-wa.compact{font-size:.88rem;padding:.5rem 1.05rem;box-shadow:none;background:transparent;color:#8fd3ae;border:1px solid rgba(37,211,102,.45)}
-  .btn-wa.compact:hover{background:rgba(37,211,102,.14);outline:none}
-  .cta-trust{margin-top:.7rem;font-size:.82rem;color:#93a598;line-height:1.55;max-width:34rem}
-  .cta-trust b{color:#b9c4b4;font-weight:600}
-  .cta-trust a{color:#cfe8da;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
-  nav{position:sticky;top:0;background:rgba(13,34,26,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--dark-line);z-index:50}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:3.6rem;gap:.8rem}
-  .logo{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-weight:700;font-size:1.14rem;color:var(--cream);text-decoration:none}
-  .logo-mark{width:1.55rem;height:1.55rem;border-radius:8px;background:var(--dark-2);color:#d9ab4e;box-shadow:inset 0 0 0 1px rgba(217,171,78,.4);display:inline-flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;font-family:var(--serif)}
-  .nav-back{color:#8fd3ae;font-size:.86rem;text-decoration:none;margin-left:auto;margin-right:.6rem}
-  @media(max-width:600px){.nav-back{display:none}}
-  .hero{background:radial-gradient(80rem 38rem at 80% -16%,#1c4433 0%,var(--dark) 48%,var(--dark-2) 100%);color:var(--cream);padding:3.4rem 0 3rem;border-bottom:1px solid var(--line)}
+  .hero{position:relative;background:var(--color-ink-900);color:var(--ink-text);overflow:hidden;margin-top:-3.7rem;padding:calc(3.7rem + clamp(2.2rem,6vw,4rem)) 0 clamp(2.4rem,6vw,3.6rem)}
+  .hero-veil{position:absolute;inset:0;background:radial-gradient(70rem 36rem at 80% -10%,color-mix(in srgb,var(--color-ink-600) 70%,transparent) 0%,transparent 60%);pointer-events:none}
+  .hero .container-x{position:relative;z-index:2}
   .hero-grid{display:grid;gap:2.2rem}
   @media(min-width:900px){.hero-grid{grid-template-columns:11fr 9fr;align-items:center;gap:3rem}}
-  .eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#8fd3ae;margin-bottom:1rem}
-  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,5.2vw,2.8rem);letter-spacing:-.015em;line-height:1.14;max-width:40rem}
-  .hero h1 em{font-style:normal;color:#9fe0bc}
-  .hero .sub{margin:1.1rem 0 0;color:var(--cream-dim);max-width:38rem;font-size:1.08rem}
-  .hero .sub strong{color:var(--cream);font-weight:600}
+  .hero h1{max-width:16ch;font-variation-settings:"opsz" 144}
+  .hero h1 em{font-style:normal;color:var(--ink-accent-2)}
+  .hero .sub{margin:1.1rem 0 0;color:var(--ink-text-dim);max-width:38rem}
+  .hero .sub strong{color:var(--ink-text)}
   .cta-row{margin-top:1.7rem}
-  .bframe{border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 1px var(--dark-line);background:#0b1d16}
-  .bbar{display:flex;align-items:center;gap:.7rem;padding:.45rem .8rem;background:#0b1d16;border-bottom:1px solid rgba(233,245,238,.09)}
-  .bdots{display:flex;gap:.3rem}
-  .bdots i{width:.5rem;height:.5rem;border-radius:50%;background:#2e4a3d;display:block}
-  .burl{display:inline-flex;align-items:center;gap:.4rem;background:#122b21;border-radius:999px;padding:.14rem .8rem;font-size:.74rem;color:#9fc3ad;white-space:nowrap}
-  .bframe img{width:100%}
-  .hero figcaption{margin-top:.7rem;font-size:.8rem;color:#93a598}
+  .hero figcaption{margin-top:.7rem;font-size:.8rem;color:var(--ink-text-mute)}
+  @media(min-width:900px) and (prefers-reduced-motion:no-preference){.hero .bframe{transform:perspective(1400px) rotateY(-5deg) rotateX(1.2deg);transition:transform .6s var(--ease)}.hero figure:hover .bframe{transform:none}}
+  .casestats{display:grid;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid color-mix(in srgb,var(--color-brand) 40%,transparent)}
+  @media(min-width:700px){.casestats{grid-template-columns:repeat(3,1fr)}}
+  .casestats b{display:block;font-family:var(--font-display);font-variation-settings:"opsz" 144;font-weight:600;font-size:2.5rem;line-height:1.02;color:var(--color-brand-bright);font-variant-numeric:tabular-nums}
+  .casestats span{display:block;margin-top:.25rem;font-size:.88rem;color:var(--ink-text-dim);max-width:16rem}
   .pains{display:grid;gap:1rem;margin-top:1.6rem}
   @media(min-width:760px){.pains{grid-template-columns:repeat(3,1fr)}}
-  .pain{background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--teja);border-radius:12px;padding:1.1rem 1.15rem;box-shadow:0 1px 2px rgba(29,26,19,.06),0 12px 30px -14px rgba(29,26,19,.16)}
-  .pain h3{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin-bottom:.35rem}
-  .pain p{color:var(--ink-2);font-size:.95rem}
-  .pain p b{color:var(--green-dark)}
+  .pain{border-top:4px solid var(--color-warn);padding:1.1rem 1.15rem}
+  .pain h3{font-family:var(--font-display);font-variation-settings:"opsz" 48;font-weight:600;font-size:1.15rem;margin-bottom:.35rem}
+  .pain p{color:var(--text-2);font-size:.95rem}
+  .pain p b{color:var(--color-ok-ink)}
   .shots{display:grid;gap:1.2rem;margin-top:1.6rem}
-  @media(min-width:760px){.shots{grid-template-columns:1fr 1fr}}
-  .shot{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(29,26,19,.06),0 12px 30px -14px rgba(29,26,19,.16)}
-  .chrome{display:flex;align-items:center;gap:.5rem;background:var(--wash);border-bottom:1px solid var(--line);padding:.45rem .8rem;font-size:.78rem;color:var(--ink-3)}
-  .chrome .dots i{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--line-2);margin-right:.25rem}
-  .chrome .url{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:.1rem .8rem}
+  @media(min-width:760px){.shots.two{grid-template-columns:1fr 1fr}}
+  .shot{overflow:hidden}
   .shot img{aspect-ratio:16/7;object-fit:cover;object-position:top}
-  .shot figcaption{padding:.8rem 1.05rem;font-size:.92rem;color:var(--ink-2);border-top:1px solid var(--line)}
-  .shot figcaption b{color:var(--ink)}
-  .media{border:1px solid var(--line-2);border-radius:16px;overflow:hidden;background:var(--panel);box-shadow:0 4px 22px rgba(29,26,19,.08);margin-top:1.4rem;max-width:52rem}
-  .vframe{position:relative;background:#0f1117}
-  .vframe video{width:100%}
-  .vplay{position:absolute;inset:0;width:100%;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:linear-gradient(rgba(10,20,15,.08),rgba(10,20,15,.34));padding:0}
-  .vplay-btn{display:flex;align-items:center;gap:.7rem;background:rgba(13,34,26,.92);color:#fff;font-weight:700;font-size:1rem;padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.4);font-family:var(--sans)}
-  .vplay-btn svg{width:1.1rem;height:1.1rem}
-  .media figcaption{padding:.85rem 1.05rem;font-size:.9rem;color:var(--ink-2);border-top:1px solid var(--line)}
+  .shot.natural img{aspect-ratio:auto}
+  .shot figcaption{padding:.8rem 1.05rem;font-size:.92rem;color:var(--text-2);border-top:1px solid var(--line)}
+  .shot figcaption b{color:var(--text)}
   .nots{display:grid;gap:.7rem;margin-top:1.4rem;max-width:46rem}
-  .not{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--dark);border-radius:10px;padding:.75rem 1rem;color:var(--ink-2);font-size:.97rem}
-  .not b{color:var(--ink)}
+  .not{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--color-ink-800);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
+  .not b{color:var(--text)}
   .steps{margin-top:1.4rem;max-width:46rem}
   .step{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
   .step:first-child{border-top:none}
-  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--dark);color:#cfe8da;font-family:var(--serif);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--color-ink-800);color:#cfe8da;font-family:var(--font-display);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
   .step h3{font-size:1.06rem;margin-bottom:.2rem}
-  .step p{color:var(--ink-2);font-size:.96rem}
-  .no-risk{margin-top:1.4rem;background:var(--green-wash);border:1.5px solid #9bd4b2;border-left:5px solid var(--green);border-radius:14px;padding:1.05rem 1.2rem;max-width:46rem}
-  .no-risk p{color:#1f3d2d;font-size:.98rem}
-  .closing{background:radial-gradient(60rem 26rem at 22% -18%,#245c40 0%,var(--dark) 52%,var(--dark-2) 100%);color:var(--cream)}
-  .closing h2{color:#fff;max-width:34rem}
-  .closing h2::after{background:linear-gradient(90deg,#d9ab4e,#8a6a22)}
-  .closing .lead{color:var(--cream-dim)}
-  footer{background:var(--dark-2);color:#93a598;padding:2rem 0 3rem;font-size:.88rem}
-  footer a{color:#8fd3ae}
-  footer p{margin:.35rem 0}
-  .mobile-cta{display:none}
-  html.js .mobile-cta{transform:translateY(110%);transition:transform .35s ease}
-  html.js.show-bar .mobile-cta{transform:none}
-  @media(max-width:759px){
-    body{padding-bottom:4.6rem}
-    .mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,34,26,.97);backdrop-filter:blur(8px);border-top:1px solid var(--dark-line);padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom))}
-    .mobile-cta .btn-wa{width:100%;font-size:.98rem;padding:.75rem 1rem}
-  }
-  .reveal{opacity:1}
-  @media (prefers-reduced-motion: no-preference){
-    html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
-    html.js .reveal.in{opacity:1;transform:none}
-  }
+  .step p{color:var(--text-2);font-size:.96rem}
+  .closing{position:relative;overflow:hidden;background:radial-gradient(60rem 26rem at 22% -18%,var(--color-ink-600) 0%,var(--color-ink-800) 52%,var(--color-ink-900) 100%)}
+  .closing h2{color:#fff;max-width:18ch}
+  .close-mark{position:absolute;right:-.15em;bottom:-.5em;font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,26vw,22rem);line-height:.8;letter-spacing:-.06em;color:rgba(242,239,227,.04);pointer-events:none;user-select:none}
+  .quote{max-width:40rem;margin-top:1.6rem;position:relative}
+  .quote blockquote{font-family:var(--font-display);font-variation-settings:"opsz" 72;font-size:1.25rem;line-height:1.4;font-weight:500;color:#fff}
+  .quote figcaption{margin-top:.8rem;font-size:.88rem;color:var(--ink-text-dim)}
+  .quote::before{content:"«";position:absolute;top:-.3rem;left:.7rem;font-family:var(--font-display);font-size:5rem;line-height:1;color:var(--color-brand-bright);opacity:.25;pointer-events:none}
 </style>
 </head>
 <body>
-
-<nav><div class="wrap nav-in">
+<nav class="nav" id="nav"><div class="container-x nav-in">
   <a class="logo" href="/"><span class="logo-mark">A</span>Appximo</a>
-  <a class="nav-back" href="/">← Todos los sistemas</a>
-  <a class="btn-wa compact" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20Los%20vi%20en%20appximo.com%2Fconjuntos%20%28men%C3%BA%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
+  <a class="nav-links" href="/" style="text-decoration:none;color:var(--ink-text-dim)">← Todos los sistemas</a>
+  <a class="btn btn-wa compact btn-ghost-ink" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20Los%20vi%20en%20appximo.com%2Fconjuntos%20%28men%C3%BA%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
 </div></nav>
 
-<header class="hero"><div class="wrap">
+<header class="hero grain"><div class="hero-veil" aria-hidden="true"></div><div class="container-x">
   <div class="hero-grid">
     <div>
-      <p class="eyebrow">Para administradores de propiedad horizontal</p>
-      <h1>La asamblea, la cartera y las PQRS de su conjunto, <em>en un solo sistema</em> hecho para usted.</h1>
-      <p class="sub">Quórum por coeficiente calculado al instante, cartera con la mora a la vista, PQRS con radicado y respuesta en plazo. <strong>Lo ve funcionando antes de pagar</strong>, con los datos de un conjunto de ejemplo.</p>
+      <p class="eyebrow" style="color:var(--ink-accent)">Para administradores de propiedad horizontal</p>
+      <h1 class="t-5xl">La asamblea, la cartera y las PQRS de su conjunto, <em>en un solo sistema</em> hecho para usted.</h1>
+      <p class="sub t-xl">Quórum por coeficiente calculado al instante, cartera con la mora a la vista, PQRS con radicado y respuesta en plazo. <strong>Lo ve funcionando antes de pagar</strong>, con los datos de un conjunto de ejemplo.</p>
       <div class="cta-row">
-        <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20del%20sistema%20de%20asambleas%2C%20cartera%20y%20PQRS.%20%28appximo.com%2Fconjuntos%20%C2%B7%20inicio%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
+        <a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20del%20sistema%20de%20asambleas%2C%20cartera%20y%20PQRS.%20%28appximo.com%2Fconjuntos%20%C2%B7%20inicio%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
         <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde el equipo directamente, no un robot.</b> Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20tel%C3%A9fono%29">+57 311 517 5472</a></p>
       </div>
     </div>
     <figure>
       <div class="bframe">
-        <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">vecingo — demo</span></div>
+        <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — demo</span></div>
         <img src="assets/caso-asamblea.webp" alt="Pantalla de asambleas y votaciones: quórum por coeficiente 58,2 % presente, con quórum, votación en curso" width="1080" height="245" fetchpriority="high">
       </div>
       <figcaption>Pantalla real de una plataforma de conjuntos hecha con nuestra tecnología: la asamblea con su quórum por coeficiente.</figcaption>
@@ -157,113 +95,76 @@
   </div>
 </div></header>
 
-<section id="dolores"><div class="wrap">
-  <p class="kicker">Lo que le quita el tiempo</p>
-  <h2>Tres cosas del oficio que hoy se hacen a mano</h2>
-  <p class="lead">Un administrador de conjunto no necesita «software»: necesita que la asamblea cierre con el quórum correcto, que la cartera esté al día sin perseguir un Excel, y que ninguna PQRS se venza sin respuesta. Eso es lo que el sistema hace.</p>
+<section class="section" id="dolores"><div class="container-x">
+  <p class="eyebrow reveal">Lo que le quita el tiempo</p>
+  <h2 class="t-4xl h-rule reveal">Tres cosas del oficio que hoy se hacen a mano</h2>
+  <p class="lead reveal" style="margin-top:1rem">Un administrador de conjunto no necesita «software»: necesita que la asamblea cierre con el quórum correcto, que la cartera esté al día sin perseguir un Excel, y que ninguna PQRS se venza sin respuesta. Eso es lo que el sistema hace.</p>
   <div class="pains">
-    <article class="pain reveal">
-      <h3>La asamblea y el quórum</h3>
-      <p>La Ley 675 manda votar por coeficiente, no por cabeza. Sumar coeficientes a mano, con gente entrando y saliendo, es la fuente de las impugnaciones. <b>El sistema registra la asistencia, calcula el quórum al instante y pondera cada voto por su coeficiente.</b> El acta sale con los números correctos.</p>
-    </article>
-    <article class="pain reveal">
-      <h3>La cartera y la mora</h3>
-      <p>Cuotas de administración, extraordinarias, intereses de mora y acuerdos de pago viven en hojas de cálculo que solo una persona entiende. <b>Cada unidad tiene su estado de cuenta, la mora se ve en el tablero y los paz y salvos salen del sistema</b>, no de la memoria.</p>
-    </article>
-    <article class="pain reveal">
-      <h3>Las PQRS con radicado</h3>
-      <p>Una petición, queja o reclamo que llega por WhatsApp se pierde, y el residente dice que nunca le respondieron. <b>Cada PQRS recibe un radicado, un responsable y un plazo</b>; el consejo ve cuáles están abiertas y cuáles se vencen esta semana.</p>
-    </article>
+    <article class="card card-hover pain reveal"><h3>La asamblea y el quórum</h3><p>La Ley 675 manda votar por coeficiente, no por cabeza. Sumar coeficientes a mano, con gente entrando y saliendo, es la fuente de las impugnaciones. <b>El sistema registra la asistencia, calcula el quórum al instante y pondera cada voto por su coeficiente.</b> El acta sale con los números correctos.</p></article>
+    <article class="card card-hover pain reveal" style="--d:.08s"><h3>La cartera y la mora</h3><p>Cuotas de administración, extraordinarias, intereses de mora y acuerdos de pago viven en hojas de cálculo que solo una persona entiende. <b>Cada unidad tiene su estado de cuenta, la mora se ve en el tablero y los paz y salvos salen del sistema</b>, no de la memoria.</p></article>
+    <article class="card card-hover pain reveal" style="--d:.16s"><h3>Las PQRS con radicado</h3><p>Una petición, queja o reclamo que llega por WhatsApp se pierde, y el residente dice que nunca le respondieron. <b>Cada PQRS recibe un radicado, un responsable y un plazo</b>; el consejo ve cuáles están abiertas y cuáles se vencen esta semana.</p></article>
   </div>
 </div></section>
 
-<section id="vecingo" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <p class="kicker">Así se ve, por dentro</p>
-  <h2>Una plataforma de 18 módulos para un conjunto, construida en una tarde</h2>
-  <p class="lead">Se llama VecinGo y está hecha con nuestra tecnología: asambleas y votaciones, cartera, PQRS, parqueaderos con plano, reservas de zonas comunes, visitantes, obras, comunicados y el muro del conjunto. Datos de demostración, pantallas reales.</p>
-  <div class="shots">
-    <figure class="shot reveal">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy">
-      <figcaption><b>El tablero.</b> PQRS abiertas, cartera en mora con su valor, obras, reservas y la asamblea en curso — todo en una pantalla.</figcaption>
-    </figure>
-    <figure class="shot reveal">
-      <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">🔒 vecingo — modo demostración</span></div>
-      <img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy">
-      <figcaption><b>Parqueaderos sobre el plano.</b> Cupos, vehículos registrados, visitantes vigentes y zonas prohibidas, dibujados sobre el plano del conjunto.</figcaption>
-    </figure>
+<section class="section on-ink" id="vecingo"><div class="container-x">
+  <p class="eyebrow reveal">Así se ve, por dentro</p>
+  <h2 class="t-4xl h-rule reveal" style="color:#fff;max-width:22ch">Una plataforma de 18 módulos para un conjunto, construida en una tarde</h2>
+  <p class="lead reveal" style="margin-top:1rem">Se llama VecinGo y está hecha con nuestra tecnología: asambleas y votaciones, cartera, PQRS, parqueaderos con plano, reservas de zonas comunes, visitantes, obras, comunicados y el muro del conjunto. Datos de demostración, pantallas reales.</p>
+  <div class="shots two">
+    <figure class="bframe shot reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"><figcaption style="color:var(--ink-text-dim);border-color:var(--ink-line)"><b style="color:#fff">El tablero.</b> PQRS abiertas, cartera en mora con su valor, obras, reservas y la asamblea en curso — todo en una pantalla.</figcaption></figure>
+    <figure class="bframe shot reveal media-skel" style="--d:.1s"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy"><figcaption style="color:var(--ink-text-dim);border-color:var(--ink-line)"><b style="color:#fff">Parqueaderos sobre el plano.</b> Cupos, vehículos registrados, visitantes vigentes y zonas prohibidas, dibujados sobre el plano del conjunto.</figcaption></figure>
   </div>
-  <figure class="media reveal">
+  <figure class="media reveal" style="margin-top:1.4rem;max-width:52rem">
     <div class="vframe">
-      <video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración">
-        <source src="assets/vecingo-caso.mp4" type="video/mp4">
-      </video>
-      <button class="vplay" id="vplay" aria-label="Reproducir el recorrido">
-        <span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span>
-      </button>
+      <video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video>
+      <button class="vplay" aria-label="Reproducir el recorrido"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span></button>
     </div>
     <figcaption>Recorrido completo por la plataforma, en modo demostración. <a href="caso.html">El caso, pantalla por pantalla</a>.</figcaption>
   </figure>
-  <p style="margin-top:1.4rem"><a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20y%20vi%20la%20plataforma%20VecinGo.%20Quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Quiero algo así para mi conjunto</a></p>
+  <p style="margin-top:1.6rem" class="reveal"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20y%20vi%20la%20plataforma%20VecinGo.%20Quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Quiero algo así para mi conjunto</a></p>
 </div></section>
 
-<section id="no-hacemos"><div class="wrap">
-  <p class="kicker">Para que no haya sorpresas</p>
-  <h2>Lo que este sistema no hace</h2>
+<section class="section" id="no-hacemos"><div class="container-x">
+  <p class="eyebrow reveal">Para que no haya sorpresas</p>
+  <h2 class="t-4xl h-rule reveal">Lo que este sistema no hace</h2>
   <div class="nots">
     <div class="not reveal"><b>No reemplaza al contador ni al revisor fiscal:</b> la cartera y los recaudos quedan claros y exportables; la contabilidad sigue siendo de ellos.</div>
-    <div class="not reveal"><b>No es una aplicación de celular de tienda:</b> se usa en el navegador del celular o del computador, sin instalar nada.</div>
-    <div class="not reveal"><b>No es un programa enlatado:</b> se arma sobre cómo trabaja su conjunto — sus módulos, sus reglas de reserva, sus tipos de cuota. Lo que no usa, no se construye.</div>
-    <div class="not reveal"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito antes de empezar, o no empezamos.</div>
+    <div class="not reveal" style="--d:.06s"><b>No es una aplicación de celular de tienda:</b> se usa en el navegador del celular o del computador, sin instalar nada.</div>
+    <div class="not reveal" style="--d:.12s"><b>No es un programa enlatado:</b> se arma sobre cómo trabaja su conjunto — sus módulos, sus reglas de reserva, sus tipos de cuota. Lo que no usa, no se construye.</div>
+    <div class="not reveal" style="--d:.18s"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito antes de empezar, o no empezamos.</div>
   </div>
 </div></section>
 
-<section id="pasos" style="background:var(--wash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
-  <p class="kicker">Cómo empieza</p>
-  <h2>Escribir no lo compromete a nada</h2>
+<section class="section on-wash hairline" id="pasos" style="border-bottom:1px solid var(--line)"><div class="container-x">
+  <p class="eyebrow reveal">Cómo empieza</p>
+  <h2 class="t-4xl h-rule reveal">Escribir no lo compromete a nada</h2>
   <div class="steps">
     <div class="step reveal"><div class="step-n">1</div><div><h3>Escriba, o mande un audio</h3><p>Cuéntenos de su conjunto: cuántas unidades, qué se le está volviendo un problema — la asamblea, la cartera, las PQRS.</p></div></div>
-    <div class="step reveal"><div class="step-n">2</div><div><h3>Una conversación corta</h3><p>Cómo trabaja hoy, quién lo usaría (usted, el consejo, la portería, los residentes) y qué no puede fallar. Sin claves ni cuentas de nada.</p></div></div>
-    <div class="step reveal"><div class="step-n">3</div><div><h3>La demostración — gratis</h3><p>En una reunión corta lo ve andando con los datos de un conjunto de ejemplo y pide cambios.</p></div></div>
-    <div class="step reveal"><div class="step-n">4</div><div><h3>Solo entonces, el precio</h3><p>Cerrado y por escrito. Si sigue, el sistema queda en internet, con sus claves y sus datos, y nosotros pasamos su Excel de cartera al arrancar.</p></div></div>
+    <div class="step reveal" style="--d:.06s"><div class="step-n">2</div><div><h3>Una conversación corta</h3><p>Cómo trabaja hoy, quién lo usaría (usted, el consejo, la portería, los residentes) y qué no puede fallar. Sin claves ni cuentas de nada.</p></div></div>
+    <div class="step reveal" style="--d:.12s"><div class="step-n">3</div><div><h3>La demostración — gratis</h3><p>En una reunión corta lo ve andando con los datos de un conjunto de ejemplo y pide cambios.</p></div></div>
+    <div class="step reveal" style="--d:.18s"><div class="step-n">4</div><div><h3>Solo entonces, el precio</h3><p>Cerrado y por escrito. Si sigue, el sistema queda en internet, con sus claves y sus datos, y nosotros pasamos su Excel de cartera al arrancar.</p></div></div>
   </div>
-  <div class="no-risk reveal"><p><strong>Si la demostración no le sirve, no pasó nada:</strong> no paga, no queda amarrado, no insistimos.</p></div>
+  <div class="card-accent reveal" style="margin-top:1.4rem;max-width:46rem"><p><strong>Si la demostración no le sirve, no pasó nada:</strong> no paga, no queda amarrado, no insistimos.</p></div>
 </div></section>
 
-<section class="closing"><div class="wrap">
-  <h2>Cuéntenos qué se le volvió un problema en su conjunto</h2>
-  <p class="lead">Con eso alcanza: le preguntamos lo demás y agendamos su demostración gratis.</p>
-  <div class="cta-row">
-    <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20final%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
-    <p class="cta-trust">Le responde el equipo directamente · Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20tel%C3%A9fono%29">+57 311 517 5472</a></p>
+<section class="section on-ink closing grain"><div class="container-x">
+  <div class="reveal">
+    <h2 class="t-5xl h-rule">Cuéntenos qué se le volvió un problema en su conjunto</h2>
+    <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos lo demás y agendamos su demostración gratis.</p>
+    <div class="cta-row"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20final%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
+      <p class="cta-trust">Le responde el equipo directamente · Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20tel%C3%A9fono%29">+57 311 517 5472</a></p></div>
   </div>
+  <span class="close-mark" aria-hidden="true">Appximo</span>
 </div></section>
 
-<footer><div class="wrap">
-  <p><strong style="color:var(--cream)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Todos los sistemas que hacemos</a> · <a href="caso.html">El caso VecinGo</a></p>
+<footer class="foot"><div class="container-x">
+  <p><strong style="color:var(--ink-text)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Todos los sistemas que hacemos</a> · <a href="caso.html">El caso VecinGo</a></p>
   <p>Esta página es para administradores de conjuntos residenciales y propiedad horizontal. ¿Tiene una tienda, un consultorio o una empresa? <a href="/">La página principal es la suya</a>.</p>
+  <span class="foot-mark" aria-hidden="true">Appximo</span>
 </div></footer>
 
-<div class="mobile-cta">
-  <a class="btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20celular%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
-</div>
-
+<div class="mobile-cta"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20celular%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
 <script>document.documentElement.classList.add('js');</script>
-<script>
-  (function(){
-    var v=document.getElementById('casovid'), b=document.getElementById('vplay');
-    if (v && b) b.addEventListener('click', function(){ b.style.display='none'; v.play(); });
-    var cta=document.querySelector('.hero .cta-row'), root=document.documentElement;
-    if (cta && 'IntersectionObserver' in window){
-      new IntersectionObserver(function(en){ root.classList.toggle('show-bar', !en[0].isIntersecting); },{threshold:0}).observe(cta);
-    } else { root.classList.add('show-bar'); }
-    var rv=document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); },{rootMargin:'0px 0px -8% 0px'});
-      rv.forEach(function(el){ io.observe(el); });
-      setTimeout(function(){ rv.forEach(function(el){ el.classList.add('in'); }); }, 2500);
-    } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-  })();
-</script>
+<script src="assets/system.js" defer></script>
 </body>
 </html>

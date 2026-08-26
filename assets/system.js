@@ -22,8 +22,9 @@
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { rootMargin: '0px 0px -8% 0px' });
     rv.forEach(function (el) { io.observe(el); });
-    setTimeout(function () { rv.forEach(function (el) { el.classList.add('in'); }); }, 2500);
-  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+    document.querySelectorAll('.bar, .ring').forEach(function (el) { io.observe(el); });
+    setTimeout(function () { document.querySelectorAll('.reveal, .bar, .ring').forEach(function (el) { el.classList.add('in'); }); }, 2500);
+  } else { rv.forEach(function (el) { el.classList.add('in'); }); document.querySelectorAll('.bar, .ring').forEach(function (el) { el.classList.add('in'); }); }
 
   /* skeleton → imagen cargada */
   document.querySelectorAll('.media-skel > img').forEach(function (img) {

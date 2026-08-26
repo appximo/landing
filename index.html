@@ -4,445 +4,294 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Appximo — Plataformas y sistemas a la medida, en días</title>
-<meta name="description" content="Cualquier idea se convierte en un sistema a su medida que trabaja solo: de la tienda al ERP o la plataforma de alto tráfico. Rápido, seguro (OWASP), con monitoreo incluido — y lo ve funcionando antes de pagar.">
+<meta name="description" content="Deje de perder pedidos, citas y cuentas: su negocio entero en un solo sistema hecho a su medida. Lo difícil ya está construido; queda andando en días, y lo ve funcionando antes de pagar. Demostración gratis por WhatsApp.">
 <meta property="og:title" content="Appximo — Plataformas y sistemas a la medida, en días">
-<meta property="og:description" content="Sistemas y plataformas a la medida que trabajan solos — de la tienda al ERP o el alto tráfico. Lo ve funcionando antes de pagar.">
+<meta property="og:description" content="Su negocio entero en un solo sistema hecho a su medida, andando en días. Lo ve funcionando antes de pagar.">
 <meta property="og:image" content="https://appximo.com/assets/og.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://appximo.com/">
 <meta property="og:locale" content="es_CO">
 <link rel="canonical" href="https://appximo.com/">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#0d221a">
+<meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/system.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23153f2e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e9f5ee' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325d366'/%3E%3Ctext x='32' y='45' font-family='Inter,Arial,sans-serif' font-size='38' font-weight='900' fill='%23062b16' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","description":"Sistemas y plataformas a la medida para negocios, hechos en Colombia: tienda, ERP, agenda, administración de conjuntos. Demostración gratis por WhatsApp.","telephone":"+57 311 517 5472","areaServed":[{"@type":"City","name":"Pereira"},{"@type":"City","name":"Dosquebradas"},{"@type":"Country","name":"Colombia"}],"address":{"@type":"PostalAddress","addressLocality":"Pereira","addressRegion":"Risaralda","addressCountry":"CO"},"sameAs":["https://github.com/appximo/appximo","https://appximo.github.io/appximo/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+57 311 517 5472","availableLanguage":"es","url":"https://wa.me/573115175472"}}</script>
 <style>
-  /* ── hero de marca: tinta, collage tratado del producto, glow, tablero con tilt ── */
-  .hero{position:relative;background:var(--color-ink-900);color:var(--ink-text);overflow:hidden;margin-top:-3.7rem;padding:calc(3.7rem + clamp(2.2rem,6vw,4.6rem)) 0 0}
-  .hero-collage{position:absolute;inset:-4%;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;opacity:.09;pointer-events:none;filter:saturate(.5) blur(2px);transform:scale(1.04)}
-  .hero-collage img{width:100%;height:100%;object-fit:cover;object-position:top}
-  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,34,26,.62) 0%,rgba(13,34,26,.84) 40%,var(--color-ink-900) 100%),radial-gradient(70rem 36rem at 80% -10%,color-mix(in srgb,var(--color-ink-600) 70%,transparent) 0%,transparent 60%);pointer-events:none}
-  .hero .container-x{position:relative;z-index:2}
-  .hero-grid{display:grid;gap:2.6rem}
-  @media(min-width:920px){.hero-grid{grid-template-columns:23fr 17fr;align-items:center;gap:3.2rem}}
-  .hero h1{max-width:13ch;font-variation-settings:"opsz" 144;font-weight:600}
-  .hero h1 em{font-style:normal;color:var(--ink-accent-2)}
-  .hero .sub{margin:1.2rem 0 0;color:var(--ink-text-dim);max-width:38rem}
-  .hero .sub strong{color:var(--ink-text);font-weight:600}
-  .cta-row{margin-top:1.8rem}
-  .hero-visual{position:relative;margin:0;z-index:1}
-  .hero-visual::before{content:"";position:absolute;top:-14%;left:-10%;right:-10%;height:120%;background:radial-gradient(closest-side,var(--color-ink-600) 0%,color-mix(in srgb,var(--color-ink-600) 35%,transparent) 45%,transparent 75%);z-index:0;pointer-events:none}
-  .hero-shot{position:relative;z-index:1}
-  .hero-phone{display:block;position:absolute;right:-.2rem;bottom:-1.1rem;width:27%;height:10.5rem;overflow:hidden;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px var(--ink-line);z-index:3}
-  .hero-phone img{object-fit:cover;object-position:top center;height:100%;width:100%}
-  @media(min-width:920px){.hero-phone{right:-.6rem;bottom:-2.4rem;width:34%;height:auto;border-radius:16px}.hero-phone img{height:auto}}
-  .hero-visual figcaption{position:relative;margin-top:.8rem;font-size:.8rem;color:var(--ink-text-mute);padding-right:32%;z-index:0}
-  @media(min-width:920px){.hero-visual figcaption{max-width:60%;padding-right:0}}
-  @media(min-width:920px) and (prefers-reduced-motion:no-preference){
-    .hero .bframe{transform:perspective(1400px) rotateY(-5deg) rotateX(1.2deg);transition:transform .6s var(--ease)}
-    .hero-visual:hover .bframe{transform:perspective(1400px) rotateY(0) rotateX(0)}
-  }
-  .chip-float{position:absolute;display:flex;align-items:center;gap:.55rem;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.45rem .75rem;box-shadow:0 12px 28px rgba(0,0,0,.38);z-index:4;pointer-events:none}
-  .chip-float .ci{width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;background:var(--color-ok)}
-  .chip-float .ci svg{width:.85rem;height:.85rem}
-  .chip-float b{font-size:.78rem;color:var(--text);display:block;line-height:1.25}
-  .chip-float span{display:block;font-size:.68rem;color:var(--text-2);line-height:1.25}
-  .chip-1{top:38%;left:-.55rem}
-  .chip-2{display:none;bottom:3.2rem;left:-1.6rem}
-  @media(min-width:920px){.chip-1{top:-1.2rem;left:-1.4rem}.chip-2{display:flex}}
-  .ia{margin:1.1rem 0 0;max-width:34rem}
-  .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#cfe8da;background:rgba(233,245,238,.07);border:1px solid rgba(37,211,102,.4);border-radius:999px;padding:.5rem 1rem;transition:border-color var(--dur-micro)}
-  .ia summary::-webkit-details-marker{display:none}
-  .ia summary svg{width:.95rem;height:.95rem;transition:transform var(--dur-ui) var(--ease)}
-  .ia[open] summary svg{transform:rotate(180deg)}
-  .ia summary:hover{border-color:rgba(37,211,102,.75)}
-  .ia-dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--color-wa)}
-  .ia-body p{margin-top:.7rem;font-size:.95rem;color:var(--ink-text-dim);background:rgba(233,245,238,.06);border:1px solid var(--ink-line);border-radius:12px;padding:.8rem 1rem}
-  .ia-body a{color:var(--ink-accent);font-weight:700}
-  .stats{display:grid;gap:1.4rem;margin-top:2.9rem;padding:1.7rem 0 1.5rem;border-top:1px solid color-mix(in srgb,var(--color-brand) 50%,transparent)}
-  @media(min-width:700px){.stats{grid-template-columns:repeat(3,1fr);gap:2rem}}
-  .stat b{display:block;font-family:var(--font-display);font-variation-settings:"opsz" 144;font-weight:600;font-size:clamp(2.6rem,6vw,3.6rem);line-height:1.02;color:var(--color-brand-bright);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-  .stat b .u{font-size:.5em;font-weight:600;margin-left:.12em}
-  .stat>span{display:block;margin-top:.35rem;font-size:.9rem;color:var(--ink-text-dim);max-width:17rem}
-  .stat>.stat-x{margin-top:.4rem;font-size:.8rem;color:var(--ink-text-mute);font-style:italic;max-width:17rem}
-  .stat-foot{padding-bottom:1.8rem;font-size:.82rem;color:var(--ink-text-mute);max-width:52rem}
-  .stat-foot strong{color:var(--ink-text)}
+  .hero-float{position:absolute;right:var(--gutter);top:clamp(4.5rem,9vw,7rem);z-index:3;display:none;width:15.5rem}
+  @media(min-width:1000px){.hero-float{display:block}}
+  .hero-float .card-dark{padding:.9rem 1rem}
+  .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
+  .notif:first-child{border-top:none;padding-top:0}
+  .notif .ci{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--color-brand-500);display:flex;align-items:center;justify-content:center;flex:none}
+  .notif .ci svg{width:.9rem;height:.9rem}
+  .notif b{display:block;font-size:.84rem;line-height:1.2}
+  .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
   .case{display:grid;gap:1.6rem;align-items:center}
   @media(min-width:900px){.case{grid-template-columns:7fr 5fr;gap:3rem}.case.flip .case-media{order:2}}
-  .case+.case{margin-top:clamp(3rem,7vw,5rem);padding-top:clamp(3rem,7vw,5rem);border-top:1px solid var(--ink-line)}
-  .case h3{font-family:var(--font-display);font-variation-settings:"opsz" 96;font-weight:600;font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.02em;line-height:1.15;margin:.35rem 0 .7rem;color:#fff}
-  .case p{color:var(--ink-text-dim);font-size:1rem}
-  .case-nums{display:grid;grid-template-columns:repeat(3,auto);gap:1.4rem;margin:1.2rem 0 0;justify-content:start}
-  .case-nums b{display:block;font-family:var(--font-display);font-variation-settings:"opsz" 144;font-weight:600;font-size:2rem;line-height:1;color:var(--color-brand-bright);font-variant-numeric:tabular-nums}
-  .case-nums span{display:block;font-size:.78rem;color:var(--ink-text-mute);margin-top:.25rem;max-width:9rem;line-height:1.3}
+  .case+.case{margin-top:clamp(3rem,7vw,5rem);padding-top:clamp(3rem,7vw,5rem);border-top:1px solid var(--zinc-200)}
+  .case h3{font-size:clamp(1.5rem,3.2vw,2.1rem);letter-spacing:-.03em;line-height:1.12;margin:.6rem 0 .7rem;font-weight:800}
+  .case p{color:var(--text-2);font-size:1rem}
   .case-media{display:grid;gap:.9rem}
   .case-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
-  .case-links .btn-ghost-ink{font-size:.9rem;padding:.55rem 1rem}
-  .case-meaning{margin-top:1rem;background:rgba(159,224,188,.08);border:1px solid rgba(159,224,188,.28);border-left:4px solid var(--ink-accent);border-radius:12px;padding:.85rem 1rem;color:#dfeee6;font-size:.95rem}
-  .case-meaning b{color:#fff}
-  .door{background:linear-gradient(180deg,var(--color-brand-100),var(--color-brand-50));border-top:1px solid var(--color-brand-200);border-bottom:1px solid var(--color-brand-200)}
-  .door-grid{display:grid;gap:1.6rem;align-items:center}
-  @media(min-width:860px){.door-grid{grid-template-columns:5fr 6fr;gap:2.6rem}}
-  .door h2,.door .lead{color:var(--color-brand-800)}
-  .door .eyebrow{color:var(--color-brand-700)}
-  .door-list{list-style:none;margin:1rem 0 0;display:grid;gap:.45rem;color:var(--color-brand-800);font-size:.97rem}
-  .door-list li{padding-left:1.4rem;position:relative}
-  .door-list li::before{content:"✓";position:absolute;left:0;color:var(--color-brand-700);font-weight:800}
-  .door .btn-ghost{margin-top:1.2rem;background:var(--color-brand-800);color:var(--color-brand-50);border-color:transparent;font-weight:700}
-  .door .btn-ghost:hover{background:var(--color-brand-700)}
-  .invite{display:grid;gap:.9rem;margin-top:1.4rem}
+  .case-panel{margin-top:1.1rem;padding:1.1rem 1.2rem}
+  .case-panel .eyebrow{margin-bottom:.6rem}
+  .meaning{margin-top:1rem;background:var(--color-brand-50);border:1px solid var(--color-brand-200);border-left:4px solid var(--color-brand-500);border-radius:var(--radius-xl);padding:.85rem 1rem;color:var(--color-ink);font-size:.95rem}
+  .door-grid{display:grid;gap:1rem;align-items:center}
+  @media(min-width:860px){.door-grid{grid-template-columns:1fr auto;gap:2rem}}
+  .door h2{font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.03em}
+  .door p{opacity:.85;font-size:.98rem;margin-top:.35rem}
+  .invite{display:grid;gap:.9rem;margin-top:1.5rem}
   @media(min-width:700px){.invite{grid-template-columns:1fr 1fr}}
-  .pick{display:grid;grid-template-columns:4.2rem 1fr auto;gap:1rem;align-items:center;padding:.9rem 1rem;text-decoration:none;color:inherit}
-  .pk-img{width:4.2rem;height:4.2rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);background:var(--wash)}
-  .pk-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .pick{display:grid;grid-template-columns:5rem 1fr;gap:1rem;align-items:center;padding:.9rem 1rem;text-decoration:none;color:inherit}
+  .pk-img{width:5rem;height:5rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--zinc-200);background:var(--zinc-100)}
+  .pk-img img{width:100%;height:100%;object-fit:cover;object-position:top left}
   .pick b{display:block;color:var(--text);font-size:1rem;line-height:1.3}
   .pick span{display:block;color:var(--text-2);font-size:.86rem;line-height:1.45}
-  .pick .arrow{color:var(--color-ok-ink);font-weight:700;font-size:1.2rem}
-  .live{display:inline-flex;align-items:center;gap:.4rem;margin-top:.3rem;font-size:.74rem;font-weight:700;color:var(--color-ok-ink);letter-spacing:.04em;text-transform:uppercase}
-  .pains{display:grid;gap:.7rem;margin-top:1.5rem;max-width:44rem}
-  .pain{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--color-warn);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
-  .pain b{color:var(--text)}
-  .nots{display:grid;gap:.7rem;margin-top:1.5rem;max-width:46rem}
-  .not{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--color-ink-800);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
-  .not b{color:var(--text)}
-  .steps{margin-top:1.8rem;display:grid;gap:0;max-width:46rem}
-  .step{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1.05rem 0;border-top:1px solid var(--line)}
-  .step:first-child{border-top:none}
-  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--color-ink-800);color:#cfe8da;font-family:var(--font-display);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
-  .step h3{font-size:1.06rem;margin-bottom:.2rem}
-  .step p{color:var(--text-2);font-size:.96rem}
-  .no-risk{margin-top:1.6rem;max-width:46rem}
-  .trust-grid{display:grid;gap:1.2rem;margin-top:1.8rem}
-  @media(min-width:860px){.trust-grid{grid-template-columns:3fr 2fr;align-items:start}}
-  .card h3{font-family:var(--font-display);font-variation-settings:"opsz" 48;font-weight:600;font-size:1.25rem;margin-bottom:.45rem}
-  .card p{color:var(--text-2);font-size:.97rem;margin-bottom:.6rem}
-  .card p:last-child{margin-bottom:0}
-  .cred-list{list-style:none;margin-top:.5rem}
+  .pick .chip{margin-top:.45rem}
+  .steps{display:grid;gap:1.2rem;margin-top:2rem}
+  @media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr);gap:1.4rem}}
+  .step h3{font-size:1.06rem;margin:.6rem 0 .3rem;color:#fff}
+  .step p{color:var(--ink-text-dim);font-size:.94rem}
+  .how-grid{display:grid;gap:1.4rem;margin-top:2.4rem;align-items:start}
+  @media(min-width:900px){.how-grid{grid-template-columns:7fr 5fr;gap:2.4rem}}
+  .no-risk{margin-top:1.4rem;background:rgba(255,255,255,.06);border:1px solid var(--ink-line);border-left:4px solid var(--color-brand-500);border-radius:var(--radius-xl);padding:.95rem 1.1rem;color:#fff;font-size:.97rem}
+  .who-grid{display:grid;gap:1.2rem;margin-top:1.8rem}
+  @media(min-width:860px){.who-grid{grid-template-columns:3fr 2fr;align-items:start}}
+  .people{display:grid;gap:.9rem;margin-top:1rem}
+  @media(min-width:520px){.people{grid-template-columns:1fr 1fr}}
+  .person{display:flex;gap:.9rem;align-items:center;padding:1rem 1.1rem}
+  .person b{display:block;font-size:1rem;line-height:1.25}
+  .person span{display:block;font-size:.84rem;color:var(--text-2);line-height:1.4}
+  .person .avatar{display:inline-flex;font-size:1.05rem;color:#fff;line-height:1}
+  .cred-list{list-style:none;margin-top:.7rem}
   .cred-list li{padding-left:1.5rem;position:relative;margin:.55rem 0;color:var(--text-2);font-size:.95rem}
-  .cred-list li::before{content:"✓";position:absolute;left:0;color:var(--color-ok);font-weight:800}
-  .open-card h3{font-family:var(--font-display);font-variation-settings:"opsz" 48;font-weight:600;font-size:1.25rem;margin-bottom:.35rem;color:#fff}
-  .open-card p{color:var(--ink-text-dim);font-size:.94rem;margin-bottom:.7rem}
-  .open-list{list-style:none;display:grid;gap:.5rem}
-  .open-list a{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center;background:rgba(233,245,238,.06);border:1px solid var(--ink-line);border-radius:10px;padding:.6rem .8rem;color:var(--ink-text);text-decoration:none;font-size:.92rem;transition:background var(--dur-micro),transform var(--dur-micro) var(--ease)}
-  .open-list a:hover{background:rgba(233,245,238,.12);transform:translateY(-1px)}
-  .open-list a span{font-size:.78rem;color:var(--ink-accent);font-variant-numeric:tabular-nums}
-  .autom{display:grid;gap:1.4rem;margin-top:2rem;padding:1.8rem 2rem;align-items:center}
+  .cred-list li::before{content:"✓";position:absolute;left:0;color:var(--color-brand-600);font-weight:800}
+  .contact{display:grid;gap:.5rem;margin-top:1rem;font-size:.95rem}
+  .contact div{display:flex;gap:.6rem;align-items:baseline}
+  .contact b{min-width:6.5rem;color:var(--text-3);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+  .nots{display:grid;gap:.7rem;margin-top:1.4rem;max-width:46rem}
+  .not{background:var(--white);border:1px solid var(--zinc-200);border-left:4px solid var(--color-ink);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
+  .not b{color:var(--text)}
+  .closing{position:relative;overflow:hidden}
+  .closing::before{content:"";position:absolute;inset:-40% -20% auto;height:120%;background:radial-gradient(60rem 30rem at 20% 0%,color-mix(in srgb,var(--color-brand-700) 45%,transparent) 0%,transparent 60%);pointer-events:none}
+  .closing .container-x{position:relative}
+  .closing h2{max-width:16ch}
+  .tech{padding:2.4rem 0;border-top:1px solid var(--zinc-200)}
+  .tech p{color:var(--text-2);font-size:.92rem;max-width:46rem;margin-top:.5rem}
+  .autom{display:grid;gap:1.2rem;align-items:center;padding:1.4rem 1.5rem;margin-top:1.4rem}
   @media(min-width:760px){.autom{grid-template-columns:3fr 2fr;gap:2rem}}
-  .autom h3{font-family:var(--font-display);font-variation-settings:"opsz" 96;font-weight:600;font-size:1.7rem;margin-bottom:.45rem;color:#fff;letter-spacing:-.02em}
-  .autom p{color:var(--ink-text-dim);font-size:1rem}
-  .autom-visual{margin:0 auto;max-width:23rem;width:100%;padding-right:.6rem}
-  .closing{position:relative;overflow:hidden;background:radial-gradient(70rem 30rem at 18% -20%,var(--color-ink-600) 0%,var(--color-ink-800) 52%,var(--color-ink-900) 100%)}
-  .closing h2{color:#fff;max-width:14ch}
-  .close-mark{position:absolute;right:-.15em;bottom:-.5em;font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,26vw,22rem);line-height:.8;letter-spacing:-.06em;color:rgba(242,239,227,.04);pointer-events:none;user-select:none}
-  .tech{background:var(--wash);border-top:1px solid var(--line);padding:2.8rem 0}
-  .tech p{color:var(--text-2);font-size:.93rem;max-width:46rem;margin-bottom:.5rem}
-  .tech p:last-child{margin-bottom:0}
-  @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}.case-nums{grid-template-columns:repeat(3,1fr);gap:.8rem}}
-  /* coreografía del hero en CSS (antes GSAP): termina siempre visible; quieta con reduced-motion */
-  @media (prefers-reduced-motion:no-preference){
-    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-    @keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
-    @keyframes riseScale{from{opacity:0;transform:translateY(28px) scale(.96)}to{opacity:1;transform:none}}
-    html.js .hero .eyebrow,html.js #hero-h1,html.js .hero .ia,html.js #hero-sub,html.js .hero .cta-row,html.js .stats .stat,html.js .stat-foot{animation:rise .7s var(--ease) both}
-    #hero-h1{animation-delay:.12s}.hero .ia{animation-delay:.24s}#hero-sub{animation-delay:.32s}.hero .cta-row{animation-delay:.42s}
-    html.js .hero-visual{animation:riseScale .9s var(--ease) .3s both}
-    html.js .hero .chip-float{animation:pop .45s cubic-bezier(.34,1.56,.64,1) both}.chip-1{animation-delay:.9s}.chip-2{animation-delay:1.05s}
-    .stats .stat:nth-child(1){animation-delay:.7s}.stats .stat:nth-child(2){animation-delay:.8s}.stats .stat:nth-child(3){animation-delay:.9s}.stat-foot{animation-delay:1s}
-    html.js .h-rule:not(.in)::after{transform:scaleX(0)}
-    .ia[open] .ia-body p{animation:rise .35s var(--ease) both}
-  }
+  .autom h3{font-size:1.35rem;color:#fff;margin-bottom:.35rem}
+  .autom p{color:var(--ink-text-dim);font-size:.96rem}
+  .autom-visual{margin:0 auto;max-width:20rem;width:100%}
+  @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
 </style>
 </head>
 <body>
-
 <nav class="nav" id="nav"><div class="container-x nav-in">
-  <a class="logo" href="#"><span class="logo-mark">A</span>Appximo</a>
-  <div class="nav-links"><a href="#casos">Casos</a><a href="#pruebe">Pruébelo</a><a href="#pasos">Cómo empieza</a><a href="#preguntas">Preguntas</a></div>
-  <a class="btn btn-wa compact btn-ghost-ink" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28men%C3%BA%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg> Demostración gratis</a>
+  <a class="logo" href="/"><span class="logo-mark">A</span>appximo</a>
+  <div class="nav-links"><a href="#casos">Casos</a><a href="#pruebe">Pruébelo</a><a href="#como">Cómo funciona</a><a href="#preguntas">Preguntas</a></div>
+  <a class="btn btn-wa compact" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28men%C3%BA%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
 </div></nav>
 
 <header class="hero grain">
-  <div class="hero-collage" aria-hidden="true">
-    <img src="assets/tablero-hero.webp" alt="" width="1080" height="483" decoding="async">
-    <img src="assets/tienda-hero.webp" alt="" width="640" height="600" decoding="async">
-    <img src="assets/tienda.webp" alt="" width="640" height="1385" decoding="async">
-    <img src="assets/atina-portal.webp" alt="" width="1280" height="640" decoding="async">
-  </div>
-  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-grid-bg" aria-hidden="true"><div><img src="assets/tienda-hero.webp" alt="" width="640" height="600" decoding="async"></div><div><img src="assets/pf-panel.webp" alt="" width="1280" height="640" decoding="async"></div><div><img src="assets/tablero-hero.webp" alt="" width="1080" height="483" decoding="async" loading="lazy"></div><div><img src="assets/atina-portal.webp" alt="" width="1280" height="640" decoding="async" loading="lazy"></div></div><div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-float" aria-hidden="true"><div class="card-dark">
+    <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
+    <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
+    <div class="notif"><span class="ci" style="background:var(--color-ink-500)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6l4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2.2"/></svg></span><span><b>Cita de mañana</b><span>Recordatorio enviado</span></span></div>
+  </div></div>
   <div class="container-x">
-  <div class="hero-grid">
-    <div>
-      <p class="eyebrow" style="color:var(--ink-accent)">Sistemas a la medida · IA nativa · Tecnología propia</p>
-      <h1 class="t-6xl" id="hero-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</h1>
-      <details class="ia" id="ia">
-        <summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
-        <div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#video">véalo abajo: la idea se vuelve sistema ↓</a></p></div>
-      </details>
-      <p class="sub t-xl" id="hero-sub">Una tienda, su ERP a la medida, procesamiento pesado de datos y archivos, o una plataforma de miles de consultas por segundo. <strong>Rápido</strong>, <strong>seguro</strong> (OWASP), con monitoreo — y <strong>lo ve funcionando antes de pagar</strong>.</p>
+    <div class="hero-copy">
+      <p class="eyebrow">Sistemas a la medida para empresas y organizaciones</p>
+      <h1 class="t-6xl" id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
+      <p class="sub" id="hero-sub">Hecho a su medida, no un programa genérico. Lo difícil ya está construido — diez años de oficio en sistemas de bancos — y queda andando en días: una plataforma entera salió en 3 horas y media. <strong>Lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
         <a class="btn btn-wa btn-pulse" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28inicio%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde el equipo directamente, no un robot.</b> Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28tel%C3%A9fono%29.">+57 311 517 5472</a></p>
+        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde Miguel Acosta, no un robot.</b> Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28tel%C3%A9fono%29.">+57 311 517 5472</a></p>
         <p class="cta-alt">¿Prefiere mirar antes de escribir? <a href="#pruebe">Abra un sistema funcionando, sin registrarse ↓</a></p>
       </div>
     </div>
-    <figure class="hero-visual">
-      <div class="chip-float chip-1" aria-hidden="true"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#fff"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
-      <div class="chip-float chip-2" aria-hidden="true"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b></span></div>
-      <div class="bframe hero-shot">
-        <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg><span id="hero-url">vecingo — demo</span></span></div>
-        <img id="hero-img" src="assets/tablero-hero.webp" alt="Tablero real de una plataforma: indicadores de casos, cartera, reservas y una asamblea con su quórum en curso" width="1080" height="483" fetchpriority="high">
-      </div>
-      <div class="hero-phone"><img src="assets/tienda.webp" alt="Una tienda en el celular, con productos y precios en pesos" width="640" height="1385" loading="lazy"></div>
-      <figcaption id="hero-cap">Pantalla real de un sistema nuestro.</figcaption>
-    </figure>
-  </div>
-
-  <div class="stats">
-    <div class="stat"><b>3½<span class="u">h</span></b><span>en que quedó andando una plataforma de 18 módulos</span><span class="stat-x"><a href="caso.html">el caso, documentado paso a paso</a></span></div>
-    <div class="stat"><b><span data-count="32" data-dec="0">32</span></b><span>módulos tiene la plataforma que otro desarrollador construyó con nuestra tecnología</span><span class="stat-x"><a href="#casos">contados en su contrato público</a></span></div>
-    <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>del equipo en sistemas de bancos</span></div>
-  </div>
-  <p class="stat-foot"><strong>Y puede entrar a tocar:</strong> los sistemas abiertos en internet, sin registrarse — <a href="#pruebe">aquí abajo</a>.</p>
+    <div class="stats">
+      <div class="stat"><b>3½<span class="u">h</span></b><span>en que quedó andando una plataforma de 18 módulos</span><span class="stat-x"><a href="caso.html">el caso, documentado paso a paso</a></span></div>
+      <div class="stat"><b><span data-count="32" data-dec="0">32</span></b><span>módulos tiene la plataforma que otro desarrollador construyó con nuestra tecnología</span><span class="stat-x"><a href="#casos">contados en su contrato público</a></span></div>
+      <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>en sistemas de bancos detrás de quien le responde</span></div>
+    </div>
   </div>
 </header>
 
 <template id="hero-retador">
   <span class="v-h1">No le pedimos que nos crea: <em>véalo funcionando</em> ahora mismo.</span>
   <span class="v-sub">Dos sistemas hechos con nuestra tecnología están abiertos en internet: una tienda y una agenda veterinaria. Éntreles sin registrarse y mire cómo cargan al instante. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
-  <span class="v-img" data-src="assets/tienda-hero.webp" data-alt="La tienda de demostración, abierta en internet: puede entrar y probarla ahora mismo" data-w="640" data-h="600"></span>
-  <span class="v-url">tiendita.appximo.com</span>
-  <span class="v-cap">La tienda de demostración está en internet: entre y pruébela.</span>
 </template>
 <template id="hero-puente">
   <span class="v-h1">Un sistema hecho para su negocio, <em>andando en días</em>.</span>
   <span class="v-sub">¿Días de verdad? Una plataforma entera — 18 módulos — quedó funcionando en 3 horas y media. No es magia: es tecnología propia, rápida y segura, con años de oficio en sistemas de bancos detrás. <strong>Lo ve funcionando antes de pagar</strong>.</span>
-  <span class="v-img" data-src="assets/tablero-hero.webp" data-alt="Tablero real de una plataforma: indicadores de casos, cartera, reservas y una asamblea con su quórum en curso" data-w="1080" data-h="483"></span>
-  <span class="v-url">vecingo — demo</span>
-  <span class="v-cap">Pantalla real: el tablero de una plataforma de conjuntos, con la asamblea en curso.</span>
 </template>
 <script>
   (function(){
     var HERO_DEFAULT = 'control'; // ← CAMBIAR AQUÍ para publicar otro hero
     var v = new URLSearchParams(location.search).get('hero') || HERO_DEFAULT;
     if (v === 'control') return;
-    var t = document.getElementById('hero-' + v);
-    if (!t) return;
+    var t = document.getElementById('hero-' + v); if (!t) return;
     var d = t.content;
     document.getElementById('hero-h1').innerHTML = d.querySelector('.v-h1').innerHTML;
     document.getElementById('hero-sub').innerHTML = d.querySelector('.v-sub').innerHTML;
-    var img = document.getElementById('hero-img'), vi = d.querySelector('.v-img');
-    img.src = vi.getAttribute('data-src'); img.alt = vi.getAttribute('data-alt');
-    img.width = vi.getAttribute('data-w'); img.height = vi.getAttribute('data-h');
-    var u = d.querySelector('.v-url');
-    if (u) document.getElementById('hero-url').textContent = u.textContent;
-    document.getElementById('hero-cap').textContent = d.querySelector('.v-cap').textContent;
   })();
 </script>
 
-<section class="section on-ink" id="casos"><div class="container-x">
+<section class="section s-white" id="casos"><div class="container-x">
   <p class="eyebrow reveal">Lo que ya salió de aquí</p>
-  <h2 class="t-5xl h-rule reveal" style="color:#fff;max-width:18ch">Dos plataformas completas, la misma tecnología</h2>
+  <h2 class="t-5xl reveal" style="max-width:18ch">Dos plataformas completas, la misma tecnología</h2>
   <p class="lead reveal" style="margin-top:1rem">No son maquetas: una está abierta en internet y la otra le sirve a un conjunto residencial. Cada cifra aguanta un clic.</p>
 
   <article class="case" style="margin-top:clamp(2.4rem,6vw,4rem)">
     <div class="case-media">
-      <div class="bframe reveal media-skel">
-        <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>atina.appximo.com</span></div>
-        <img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy">
-      </div>
-      <figure class="media reveal" style="--d:.1s">
-        <div class="vframe">
-          <video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video>
-          <button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Ver por dentro · 57 s</span></button>
-        </div>
-        <figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption>
-      </figure>
+      <div class="bframe reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>atina.appximo.com</span></div><img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
+      <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
     </div>
-    <div class="reveal reveal-x">
-      <span class="chip chip-ghost">Prueba de capacidad</span>
+    <div class="reveal" style="--d:.15s">
+      <span class="chip chip-brand">Prueba de capacidad</span>
       <h3>atina: la construyó otro desarrollador — sin nosotros</h3>
-      <p>Una plataforma completa de selección de personal — portal público, área del candidato y panel de la empresa. <strong style="color:#fff">La construyó un desarrollador externo</strong> con nuestra tecnología y la documentación publicada. Está en internet: puede abrirla.</p>
-      <div class="case-nums">
-        <div><b>32</b><span>módulos, contados en su contrato público</span></div>
-        <div><b>48</b><span>funciones propias, además de lo generado</span></div>
-        <div><b>30+</b><span>pantallas: portal, candidato, panel y consola</span></div>
+      <p>Una plataforma completa de selección de personal — portal público, área del candidato y panel de la empresa. <strong>La construyó un desarrollador externo</strong> con nuestra tecnología y la documentación publicada. Está en internet: puede abrirla.</p>
+      <div class="card case-panel">
+        <p class="eyebrow">Qué tiene, contado en su contrato público</p>
+        <div class="bars">
+          <div class="bar" style="--w:67%;--d:0s"><span class="lbl">Módulos (tablas de datos)</span><span class="val">32</span><div class="track"><div class="fill"></div></div></div>
+          <div class="bar" style="--w:100%;--d:0.1s"><span class="lbl">Funciones propias, además de lo generado</span><span class="val">48</span><div class="track"><div class="fill"></div></div></div>
+          <div class="bar" style="--w:63%;--d:0.2s"><span class="lbl">Pantallas: portal, candidato, panel y consola</span><span class="val">30+</span><div class="track"><div class="fill"></div></div></div>
+        </div>
       </div>
-      <div class="case-meaning"><b>Qué significa para usted:</b> su sistema no depende de una sola persona. Si otro construyó esto sin nuestra ayuda, cualquier ingeniero puede mantener el suyo.</div>
-      <div class="case-links"><a class="btn btn-ghost-ink" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
+      <div class="meaning"><b>Qué significa para usted:</b> su sistema no depende de una sola persona. Si otro construyó esto sin nuestra ayuda, cualquier ingeniero puede mantener el suyo.</div>
+      <div class="case-links"><a class="btn btn-ghost" href="https://atina.appximo.com" rel="noopener" target="_blank">Abrir atina.appximo.com ↗</a></div>
     </div>
   </article>
 
   <article class="case flip" id="caso-vecingo">
     <div class="case-media">
-      <div class="bframe reveal media-skel">
-        <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — demo</span></div>
-        <img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy">
-      </div>
-      <figure class="media reveal" style="--d:.1s">
-        <div class="vframe">
-          <video class="demovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma de conjuntos de 18 módulos, en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video>
-          <button class="vplay" aria-label="Reproducir el video del caso"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Ver el sistema · 5 min</span></button>
-        </div>
-        <figcaption>Video con datos ficticios. <a href="caso.html">El caso, pantalla por pantalla</a>.</figcaption>
-      </figure>
+      <div class="bframe reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>vecingo — demo</span></div><img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"></div>
+      <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma de conjuntos de 18 módulos, en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video del caso"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el sistema · 5 min</span></button></div><figcaption>Video con datos ficticios. <a href="caso.html">El caso, pantalla por pantalla</a>.</figcaption></figure>
     </div>
-    <div class="reveal reveal-x">
-      <span class="chip chip-ghost">El caso documentado</span>
+    <div class="reveal" style="--d:.15s">
+      <span class="chip chip-brand">El caso documentado</span>
       <h3>VecinGo: la administración de un conjunto, en una tarde</h3>
       <p>18 módulos — asambleas por coeficiente, radicados, cartera, parqueaderos sobre el plano — construida en una tarde para un conjunto residencial. El problema que resolvió: la asamblea que se impugna, la cartera en un Excel y las PQRS que se vencen.</p>
-      <div class="case-nums">
-        <div><b>18</b><span>módulos en un solo sistema</span></div>
-        <div><b>3½ h</b><span>hasta quedar andando, documentadas</span></div>
-        <div><b>58,2 %</b><span>de quórum por coeficiente, en tiempo real</span></div>
+      <div class="card case-panel ring-row">
+        <div class="ring " style="--size:7.5rem;--c:264;--p:0.5820" role="img" aria-label="58.2 por ciento quórum"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><div class="num"><span>58,2<span style="font-size:.55em"> %</span></span><small>quórum</small></div></div>
+        <div>
+          <b style="display:block;font-size:1rem;line-height:1.25">Quórum por coeficiente, en tiempo real</b>
+          <span class="t-sm" style="color:var(--text-2);display:block;margin-top:.3rem">Una asamblea de demostración en curso: 58,2 % de los coeficientes presentes — con quórum, y cada voto ponderado. Se acabó contar papelitos.</span>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem"><span class="chip">18 módulos</span><span class="chip">3½ h documentadas</span><span class="chip">Asambleas · cartera · PQRS</span></div>
+        </div>
       </div>
-      <div class="case-links"><a class="btn btn-ghost-ink" href="conjuntos.html">¿Administra un conjunto? Su página →</a><a class="btn btn-ghost-ink" href="caso.html">El caso, en español</a></div>
+      <div class="case-links"><a class="btn btn-ghost" href="conjuntos.html">¿Administra un conjunto? Su página →</a><a class="btn btn-ghost" href="caso.html">El caso, en español</a></div>
     </div>
   </article>
 </div></section>
 
-<section class="section door" id="conjuntos"><div class="container-x door-grid">
+<section class="band s-brand door" id="conjuntos"><div class="container-x door-grid">
   <div class="reveal">
     <p class="eyebrow">Para administradores de propiedad horizontal</p>
-    <h2 class="t-4xl h-rule">¿Administra un conjunto? Esta es su página.</h2>
-    <p class="lead" style="margin-top:1rem">Un sistema hecho para su oficio, no para «cualquier negocio»:</p>
-    <ul class="door-list">
-      <li>Asambleas con quórum por coeficiente, al instante</li>
-      <li>Cartera y mora a la vista, paz y salvos del sistema</li>
-      <li>PQRS con radicado, responsable y plazo</li>
-    </ul>
-    <a class="btn btn-ghost" href="conjuntos.html">Ver el sistema para conjuntos →</a>
+    <h2>¿Administra un conjunto? Esta es su página.</h2>
+    <p>Asambleas con quórum por coeficiente, cartera y mora a la vista, PQRS con radicado. Un sistema hecho para su oficio, no para «cualquier negocio».</p>
   </div>
-  <div class="bframe paper reveal reveal-x media-skel">
-    <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div>
-    <img src="assets/caso-asamblea.webp" alt="Asambleas y votaciones: quórum por coeficiente 58,2 % presente, con quórum, votación en curso" width="1080" height="245" loading="lazy">
-  </div>
+  <a class="btn btn-ghost reveal" style="--d:.1s" href="conjuntos.html">Ver el sistema para conjuntos →</a>
 </div></section>
 
-<section class="section-tight hairline" id="pruebe"><div class="container-x">
+<section class="section-tight s-zinc" id="pruebe"><div class="container-x">
   <p class="eyebrow reveal">Y además, puede entrar a tocar</p>
   <h2 class="t-3xl reveal">Dos sistemas abiertos en internet, sin registrarse</h2>
   <p class="lead reveal t-sm" style="margin-top:.5rem">No le pedimos que nos crea. Entre, toque, y mire cómo cargan.</p>
   <div class="invite">
     <a class="card card-hover pick reveal" href="https://tiendita.appximo.com" rel="noopener" target="_blank">
-      <span class="pk-img"><img src="assets/tienda.webp" alt="" width="640" height="1385" loading="lazy"></span>
-      <span><b>¿Vende productos?</b><span>Una tienda con inventario e IVA: compre algo, es de prueba.</span><span class="live"><i class="dot"></i>En internet ahora mismo</span></span>
-      <span class="arrow">→</span>
+      <span class="pk-img"><img src="assets/tienda-hero.webp" alt="" width="640" height="600" loading="lazy"></span>
+      <span><b>¿Vende productos?</b><span>Una tienda con inventario e IVA: compre algo, es de prueba.</span><span class="chip chip-brand"><i class="dot"></i>En internet ahora mismo</span></span>
     </a>
     <a class="card card-hover pick reveal" style="--d:.08s" href="https://petfriendly.appximo.com" rel="noopener" target="_blank">
-      <span class="pk-img"><img src="assets/pf-thumb.webp" alt="" width="320" height="200" loading="lazy"></span>
-      <span><b>¿Citas y clientes?</b><span>Una agenda veterinaria: toque el panel, nada se guarda.</span><span class="live"><i class="dot"></i>En internet ahora mismo</span></span>
-      <span class="arrow">→</span>
+      <span class="pk-img"><img src="assets/pf-panel.webp" alt="" width="1280" height="640" loading="lazy"></span>
+      <span><b>¿Citas y clientes?</b><span>Una agenda veterinaria: toque el panel, nada se guarda.</span><span class="chip chip-brand"><i class="dot"></i>En internet ahora mismo</span></span>
     </a>
   </div>
 </div></section>
 
-<section class="section on-wash hairline" id="video" style="border-bottom:1px solid var(--line)"><div class="container-x">
-  <p class="eyebrow reveal">El porqué del poder</p>
-  <h2 class="t-4xl h-rule reveal">Núcleo propio, pensado para trabajar con IA</h2>
-  <p class="lead reveal" style="margin-top:1rem">Motor propio, construido desde cero y pensado para la IA: ella no se gasta construyendo ni desplegando la base — <strong>el motor ya la trae</strong>. La IA solo describe su negocio. Véalo: la idea, en español, queda andando.</p>
-  <figure class="media reveal" style="margin-top:1.6rem;max-width:52rem">
-    <div class="vframe">
-      <video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video>
-      <button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> Ver · 45 s</span></button>
-    </div>
-    <figcaption>Así <strong>empieza</strong> la demostración gratis: su idea, funcionando. Tiempo real.</figcaption>
-  </figure>
-  <p style="margin-top:1.4rem" class="reveal"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20video%20de%20la%20idea%20que%20se%20vuelve%20sistema%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20%28appximo.com%20%C2%B7%20video%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></p>
-  <div class="pains">
-    <div class="pain reveal">¿Los pedidos <b>se le pierden entre los chats</b> de WhatsApp?</div>
-    <div class="pain reveal" style="--d:.06s">¿El inventario vive en un Excel que <b>solo uno entiende</b>?</div>
-    <div class="pain reveal" style="--d:.12s">¿Su sistema actual <b>se queda «cargando…»</b> a cada rato?</div>
-    <div class="pain reveal" style="--d:.18s">¿La factura electrónica y la DIAN <b>le quitan el sueño</b>?</div>
+<section class="section s-ink" id="como"><div class="container-x">
+  <p class="eyebrow reveal">Cómo funciona</p>
+  <h2 class="t-4xl reveal">Escribir no lo compromete a nada</h2>
+  <p class="lead reveal" style="margin-top:1rem">Decidir da miedo: el primer paso es mínimo.</p>
+  <div class="steps">
+    <div class="step reveal"><div class="step-n">01</div><h3>Escriba, o mande un audio</h3><p>Cuéntenos qué se le volvió un problema.</p></div>
+    <div class="step reveal" style="--d:.08s"><div class="step-n">02</div><h3>Una conversación corta</h3><p>Cómo trabaja hoy, quién lo usaría, qué no puede fallar. Sin claves ni cuentas de nada.</p></div>
+    <div class="step reveal" style="--d:.16s"><div class="step-n">03</div><h3>La demostración — gratis</h3><p>En una reunión corta lo ve andando con datos de ejemplo y pide cambios.</p></div>
+    <div class="step reveal" style="--d:.24s"><div class="step-n">04</div><h3>Solo entonces, el precio</h3><p>Cerrado y por escrito. Si sigue, queda en internet con sus claves.</p></div>
   </div>
-  <p class="lead reveal" style="margin-top:1.2rem">Todo eso se resuelve, con datos de ejemplo de su negocio.</p>
-  <div class="card-dark autom reveal">
-    <div>
-      <h3>Sistemas que trabajan solos</h3>
-      <p>El pedido entra y el aviso sale solo. <strong style="color:var(--ink-text)">Automatizamos lo repetitivo</strong> — chat, correo, entre sistemas — y su operación cuesta menos horas.</p>
+  <div class="how-grid">
+    <figure class="media reveal"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver · 45 s</span></button></div><figcaption>Así <strong>empieza</strong> la demostración gratis: su idea, en español, funcionando. Grabación real, sin acelerar. <a href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20video%20de%20la%20idea%20que%20se%20vuelve%20sistema%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20%28appximo.com%20%C2%B7%20video%29">¿Quiere verlo con los datos de su negocio? Pídalo por WhatsApp →</a></figcaption></figure>
+    <div class="reveal" style="--d:.1s">
+      <div class="card-dark card-pad">
+        <p class="eyebrow">Por qué en días y no en meses</p>
+        <div class="bars">
+          <div class="bar" style="--w:18%;--d:0s"><span class="lbl">Lo que ya viene construido y probado — usuarios, claves, permisos, listas, copias, monitoreo</span><span class="val">minutos</span><div class="track"><div class="fill"></div></div><span class="sub">En el caso documentado: el armazón entero validó en la segunda pasada.</span></div>
+          <div class="bar" style="--w:70%;--d:0.15s"><span class="lbl">Lo que es solo suyo — sus reglas, sus pantallas, su forma de trabajar</span><span class="val">el 70 % del tiempo</span><div class="track"><div class="fill"></div></div><span class="sub">Ahí va el oficio. Ahí es donde debe ir.</span></div>
+        </div>
+      </div>
+      <div class="no-risk"><strong>Si la demostración no le sirve, no pasó nada:</strong> no paga, no queda amarrado, no insistimos.</div>
+      <p style="margin-top:1.2rem"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20contarles%20qu%C3%A9%20se%20me%20volvi%C3%B3%20un%20problema%20y%20pedir%20la%20demostraci%C3%B3n%20gratis.%20%28appximo.com%20%C2%B7%20pasos%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></p>
     </div>
-    <figure class="autom-visual reveal reveal-x" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
+  </div>
+  <div class="card-dark autom reveal">
+    <div><h3>Sistemas que trabajan solos</h3><p>El pedido entra y el aviso sale solo. <strong style="color:#fff">Automatizamos lo repetitivo</strong> — chat, correo, entre sistemas — y su operación cuesta menos horas.</p></div>
+    <figure class="autom-visual" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
       <svg viewBox="0 0 520 340" role="img" xmlns="http://www.w3.org/2000/svg">
-        <rect x="16" y="128" width="150" height="84" rx="14" fill="#0d221a"/>
-        <text x="91" y="164" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" fill="#f2efe3">Su sistema</text>
-        <rect x="40" y="178" width="30" height="7" rx="3.5" fill="#1c9d5b"/><rect x="76" y="178" width="46" height="7" rx="3.5" fill="#39544a"/><rect x="128" y="178" width="18" height="7" rx="3.5" fill="#39544a"/>
-        <path d="M 170 170 C 214 170 230 168 282 168" stroke="#1c9d5b" stroke-width="3" stroke-dasharray="7 7" fill="none"/>
-        <path d="M 226 156 l 26 10 -26 10 6 -10 z" fill="#1c9d5b"/>
-        <rect x="296" y="24" width="208" height="292" rx="26" fill="#06110c"/>
-        <rect x="308" y="38" width="184" height="264" rx="16" fill="#f7f4ec"/>
-        <rect x="318" y="56" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
-        <circle cx="340" cy="80" r="13" fill="#1c9d5b"/><path d="M 333 80 l 14 -6 -4 12 -3.5 -4 z" fill="#fff"/>
-        <text x="360" y="78" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Pedido nuevo</text>
-        <text x="360" y="98" font-family="Inter,system-ui,Arial" font-size="12" fill="#564e3e">Marta · 2 tortas</text>
-        <rect x="318" y="136" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
-        <circle cx="340" cy="160" r="13" fill="#b98a2e"/><text x="340" y="166" text-anchor="middle" font-family="Inter,system-ui,Arial" font-size="16" font-weight="800" fill="#fff">!</text>
-        <text x="360" y="158" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Inventario bajo</text>
-        <text x="360" y="178" font-family="Inter,system-ui,Arial" font-size="12" fill="#564e3e">Harina: quedan 3</text>
-        <rect x="318" y="216" width="164" height="70" rx="12" fill="#fffdf8" stroke="#e3dcca"/>
-        <circle cx="340" cy="240" r="13" fill="#1c9d5b"/><path d="M 334 240 l 4.5 5 8 -10" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-        <text x="360" y="238" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#1d1a13">Pago confirmado</text>
-        <text x="360" y="258" font-family="Inter,system-ui,Arial" font-size="12" fill="#564e3e">Aviso al cliente</text>
+        <rect x="16" y="128" width="150" height="84" rx="14" fill="#182620"/><text x="91" y="164" text-anchor="middle" font-family="Inter,system-ui,Arial" font-weight="700" font-size="18" fill="#fff">Su sistema</text>
+        <rect x="40" y="178" width="30" height="7" rx="3.5" fill="#25d366"/><rect x="76" y="178" width="46" height="7" rx="3.5" fill="#2c4034"/><rect x="128" y="178" width="18" height="7" rx="3.5" fill="#2c4034"/>
+        <path d="M 170 170 C 214 170 230 168 282 168" stroke="#25d366" stroke-width="3" stroke-dasharray="7 7" fill="none"/><path d="M 226 156 l 26 10 -26 10 6 -10 z" fill="#25d366"/>
+        <rect x="296" y="24" width="208" height="292" rx="26" fill="#060d0a"/><rect x="308" y="38" width="184" height="264" rx="16" fill="#fafafa"/>
+        <rect x="318" y="56" width="164" height="70" rx="12" fill="#fff" stroke="#e4e4e7"/><circle cx="340" cy="80" r="13" fill="#25d366"/><path d="M 333 80 l 14 -6 -4 12 -3.5 -4 z" fill="#062b16"/><text x="360" y="78" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#0b1512">Pedido nuevo</text><text x="360" y="98" font-family="Inter,system-ui,Arial" font-size="12" fill="#52525b">Marta · 2 tortas</text>
+        <rect x="318" y="136" width="164" height="70" rx="12" fill="#fff" stroke="#e4e4e7"/><circle cx="340" cy="160" r="13" fill="#c2410c"/><text x="340" y="166" text-anchor="middle" font-family="Inter,system-ui,Arial" font-size="16" font-weight="800" fill="#fff">!</text><text x="360" y="158" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#0b1512">Inventario bajo</text><text x="360" y="178" font-family="Inter,system-ui,Arial" font-size="12" fill="#52525b">Harina: quedan 3</text>
+        <rect x="318" y="216" width="164" height="70" rx="12" fill="#fff" stroke="#e4e4e7"/><circle cx="340" cy="240" r="13" fill="#25d366"/><path d="M 334 240 l 4.5 5 8 -10" stroke="#062b16" stroke-width="2.6" fill="none" stroke-linecap="round"/><text x="360" y="238" font-family="Inter,system-ui,Arial" font-size="14" font-weight="700" fill="#0b1512">Pago confirmado</text><text x="360" y="258" font-family="Inter,system-ui,Arial" font-size="12" fill="#52525b">Aviso al cliente</text>
       </svg>
     </figure>
   </div>
 </div></section>
 
-<section class="section-tight" id="equipo"><div class="container-x">
-  <p class="eyebrow reveal">Para empresas con ingenieros</p>
-  <h2 class="t-4xl h-rule reveal">¿Tiene equipo técnico? Mejor.</h2>
-  <p class="lead reveal" style="margin-top:1rem">Su ERP o plataforma va sobre <strong>tecnología abierta y documentada</strong>: su gente la administra, la audita y la extiende. <strong>Suyo de verdad</strong> — sin cajas negras ni amarres.</p>
-</div></section>
-
-<section class="section hairline" id="pasos"><div class="container-x">
-  <p class="eyebrow reveal">Qué pasa cuando escribe</p>
-  <h2 class="t-4xl h-rule reveal">Escribir no lo compromete a nada</h2>
-  <p class="lead reveal" style="margin-top:1rem">Decidir da miedo: el primer paso es mínimo.</p>
-  <div class="steps">
-    <div class="step reveal"><div class="step-n">1</div><div><h3>Escriba, o mande un audio</h3><p>Cuéntenos qué se le volvió un problema.</p></div></div>
-    <div class="step reveal" style="--d:.06s"><div class="step-n">2</div><div><h3>Una conversación corta</h3><p>Cómo trabaja hoy, quién lo usaría, qué no puede fallar. Sin claves ni cuentas de nada.</p></div></div>
-    <div class="step reveal" style="--d:.12s"><div class="step-n">3</div><div><h3>La demostración — gratis</h3><p>En una reunión corta lo ve andando con datos de ejemplo y pide cambios.</p></div></div>
-    <div class="step reveal" style="--d:.18s"><div class="step-n">4</div><div><h3>Solo entonces, el precio</h3><p>Cerrado y por escrito. Si sigue, queda en internet con sus claves.</p></div></div>
-  </div>
-  <div class="card-accent no-risk reveal"><p><strong>Si la demostración no le sirve, no pasó nada:</strong> no paga, no queda amarrado, no insistimos.</p></div>
-  <div class="cta-row reveal" style="margin-top:1.6rem"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20contarles%20qu%C3%A9%20se%20me%20volvi%C3%B3%20un%20problema%20y%20pedir%20la%20demostraci%C3%B3n%20gratis.%20%28appximo.com%20%C2%B7%20pasos%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
-</div></section>
-
-<section class="section on-wash hairline" id="confianza" style="border-bottom:1px solid var(--line)"><div class="container-x">
-  <p class="eyebrow reveal">Por qué confiar</p>
-  <h2 class="t-4xl h-rule reveal">No somos una promesa: ya funciona</h2>
-  <div class="trust-grid">
-    <div class="card card-pad reveal">
-      <h3>El equipo y la tecnología</h3>
-      <p><strong>Diez+ años en sistemas de bancos</strong> y una <strong>tecnología propia pionera</strong>: sistemas completos en días.</p>
-      <ul class="cred-list">
+<section class="section s-white" id="quien"><div class="container-x">
+  <p class="eyebrow reveal">Quién responde</p>
+  <h2 class="t-4xl reveal">No somos una promesa: ya funciona</h2>
+  <div class="who-grid">
+    <div class="reveal">
+      <p class="lead">El WhatsApp lo contesta quien construye el sistema. <strong>Diez+ años en sistemas de bancos</strong> y una tecnología propia pionera: sistemas completos en días.</p>
+      <div class="people">
+        <div class="card person" data-pendiente="FOTO-PENDIENTE"><span class="avatar" aria-hidden="true">MA</span><span><b>Miguel Acosta</b><span>Parte técnica · 10 años en sistemas de bancos · Pereira</span></span></div>
+        <div class="card person" data-pendiente="SOCIA-PENDIENTE FOTO-PENDIENTE"><span class="avatar" aria-hidden="true" style="--g:1;background:linear-gradient(135deg,var(--color-ink-600),var(--color-ink-800))">·</span><span><b>Ingeniera de sistemas</b><span>La otra mitad del proyecto · Dosquebradas</span></span></div>
+      </div>
+      <div class="contact">
+        <div><b>WhatsApp</b><a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28tel%C3%A9fono%29.">+57 311 517 5472</a></div>
+        <div><b>Dónde</b><span>Pereira y Dosquebradas, Colombia — y en todo el país por videollamada</span></div>
+      </div>
+    </div>
+    <div class="card card-pad reveal" style="--d:.1s">
+      <ul class="cred-list" style="margin-top:0">
         <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda</a> abren al instante.</li>
         <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, permisos por usuario.</li>
         <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido.</li>
-      </ul>
-    </div>
-    <div class="card-dark card-pad open-card reveal reveal-x">
-      <h3>No le pedimos que nos crea</h3>
-      <p>Tres sistemas hechos con esta tecnología están abiertos en internet ahora mismo.</p>
-      <ul class="open-list">
-        <li><a href="https://tiendita.appximo.com" rel="noopener" target="_blank">Una tienda con inventario e IVA <span>tiendita.appximo.com</span></a></li>
-        <li><a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">Una agenda veterinaria <span>petfriendly.appximo.com</span></a></li>
-        <li><a href="https://atina.appximo.com" rel="noopener" target="_blank">La plataforma que hizo otro desarrollador <span>atina.appximo.com</span></a></li>
+        <li><strong>Suyo de verdad:</strong> queda en un servidor a su nombre, con sus claves; su equipo técnico, si lo tiene, puede administrarlo.</li>
       </ul>
     </div>
   </div>
+</div></section>
+
+<section class="section s-zinc" id="preguntas"><div class="container-x">
+  <p class="eyebrow reveal">Para que no haya sorpresas</p>
+  <h2 class="t-4xl reveal">Lo que no hacemos</h2>
   <div class="nots">
     <div class="not reveal"><b>No hacemos aplicaciones de celular:</b> va en el navegador.</div>
     <div class="not reveal" style="--d:.06s"><b>No reemplazamos a su contador:</b> las ventas y el IVA salen claros.</div>
     <div class="not reveal" style="--d:.12s"><b>No cobramos por horas abiertas:</b> precio cerrado por escrito, o no empezamos.</div>
     <div class="not reveal" style="--d:.18s"><b>¿Solo necesita una página?</b> Eso sale más barato en otro lado.</div>
   </div>
-</div></section>
-
-<section class="section" id="preguntas"><div class="container-x">
-  <p class="eyebrow reveal">Preguntas frecuentes</p>
-  <h2 class="t-4xl h-rule reveal">Lo que todos preguntan</h2>
+  <p class="eyebrow reveal" style="margin-top:2.6rem">Preguntas frecuentes</p>
+  <h2 class="t-3xl reveal">Lo que todos preguntan</h2>
   <div class="faq reveal">
     <details><summary>¿Cuánto cuesta?</summary><div class="a">
       <p>Depende del tamaño: no cuesta lo mismo ordenar las citas de un consultorio que una plataforma con inventario o votaciones. Una tarifa única sería mentirle en alguna de las dos direcciones.</p>
@@ -465,33 +314,32 @@
   </div>
 </div></section>
 
-<section class="section on-ink closing grain"><div class="container-x">
+<section class="section s-ink closing grain"><div class="container-x">
   <div class="reveal">
-    <h2 class="t-5xl h-rule">Cuéntenos qué se le volvió un problema</h2>
+    <p class="eyebrow">Empiece hoy</p>
+    <h2 class="t-5xl">Cuéntenos qué se le volvió un problema</h2>
     <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos y agendamos su demostración gratis.</p>
-    <div class="cta-row" style="margin-top:1.6rem"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28final%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
-      <p class="cta-trust">Le responde el equipo directamente · Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28tel%C3%A9fono%29.">+57 311 517 5472</a></p></div>
+    <div class="cta-row"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28final%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a>
+      <p class="cta-trust">Le responde Miguel Acosta directamente · Pereira y Dosquebradas, Colombia · <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28tel%C3%A9fono%29.">+57 311 517 5472</a></p></div>
   </div>
-  <span class="close-mark" aria-hidden="true">Appximo</span>
 </div></section>
 
-<section class="tech" id="tecnico"><div class="container-x">
+<section class="tech s-white" id="tecnico"><div class="container-x">
   <p class="eyebrow">Para su equipo técnico</p>
   <h2 class="t-2xl">Lo que su ingeniero va a preguntar</h2>
-  <p style="margin-top:.6rem">La base es Appximo, un proyecto de código abierto, público y documentado. Cada sistema se entrega instalado en un servidor a nombre del cliente, con sus claves. Los datos viven en PostgreSQL, con copia de seguridad y restauración probadas. Seguridad alineada con OWASP: argon2id, validación de archivos por contenido, RBAC por rol y aislamiento por inquilino. Observabilidad nativa: métricas, trazas y alertas de anomalías, sin servicios externos. La API queda documentada (REST, GraphQL y OpenAPI). Rendimiento publicado: p50 1,58 ms a 2.000 RPS. La plataforma de 18 módulos quedó andando en 3½ horas (caso documentado).</p>
+  <p>La base es Appximo, un proyecto de código abierto, público y documentado. Cada sistema se entrega instalado en un servidor a nombre del cliente, con sus claves. Los datos viven en PostgreSQL, con copia de seguridad y restauración probadas. Seguridad alineada con OWASP: argon2id, validación de archivos por contenido, RBAC por rol y aislamiento por inquilino. Observabilidad nativa: métricas, trazas y alertas de anomalías, sin servicios externos. La API queda documentada (REST, GraphQL y OpenAPI). Rendimiento publicado: p50 1,58 ms a 2.000 RPS. La plataforma de 18 módulos quedó andando en 3½ horas (caso documentado).</p>
   <p class="t-sm">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
 </div></section>
 
 <footer class="foot"><div class="container-x">
-  <p><strong style="color:var(--ink-text)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. WhatsApp: <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28pie%20de%20p%C3%A1gina%29.">+57 311 517 5472</a></p>
+  <p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. WhatsApp: <a href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28pie%20de%20p%C3%A1gina%29.">+57 311 517 5472</a></p>
   <p>Pruebe los sistemas abiertos: <a href="https://tiendita.appximo.com" rel="noopener">tiendita.appximo.com</a> · <a href="https://petfriendly.appximo.com" rel="noopener">petfriendly.appximo.com</a> · <a href="https://atina.appximo.com" rel="noopener">atina.appximo.com</a></p>
   <p>¿Administra un conjunto residencial? <a href="conjuntos.html">Software para la administración de conjuntos</a> · <a href="caso.html">el caso VecinGo</a></p>
   <p class="t-xs">¿Trabaja en tecnología? La herramienta detrás de esto es un proyecto de código abierto: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a></p>
-  <span class="foot-mark" aria-hidden="true">Appximo</span>
+  <span class="foot-mark" aria-hidden="true">appximo</span>
 </div></footer>
 
 <div class="mobile-cta"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28celular%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
-
 <script>document.documentElement.classList.add('js');</script>
 <script src="assets/system.js" defer></script>
 </body>

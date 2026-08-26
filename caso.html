@@ -12,117 +12,143 @@
 <meta property="og:url" content="https://appximo.com/caso.html">
 <link rel="canonical" href="https://appximo.com/caso.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#0d221a">
+<meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/system.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23153f2e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23e9f5ee' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325d366'/%3E%3Ctext x='32' y='45' font-family='Inter,Arial,sans-serif' font-size='38' font-weight='900' fill='%23062b16' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
-  .hero{position:relative;background:var(--color-ink-900);color:var(--ink-text);overflow:hidden;margin-top:-3.7rem;padding:calc(3.7rem + clamp(2.2rem,6vw,4rem)) 0 clamp(2.4rem,6vw,3.6rem)}
-  .hero-veil{position:absolute;inset:0;background:radial-gradient(70rem 36rem at 80% -10%,color-mix(in srgb,var(--color-ink-600) 70%,transparent) 0%,transparent 60%);pointer-events:none}
-  .hero .container-x{position:relative;z-index:2}
-  .hero-grid{display:grid;gap:2.2rem}
-  @media(min-width:900px){.hero-grid{grid-template-columns:11fr 9fr;align-items:center;gap:3rem}}
-  .hero h1{max-width:16ch;font-variation-settings:"opsz" 144}
-  .hero h1 em{font-style:normal;color:var(--ink-accent-2)}
-  .hero .sub{margin:1.1rem 0 0;color:var(--ink-text-dim);max-width:38rem}
-  .hero .sub strong{color:var(--ink-text)}
-  .cta-row{margin-top:1.7rem}
-  .hero figcaption{margin-top:.7rem;font-size:.8rem;color:var(--ink-text-mute)}
-  @media(min-width:900px) and (prefers-reduced-motion:no-preference){.hero .bframe{transform:perspective(1400px) rotateY(-5deg) rotateX(1.2deg);transition:transform .6s var(--ease)}.hero figure:hover .bframe{transform:none}}
-  .casestats{display:grid;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid color-mix(in srgb,var(--color-brand) 40%,transparent)}
-  @media(min-width:700px){.casestats{grid-template-columns:repeat(3,1fr)}}
-  .casestats b{display:block;font-family:var(--font-display);font-variation-settings:"opsz" 144;font-weight:600;font-size:2.5rem;line-height:1.02;color:var(--color-brand-bright);font-variant-numeric:tabular-nums}
-  .casestats span{display:block;margin-top:.25rem;font-size:.88rem;color:var(--ink-text-dim);max-width:16rem}
-  .pains{display:grid;gap:1rem;margin-top:1.6rem}
-  @media(min-width:760px){.pains{grid-template-columns:repeat(3,1fr)}}
-  .pain{border-top:4px solid var(--color-warn);padding:1.1rem 1.15rem}
-  .pain h3{font-family:var(--font-display);font-variation-settings:"opsz" 48;font-weight:600;font-size:1.15rem;margin-bottom:.35rem}
-  .pain p{color:var(--text-2);font-size:.95rem}
-  .pain p b{color:var(--color-ok-ink)}
-  .shots{display:grid;gap:1.2rem;margin-top:1.6rem}
-  @media(min-width:760px){.shots.two{grid-template-columns:1fr 1fr}}
-  .shot{overflow:hidden}
-  .shot img{aspect-ratio:16/7;object-fit:cover;object-position:top}
-  .shot.natural img{aspect-ratio:auto}
-  .shot figcaption{padding:.8rem 1.05rem;font-size:.92rem;color:var(--text-2);border-top:1px solid var(--line)}
-  .shot figcaption b{color:var(--text)}
+  .hero-float{position:absolute;right:var(--gutter);top:clamp(4.5rem,9vw,7rem);z-index:3;display:none;width:15.5rem}
+  @media(min-width:1000px){.hero-float{display:block}}
+  .hero-float .card-dark{padding:.9rem 1rem}
+  .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
+  .notif:first-child{border-top:none;padding-top:0}
+  .notif .ci{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--color-brand-500);display:flex;align-items:center;justify-content:center;flex:none}
+  .notif .ci svg{width:.9rem;height:.9rem}
+  .notif b{display:block;font-size:.84rem;line-height:1.2}
+  .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
+  .case{display:grid;gap:1.6rem;align-items:center}
+  @media(min-width:900px){.case{grid-template-columns:7fr 5fr;gap:3rem}.case.flip .case-media{order:2}}
+  .case+.case{margin-top:clamp(3rem,7vw,5rem);padding-top:clamp(3rem,7vw,5rem);border-top:1px solid var(--zinc-200)}
+  .case h3{font-size:clamp(1.5rem,3.2vw,2.1rem);letter-spacing:-.03em;line-height:1.12;margin:.6rem 0 .7rem;font-weight:800}
+  .case p{color:var(--text-2);font-size:1rem}
+  .case-media{display:grid;gap:.9rem}
+  .case-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+  .case-panel{margin-top:1.1rem;padding:1.1rem 1.2rem}
+  .case-panel .eyebrow{margin-bottom:.6rem}
+  .meaning{margin-top:1rem;background:var(--color-brand-50);border:1px solid var(--color-brand-200);border-left:4px solid var(--color-brand-500);border-radius:var(--radius-xl);padding:.85rem 1rem;color:var(--color-ink);font-size:.95rem}
+  .door-grid{display:grid;gap:1rem;align-items:center}
+  @media(min-width:860px){.door-grid{grid-template-columns:1fr auto;gap:2rem}}
+  .door h2{font-size:clamp(1.35rem,2.8vw,1.8rem);letter-spacing:-.03em}
+  .door p{opacity:.85;font-size:.98rem;margin-top:.35rem}
+  .invite{display:grid;gap:.9rem;margin-top:1.5rem}
+  @media(min-width:700px){.invite{grid-template-columns:1fr 1fr}}
+  .pick{display:grid;grid-template-columns:5rem 1fr;gap:1rem;align-items:center;padding:.9rem 1rem;text-decoration:none;color:inherit}
+  .pk-img{width:5rem;height:5rem;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--zinc-200);background:var(--zinc-100)}
+  .pk-img img{width:100%;height:100%;object-fit:cover;object-position:top left}
+  .pick b{display:block;color:var(--text);font-size:1rem;line-height:1.3}
+  .pick span{display:block;color:var(--text-2);font-size:.86rem;line-height:1.45}
+  .pick .chip{margin-top:.45rem}
+  .steps{display:grid;gap:1.2rem;margin-top:2rem}
+  @media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr);gap:1.4rem}}
+  .step h3{font-size:1.06rem;margin:.6rem 0 .3rem;color:#fff}
+  .step p{color:var(--ink-text-dim);font-size:.94rem}
+  .how-grid{display:grid;gap:1.4rem;margin-top:2.4rem;align-items:start}
+  @media(min-width:900px){.how-grid{grid-template-columns:7fr 5fr;gap:2.4rem}}
+  .no-risk{margin-top:1.4rem;background:rgba(255,255,255,.06);border:1px solid var(--ink-line);border-left:4px solid var(--color-brand-500);border-radius:var(--radius-xl);padding:.95rem 1.1rem;color:#fff;font-size:.97rem}
+  .who-grid{display:grid;gap:1.2rem;margin-top:1.8rem}
+  @media(min-width:860px){.who-grid{grid-template-columns:3fr 2fr;align-items:start}}
+  .people{display:grid;gap:.9rem;margin-top:1rem}
+  @media(min-width:520px){.people{grid-template-columns:1fr 1fr}}
+  .person{display:flex;gap:.9rem;align-items:center;padding:1rem 1.1rem}
+  .person b{display:block;font-size:1rem;line-height:1.25}
+  .person span{display:block;font-size:.84rem;color:var(--text-2);line-height:1.4}
+  .person .avatar{display:inline-flex;font-size:1.05rem;color:#fff;line-height:1}
+  .cred-list{list-style:none;margin-top:.7rem}
+  .cred-list li{padding-left:1.5rem;position:relative;margin:.55rem 0;color:var(--text-2);font-size:.95rem}
+  .cred-list li::before{content:"✓";position:absolute;left:0;color:var(--color-brand-600);font-weight:800}
+  .contact{display:grid;gap:.5rem;margin-top:1rem;font-size:.95rem}
+  .contact div{display:flex;gap:.6rem;align-items:baseline}
+  .contact b{min-width:6.5rem;color:var(--text-3);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
   .nots{display:grid;gap:.7rem;margin-top:1.4rem;max-width:46rem}
-  .not{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--color-ink-800);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
+  .not{background:var(--white);border:1px solid var(--zinc-200);border-left:4px solid var(--color-ink);border-radius:var(--radius-lg);padding:.75rem 1rem;color:var(--text-2);font-size:.97rem;box-shadow:var(--shadow-soft)}
   .not b{color:var(--text)}
-  .steps{margin-top:1.4rem;max-width:46rem}
-  .step{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
-  .step:first-child{border-top:none}
-  .step-n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--color-ink-800);color:#cfe8da;font-family:var(--font-display);font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.05rem}
-  .step h3{font-size:1.06rem;margin-bottom:.2rem}
-  .step p{color:var(--text-2);font-size:.96rem}
-  .closing{position:relative;overflow:hidden;background:radial-gradient(60rem 26rem at 22% -18%,var(--color-ink-600) 0%,var(--color-ink-800) 52%,var(--color-ink-900) 100%)}
-  .closing h2{color:#fff;max-width:18ch}
-  .close-mark{position:absolute;right:-.15em;bottom:-.5em;font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,26vw,22rem);line-height:.8;letter-spacing:-.06em;color:rgba(242,239,227,.04);pointer-events:none;user-select:none}
-  .quote{max-width:40rem;margin-top:1.6rem;position:relative}
-  .quote blockquote{font-family:var(--font-display);font-variation-settings:"opsz" 72;font-size:1.25rem;line-height:1.4;font-weight:500;color:#fff}
-  .quote figcaption{margin-top:.8rem;font-size:.88rem;color:var(--ink-text-dim)}
-  .quote::before{content:"«";position:absolute;top:-.3rem;left:.7rem;font-family:var(--font-display);font-size:5rem;line-height:1;color:var(--color-brand-bright);opacity:.25;pointer-events:none}
+  .closing{position:relative;overflow:hidden}
+  .closing::before{content:"";position:absolute;inset:-40% -20% auto;height:120%;background:radial-gradient(60rem 30rem at 20% 0%,color-mix(in srgb,var(--color-brand-700) 45%,transparent) 0%,transparent 60%);pointer-events:none}
+  .closing .container-x{position:relative}
+  .closing h2{max-width:16ch}
+  .tech{padding:2.4rem 0;border-top:1px solid var(--zinc-200)}
+  .tech p{color:var(--text-2);font-size:.92rem;max-width:46rem;margin-top:.5rem}
+  .autom{display:grid;gap:1.2rem;align-items:center;padding:1.4rem 1.5rem;margin-top:1.4rem}
+  @media(min-width:760px){.autom{grid-template-columns:3fr 2fr;gap:2rem}}
+  .autom h3{font-size:1.35rem;color:#fff;margin-bottom:.35rem}
+  .autom p{color:var(--ink-text-dim);font-size:.96rem}
+  .autom-visual{margin:0 auto;max-width:20rem;width:100%}
+  @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
+</style>
+<style>
+  .shots{display:grid;gap:1.2rem;margin-top:1.6rem}
+  @media(min-width:760px){.shots{grid-template-columns:1fr 1fr}}
+  .shot figcaption{padding:.8rem 1.05rem;font-size:.9rem;color:var(--text-2);border-top:1px solid var(--zinc-200)}
+  .shot figcaption b{color:var(--text)}
 </style>
 </head>
 <body>
 <nav class="nav" id="nav"><div class="container-x nav-in">
-  <a class="logo" href="/"><span class="logo-mark">A</span>Appximo</a>
+  <a class="logo" href="/"><span class="logo-mark">A</span>appximo</a>
   <a class="nav-links" href="/" style="text-decoration:none;color:var(--ink-text-dim)">← Volver a la página principal</a>
-  <a class="btn btn-wa compact btn-ghost-ink" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
+  <a class="btn btn-wa compact" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Demostración gratis</a>
 </div></nav>
 
-<header class="hero grain"><div class="hero-veil" aria-hidden="true"></div><div class="container-x">
-  <p class="eyebrow" style="color:var(--ink-accent)">El caso, en español y con pruebas</p>
-  <h1 class="t-5xl" style="max-width:20ch">Una plataforma de 18 módulos para un conjunto real, <em>construida en una tarde</em>.</h1>
-  <p class="sub t-xl">Se llama VecinGo: la administración completa de un conjunto residencial, construida con nuestra tecnología. Su construcción está <strong>documentada paso a paso</strong> en un informe público. Estas son sus pantallas, tal cual.</p>
-  <div class="casestats">
-    <div><b>18</b><span>módulos: asambleas, cartera, PQRS, parqueaderos, reservas, obras…</span></div>
-    <div><b>3½ h</b><span>de construcción, documentadas paso a paso en el informe del caso</span></div>
-    <div><b>58,2&nbsp;%</b><span>de quórum por coeficiente, calculado en tiempo real en una asamblea</span></div>
+<header class="hero grain">
+  <div class="hero-grid-bg" aria-hidden="true"><div><img src="assets/tablero-hero.webp" alt="" width="1080" height="483" decoding="async"></div><div><img src="assets/caso-asamblea.webp" alt="" width="1080" height="245" decoding="async"></div><div><img src="assets/caso-plano.webp" alt="" width="1080" height="498" decoding="async" loading="lazy"></div><div><img src="assets/caso-muro.webp" alt="" width="1080" height="498" decoding="async" loading="lazy"></div></div><div class="hero-veil" aria-hidden="true"></div>
+  <div class="container-x">
+    <div class="hero-copy">
+      <p class="eyebrow">El caso, en español y con pruebas</p>
+      <h1 class="t-5xl" style="max-width:20ch">Una plataforma de 18 módulos para un conjunto real, <em>construida en una tarde</em>.</h1>
+      <p class="sub">Se llama VecinGo: la administración completa de un conjunto residencial, construida con nuestra tecnología. Su construcción está <strong>documentada paso a paso</strong> en un informe público. Estas son sus pantallas, tal cual.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>18</b><span>módulos: asambleas, cartera, PQRS, parqueaderos, reservas, obras…</span></div>
+      <div class="stat"><b>3½<span class="u">h</span></b><span>de construcción, documentadas paso a paso en el informe del caso</span></div>
+      <div class="stat ring-row" style="align-items:center"><div class="ring dark" style="--size:6rem;--c:264;--p:0.5820" role="img" aria-label="58.2 por ciento quórum"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><div class="num"><span>58,2<span style="font-size:.55em"> %</span></span><small>quórum</small></div></div><span style="margin-top:0">de quórum por coeficiente, calculado en tiempo real en una asamblea</span></div>
+    </div>
   </div>
-</div></header>
+</header>
 
-<section class="section"><div class="container-x">
+<section class="section s-white"><div class="container-x">
   <p class="eyebrow reveal">Por dentro, pantalla por pantalla</p>
-  <h2 class="t-4xl h-rule reveal">Lo que la administración ve todos los días</h2>
+  <h2 class="t-4xl reveal">Lo que la administración ve todos los días</h2>
   <div class="shots">
-    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"><figcaption><b>El tablero.</b> Todo el estado del conjunto en una pantalla: PQRS abiertas, cartera en mora con su valor, obras, reservas, visitantes — y la asamblea en curso con su quórum.</figcaption></figure>
-    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-asamblea.webp" alt="Asambleas y votaciones: quórum por coeficiente y voto ponderado en tiempo real, 58,2 % presente, con quórum" width="1080" height="245" loading="lazy"><figcaption><b>Asambleas y votaciones.</b> Quórum por coeficiente y voto ponderado, calculados en tiempo real. Se acabó contar papelitos a medianoche.</figcaption></figure>
-    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy"><figcaption><b>El plano de parqueaderos.</b> Los cupos se dibujan sobre el plano del conjunto: 106 cupos, 144 vehículos registrados, visitantes vigentes y zonas prohibidas.</figcaption></figure>
-    <figure class="bframe paper shot natural reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="#8fd3ae"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="#8fd3ae" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-muro.webp" alt="Muro del conjunto: publicaciones de los residentes con etiquetas de agradecimiento y convivencia" width="1080" height="498" loading="lazy"><figcaption><b>El muro del conjunto.</b> Lo que los vecinos publican, con moderación y registro de quién leyó cada comunicado.</figcaption></figure>
+    <figure class="bframe paper shot reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/tablero-hero.webp" alt="Tablero del conjunto: PQRS abiertas, unidades en mora con su valor, obras, reservas, visitantes y la asamblea en curso" width="1080" height="483" loading="lazy"><figcaption><b>El tablero.</b> Todo el estado del conjunto en una pantalla: PQRS abiertas, cartera en mora con su valor, obras, reservas, visitantes — y la asamblea en curso con su quórum.</figcaption></figure>
+    <figure class="bframe paper shot reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-asamblea.webp" alt="Asambleas y votaciones: quórum por coeficiente y voto ponderado en tiempo real, 58,2 % presente, con quórum" width="1080" height="245" loading="lazy"><figcaption><b>Asambleas y votaciones.</b> Quórum por coeficiente y voto ponderado, calculados en tiempo real. Se acabó contar papelitos a medianoche.</figcaption></figure>
+    <figure class="bframe paper shot reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-plano.webp" alt="Plano de parqueaderos dibujado en el sistema: 106 cupos, 144 vehículos registrados, zonas pintadas" width="1080" height="498" loading="lazy"><figcaption><b>El plano de parqueaderos.</b> Los cupos se dibujan sobre el plano del conjunto: 106 cupos, 144 vehículos registrados, visitantes vigentes y zonas prohibidas.</figcaption></figure>
+    <figure class="bframe paper shot reveal media-skel"><div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>vecingo — modo demostración</span></div><img src="assets/caso-muro.webp" alt="Muro del conjunto: publicaciones de los residentes con etiquetas de agradecimiento y convivencia" width="1080" height="498" loading="lazy"><figcaption><b>El muro del conjunto.</b> Lo que los vecinos publican, con moderación y registro de quién leyó cada comunicado.</figcaption></figure>
   </div>
   <p class="lead reveal" style="margin-top:1.2rem">Las pantallas son del <strong>modo demostración</strong> de la plataforma: los datos son ficticios a propósito — la comunidad real no se expone.</p>
 </div></section>
 
-<section class="section on-ink"><div class="container-x">
+<section class="section s-ink"><div class="container-x">
   <p class="eyebrow reveal">El recorrido completo</p>
-  <h2 class="t-4xl h-rule reveal" style="color:#fff">Véala funcionando, 5 minutos</h2>
-  <figure class="media reveal" style="margin-top:1.4rem;max-width:52rem">
-    <div class="vframe">
-      <video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video>
-      <button class="vplay" aria-label="Reproducir el recorrido"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span></button>
-    </div>
-    <figcaption>El recorrido lo grabó el autor de la plataforma, con sus propios rótulos.</figcaption>
-  </figure>
-  <figure class="card-dark card-pad quote reveal">
-    <blockquote>El informe técnico completo — qué se construyó, cuánto tardó cada parte y qué falló — está publicado.</blockquote>
-    <figcaption><a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">Léalo aquí</a> (en inglés). ¿Administra un conjunto? <a href="conjuntos.html">Esta es su página</a>.</figcaption>
-  </figure>
+  <h2 class="t-4xl reveal">Véala funcionando, 5 minutos</h2>
+  <figure class="media reveal" style="margin-top:1.4rem;max-width:52rem"><div class="vframe"><video id="casovid" controls muted playsinline preload="none" poster="assets/poster-vecingo.webp" width="1280" height="720" aria-label="Video: recorrido de 5 minutos por la plataforma VecinGo en modo demostración"><source src="assets/vecingo-caso.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver el recorrido · 5 min</span></button></div><figcaption>El recorrido lo grabó el autor de la plataforma, con sus propios rótulos.</figcaption></figure>
+  <div class="card-dark card-pad reveal" style="max-width:40rem;margin-top:1.6rem">
+    <p style="font-weight:600;font-size:1.08rem;line-height:1.4">El informe técnico completo — qué se construyó, cuánto tardó cada parte y qué falló — está publicado.</p>
+    <p class="t-sm" style="margin-top:.7rem;color:var(--ink-text-dim)"><a href="https://github.com/appximo/appximo/blob/main/docs/CASE_STUDY_VECINGO.md" rel="noopener">Léalo aquí</a> (en inglés). ¿Administra un conjunto? <a href="conjuntos.html">Esta es su página</a>.</p>
+  </div>
 </div></section>
 
-<section class="section on-ink closing grain" style="border-top:1px solid var(--ink-line)"><div class="container-x">
+<section class="section s-ink closing grain" style="border-top:1px solid var(--ink-line)"><div class="container-x">
   <div class="reveal">
-    <h2 class="t-5xl h-rule">¿Su conjunto — o su negocio — necesita algo así?</h2>
+    <h2 class="t-5xl">¿Su conjunto — o su negocio — necesita algo así?</h2>
     <p class="lead" style="margin-top:1rem">Cuéntenos qué se le está volviendo un problema. La demostración es gratis, y el precio se cierra por escrito antes de empezar.</p>
     <div class="cta-row"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20caso%20VecinGo%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20conjunto%20o%20mi%20negocio.%20%28appximo.com%20%C2%B7%20caso%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
   </div>
-  <span class="close-mark" aria-hidden="true">Appximo</span>
 </div></section>
 
 <footer class="foot"><div class="container-x">
-  <p><strong style="color:var(--ink-text)">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>
-  <span class="foot-mark" aria-hidden="true">Appximo</span>
+  <p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>
+  <p class="t-xs">¿Trabaja en tecnología? La herramienta detrás de esto es un proyecto de código abierto: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a></p>
+  <span class="foot-mark" aria-hidden="true">appximo</span>
 </div></footer>
 <script>document.documentElement.classList.add('js');</script>
 <script src="assets/system.js" defer></script>

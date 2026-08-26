@@ -14,7 +14,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/system.css?v=79b03f89">
+<link rel="stylesheet" href="assets/system.css?v=f416f9df">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325d366'/%3E%3Ctext x='32' y='45' font-family='Inter,Arial,sans-serif' font-size='38' font-weight='900' fill='%23062b16' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
   .hero-float{position:absolute;right:var(--gutter);top:clamp(4.5rem,9vw,7rem);z-index:3;display:none;width:15.5rem}
@@ -102,7 +102,12 @@
   .k{font-weight:600;color:inherit;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%);border-radius:2px;padding:0 .08em}
   .b-bubble .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
   .plat-tabs span{transition:background .35s var(--ease),color .35s var(--ease),padding .35s var(--ease)}
-  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem}
+  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem;box-shadow:0 0 0 3px color-mix(in srgb,var(--color-brand) 25%,transparent)}
+  .fly{position:fixed;z-index:80;pointer-events:none;font-weight:700;font-size:.8rem;color:var(--color-on-brand);background:var(--color-brand);border-radius:999px;padding:.2rem .6rem;box-shadow:0 0 0 4px color-mix(in srgb,var(--color-brand) 30%,transparent),0 10px 30px -8px color-mix(in srgb,var(--color-brand) 80%,transparent);white-space:nowrap;will-change:transform,opacity}
+  .fly-trail{position:fixed;z-index:79;pointer-events:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--color-brand-300);opacity:.9;will-change:transform,opacity}
+  html.js .plat.assemble .plat-tabs{animation:coIn .5s var(--ease) both}
+  html.js .plat.assemble .plat-kpis{animation:coIn .5s var(--ease) .15s both}
+  html.js .plat.assemble .co-order{animation:coIn .5s var(--ease) .3s both}
   .ia{margin:1rem 0 0;max-width:34rem}
   .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
   .ia summary::-webkit-details-marker{display:none}
@@ -386,6 +391,6 @@
   <span class="foot-mark" aria-hidden="true">appximo</span>
 </div></footer>
 <script>document.documentElement.classList.add('js');</script>
-<script src="assets/system.js?v=24a42bb8" defer></script>
+<script src="assets/system.js?v=3c4461c2" defer></script>
 </body>
 </html>

@@ -39,18 +39,29 @@
       setTimeout(step, 26 + Math.random() * 28);
     })();
   };
+  /* cada palabra clave VUELA desde la frase hasta su pestaña, con estela, y la enciende al llegar */
   var lightTabs = function (scope, delay) {
-    var keys = []; scope.querySelectorAll('.k[data-k]').forEach(function (k) { if (keys.indexOf(k.getAttribute('data-k')) < 0) keys.push(k.getAttribute('data-k')); });
-    keys.forEach(function (k, i) { setTimeout(function () { scope.querySelectorAll('.plat-tabs [data-k="' + k + '"]').forEach(function (t) { t.classList.add('lit'); }); }, (delay || 0) + i * 380); });
+    var pairs = []; scope.querySelectorAll('.k[data-k]').forEach(function (k) { var key = k.getAttribute('data-k'); var t = scope.querySelector('.plat-tabs [data-k="' + key + '"]'); if (t && !pairs.some(function (p) { return p.key === key; })) pairs.push({ key: key, from: k, to: t }); });
+    pairs.forEach(function (p, i) { setTimeout(function () {
+      var a = p.from.getBoundingClientRect(), b = p.to.getBoundingClientRect();
+      if (!a.width || !b.width || !('animate' in document.body)) { p.to.classList.add('lit'); return; }
+      var chip = document.createElement('span'); chip.className = 'fly'; chip.textContent = p.to.textContent; document.body.appendChild(chip);
+      var c = chip.getBoundingClientRect(); var x0 = a.left + a.width / 2 - c.width / 2, y0 = a.top + a.height / 2 - c.height / 2, x1 = b.left + b.width / 2 - c.width / 2, y1 = b.top + b.height / 2 - c.height / 2;
+      var mx = (x0 + x1) / 2 + (x1 > x0 ? 40 : -40), my = Math.min(y0, y1) - 60;
+      chip.style.left = '0'; chip.style.top = '0';
+      var anim = chip.animate([{ transform: 'translate(' + x0 + 'px,' + y0 + 'px) scale(.85)', opacity: 0 }, { transform: 'translate(' + x0 + 'px,' + y0 + 'px) scale(1.05)', opacity: 1, offset: .15 }, { transform: 'translate(' + mx + 'px,' + my + 'px) scale(1)', opacity: 1, offset: .6 }, { transform: 'translate(' + x1 + 'px,' + y1 + 'px) scale(.6)', opacity: 0 }], { duration: 900, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'forwards' });
+      for (var d = 0; d < 6; d++) (function (d) { setTimeout(function () { var r = chip.getBoundingClientRect(); if (!r.width) return; var dot = document.createElement('span'); dot.className = 'fly-trail'; dot.style.left = (r.left + r.width / 2) + 'px'; dot.style.top = (r.top + r.height / 2) + 'px'; document.body.appendChild(dot); dot.animate([{ transform: 'scale(1)', opacity: .9 }, { transform: 'scale(.2)', opacity: 0 }], { duration: 500, easing: 'ease-out', fill: 'forwards' }).onfinish = function () { dot.remove(); }; }, 120 + d * 110); })(d);
+      anim.onfinish = function () { chip.remove(); p.to.classList.add('lit'); p.to.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.12)' }, { transform: 'scale(1)' }], { duration: 320, easing: 'ease-out' }); };
+    }, (delay || 0) + i * 420); });
   };
   var fullText = function (el) { var segs; try { segs = JSON.parse(el.getAttribute('data-segs')); } catch (e) { return; } el.innerHTML = segs.map(function (sg) { return sg.k ? '<span class="k" data-k="' + sg.k + '">' + sg.t + '</span>' : sg.t; }).join(''); };
 
   /* el hero: la idea se ESCRIBE una vez; después se arma la plataforma (sin JS o con reduced-motion: todo visible, quieto) */
   document.querySelectorAll('.flow').forEach(function (flow) {
     var t = flow.querySelector('.fl-type'); if (!t) return;
-    if (reduce || getComputedStyle(flow).display === 'none') { flow.classList.add('typed'); return; }
+    if (getComputedStyle(flow).display === 'none') { flow.classList.add('typed'); return; }
     flow.classList.add('typing');
-    var start = function () { typeSegs(t, function () { flow.classList.remove('typing'); flow.classList.add('typed'); setTimeout(function () { flow.querySelectorAll('.late-count').forEach(runCount); }, 500); lightTabs(flow, 900); }); };
+    var start = function () { typeSegs(t, function () { flow.classList.remove('typing'); flow.classList.add('typed'); var pl = flow.querySelector('.plat'); if (pl) pl.classList.add('assemble'); setTimeout(function () { flow.querySelectorAll('.late-count').forEach(runCount); }, 500); lightTabs(flow, 1000); }); };
     setTimeout(start, 700);
     setTimeout(function () { if (!flow.classList.contains('typed')) { fullText(t); flow.classList.remove('typing'); flow.classList.add('typed'); lightTabs(flow, 300); } }, 9000);
   });
@@ -72,7 +83,7 @@
   if (build) {
     var bt = build.querySelector('.b-type'), steps = build.querySelectorAll('.b-proc li'), clock = build.querySelector('.b-time');
     var finish = function () { build.classList.add('p2', 'p3'); steps.forEach(function (li) { li.classList.add('done'); }); if (bt) fullText(bt); build.querySelectorAll('.late-count').forEach(function (el) { el.textContent = parseFloat(el.dataset.count).toLocaleString('es-CO'); }); };
-    if (reduce || !('IntersectionObserver' in window)) finish();
+    if (!('IntersectionObserver' in window)) finish();
     else {
       var started = false, t0 = 0, tick = null;
       var startBuild = function () {
@@ -80,7 +91,7 @@
         tick = setInterval(function () { var s = Math.floor((performance.now() - t0) / 1000); clock.textContent = '00:' + (s < 10 ? '0' : '') + s; }, 250);
         build.classList.add('p1');
         typeSegs(bt, function () { build.classList.remove('p1'); build.classList.add('p2'); proc(0); });
-        function proc(k) { if (k > 0) steps[k - 1].classList.replace('on', 'done'); if (k >= steps.length) { build.classList.add('p3'); clearInterval(tick); setTimeout(function () { build.querySelectorAll('.late-count').forEach(runCount); }, 600); lightTabs(build, 900); return; } steps[k].classList.add('on'); setTimeout(function () { proc(k + 1); }, 650 + k * 120); }
+        function proc(k) { if (k > 0) steps[k - 1].classList.replace('on', 'done'); if (k >= steps.length) { build.classList.add('p3'); clearInterval(tick); var pl = build.querySelector('.plat'); if (pl) pl.classList.add('assemble'); setTimeout(function () { build.querySelectorAll('.late-count').forEach(runCount); }, 600); lightTabs(build, 1000); return; } steps[k].classList.add('on'); setTimeout(function () { proc(k + 1); }, 650 + k * 120); }
       };
       var bo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { bo.disconnect(); startBuild(); } }); }, { threshold: .35 });
       bo.observe(build);
@@ -101,7 +112,7 @@
     var fmt = function (v, dec, suf) { return v.toLocaleString('es-CO', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf; };
     var run = function (el) {
       var target = parseFloat(el.dataset.count), dec = (el.dataset.dec | 0), suf = el.dataset.suf || '', dur = 1400;
-      if (reduce) { el.textContent = fmt(target, dec, suf); return; }
+      if (reduce && !el.classList.contains('late-count')) { el.textContent = fmt(target, dec, suf); return; }
       var t0 = null;
       setTimeout(function () { el.textContent = fmt(target, dec, suf); }, dur + 80);
       (function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1); p = 1 - Math.pow(1 - p, 3); el.textContent = fmt(target * p, dec, suf); if (p < 1) requestAnimationFrame(step); })(performance.now());

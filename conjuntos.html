@@ -15,7 +15,7 @@
 <meta property="og:locale" content="es_CO">
 <meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/system.css?v=79b03f89">
+<link rel="stylesheet" href="assets/system.css?v=f416f9df">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325d366'/%3E%3Ctext x='32' y='45' font-family='Inter,Arial,sans-serif' font-size='38' font-weight='900' fill='%23062b16' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Software para administración de conjuntos residenciales","serviceType":"Sistema de administración de propiedad horizontal a la medida","provider":{"@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","telephone":"+57 311 517 5472"},"audience":{"@type":"Audience","audienceType":"Administradores de propiedad horizontal"},"url":"https://appximo.com/conjuntos.html","offers":{"@type":"Offer","description":"Demostración gratis con datos de ejemplo; precio cerrado por escrito antes de empezar","url":"https://wa.me/573115175472"}}</script>
 <style>
@@ -104,7 +104,12 @@
   .k{font-weight:600;color:inherit;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%);border-radius:2px;padding:0 .08em}
   .b-bubble .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
   .plat-tabs span{transition:background .35s var(--ease),color .35s var(--ease),padding .35s var(--ease)}
-  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem}
+  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem;box-shadow:0 0 0 3px color-mix(in srgb,var(--color-brand) 25%,transparent)}
+  .fly{position:fixed;z-index:80;pointer-events:none;font-weight:700;font-size:.8rem;color:var(--color-on-brand);background:var(--color-brand);border-radius:999px;padding:.2rem .6rem;box-shadow:0 0 0 4px color-mix(in srgb,var(--color-brand) 30%,transparent),0 10px 30px -8px color-mix(in srgb,var(--color-brand) 80%,transparent);white-space:nowrap;will-change:transform,opacity}
+  .fly-trail{position:fixed;z-index:79;pointer-events:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--color-brand-300);opacity:.9;will-change:transform,opacity}
+  html.js .plat.assemble .plat-tabs{animation:coIn .5s var(--ease) both}
+  html.js .plat.assemble .plat-kpis{animation:coIn .5s var(--ease) .15s both}
+  html.js .plat.assemble .co-order{animation:coIn .5s var(--ease) .3s both}
   .ia{margin:1rem 0 0;max-width:34rem}
   .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
   .ia summary::-webkit-details-marker{display:none}
@@ -444,6 +449,6 @@
 
 <div class="mobile-cta"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20administro%20un%20conjunto%20residencial%20y%20quiero%20una%20demostraci%C3%B3n%20gratis.%20%28appximo.com%2Fconjuntos%20%C2%B7%20celular%29"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
 <script>document.documentElement.classList.add('js');</script>
-<script src="assets/system.js?v=24a42bb8" defer></script>
+<script src="assets/system.js?v=3c4461c2" defer></script>
 </body>
 </html>

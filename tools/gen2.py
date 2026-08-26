@@ -123,7 +123,12 @@ PAGE_CSS='''<style>
   .k{font-weight:600;color:inherit;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%);border-radius:2px;padding:0 .08em}
   .b-bubble .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
   .plat-tabs span{transition:background .35s var(--ease),color .35s var(--ease),padding .35s var(--ease)}
-  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem}
+  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem;box-shadow:0 0 0 3px color-mix(in srgb,var(--color-brand) 25%,transparent)}
+  .fly{position:fixed;z-index:80;pointer-events:none;font-weight:700;font-size:.8rem;color:var(--color-on-brand);background:var(--color-brand);border-radius:999px;padding:.2rem .6rem;box-shadow:0 0 0 4px color-mix(in srgb,var(--color-brand) 30%,transparent),0 10px 30px -8px color-mix(in srgb,var(--color-brand) 80%,transparent);white-space:nowrap;will-change:transform,opacity}
+  .fly-trail{position:fixed;z-index:79;pointer-events:none;width:.55rem;height:.55rem;border-radius:50%;background:var(--color-brand-300);opacity:.9;will-change:transform,opacity}
+  html.js .plat.assemble .plat-tabs{animation:coIn .5s var(--ease) both}
+  html.js .plat.assemble .plat-kpis{animation:coIn .5s var(--ease) .15s both}
+  html.js .plat.assemble .co-order{animation:coIn .5s var(--ease) .3s both}
   .ia{margin:1rem 0 0;max-width:34rem}
   .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
   .ia summary::-webkit-details-marker{display:none}
@@ -386,8 +391,6 @@ index=f'''<!doctype html>
 {nav('$M_MENU','<a href="#casos">Casos</a><a href="#pruebe">Pruébelo</a><a href="#como">Cómo funciona</a><a href="#preguntas">Preguntas</a>')}
 
 <header class="hero grain">
-  <div class="hero-tex" aria-hidden="true"></div>
-  <video class="hero-vid" id="hero-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-webm="assets/atina-kanban.webm" data-mp4="assets/atina-kanban.mp4"></video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="container-x">
     <div class="hero-layout">
@@ -622,12 +625,9 @@ index=f'''<!doctype html>
       <p>Lo que sí es fijo: <strong>la demostración es gratis</strong>, y antes de empezar usted recibe <strong>un precio cerrado, por escrito</strong>. Sin cobros por horas que nadie controla.</p>
       <p>¿Prefiere un rango antes de cualquier reunión? Pregúntelo por WhatsApp y se lo damos el mismo día.</p>
       <p><a href="$M_PRECIO">Pregunte su rango por WhatsApp →</a></p></div></details>
-    <details><summary>¿Sirve para la factura electrónica y la DIAN?</summary><div class="a">
-      <p>En Colombia la factura electrónica se emite a través de un proveedor autorizado por la DIAN — así lo hacen todos los programas serios, y su sistema se construye para trabajar con el suyo.</p>
-      <p>Y las cuentas quedan claras desde el primer día: cada venta con su IVA calculado y a la vista — <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">compruébelo en la tienda de demostración</a>. Que la DIAN deje de ser un susto de fin de mes: de eso se trata.</p></div></details>
     <details><summary>¿Cuánto se demora?</summary><div class="a"><p>La demostración: una reunión de menos de una hora. El sistema andando en internet: <strong>días</strong> en la mayoría de los casos. Un proceso grande, con varias partes, puede tomar algunas semanas. Lo que no va a escuchar de nosotros es «vuelva en seis meses».</p></div></details>
-    <details><summary>¿Y si después necesito cambios?</summary><div class="a"><p>Los va a necesitar — los negocios cambian. Agregar un campo, una regla o una pantalla es trabajo de poco tiempo, no un proyecto nuevo. Se piden por WhatsApp y se cotizan igual: precio cerrado antes de hacerlos.</p></div></details>
-    <details><summary>¿Se conecta con lo que ya uso?</summary><div class="a"><p>Sí. Los sistemas que construimos se comunican con otras herramientas: avisos automáticos al chat (Telegram) o al correo, y conexión con otros programas cuando su proceso lo necesita. En la demostración le mostramos cómo aplicaría a su caso. Y los informes le salen para su contador cuando los necesite.</p></div></details>
+    <details><summary>¿Y si después necesito cambios?</summary><div class="a"><p>Los va a necesitar — los negocios cambian, y por eso no entregamos y desaparecemos: <strong>somos su socio técnico</strong>. Lo acompañamos en cada cambio, cada mejora y cada proceso nuevo: usted lo pide por el mismo WhatsApp, lo cotizamos con precio cerrado y queda andando sin parar lo que ya funciona.</p></div></details>
+    <details><summary>¿Se conecta con lo que ya uso?</summary><div class="a"><p>Sí. Los sistemas que construimos se comunican con otras herramientas: avisos automáticos al chat (Telegram) o al correo, y conexión con otros programas cuando su proceso lo necesita. En la demostración le mostramos cómo aplicaría a su caso.</p></div></details>
     <details><summary>¿Mi equipo de TI puede administrarlo?</summary><div class="a"><p>Sí — y es un plus grande: paneles de administración, editor visual, API documentada (REST, GraphQL y OpenAPI) y tecnología de código abierto. Además está pensada para IA: generar o desplegar la base no quema tokens — el motor la trae y la IA solo describe el negocio. Su gente lo opera, lo audita y lo extiende; nosotros acompañamos lo que haga falta.</p></div></details>
     <details><summary>¿Y mis datos actuales, quién los pasa?</summary><div class="a"><p>Nosotros. Su Excel o su cuaderno se cargan al arrancar, y usted revisa todo antes de salir en vivo. Eso va dentro del precio cerrado — no es un cobro sorpresa.</p></div></details>
     <details><summary>¿Quién responde si algo falla?</summary><div class="a"><p>El mismo WhatsApp por el que llegó: le contesta el equipo que construyó su sistema, no un centro de llamadas. Además el sistema se monitorea solo — deja registro de qué pasó y cuándo —, y su información tiene copia de seguridad: un daño se arregla sin perder lo trabajado.</p></div></details>

@@ -268,12 +268,12 @@ PAGE_CSS='''<style>
   .tec-foot{margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--ink-line);font-size:.9rem;color:var(--ink-text-mute)}
 </style>'''
 
-FOOT_I=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. WhatsApp: <a href="$M_PIE">+57 311 517 5472</a></p>
-  <p>Pruebe los sistemas abiertos: <a href="https://tiendita.appximo.com" rel="noopener">tiendita.appximo.com</a> · <a href="https://petfriendly.appximo.com" rel="noopener">petfriendly.appximo.com</a> · <a href="https://atina.appximo.com" rel="noopener">atina.appximo.com</a></p>
+FOOT_I=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida. WhatsApp: <a href="$M_PIE">+57 311 517 5472</a></p>
+  <p>Pruebe los sistemas abiertos: <a href="https://atina.appximo.com" rel="noopener">atina.appximo.com</a> · <a href="https://demovecingo.appximo.com" rel="noopener">demovecingo.appximo.com</a> · <a href="https://tiendita.appximo.com" rel="noopener">tiendita.appximo.com</a></p>
   <p>¿Administra un conjunto residencial? <a href="conjuntos.html">Software para la administración de conjuntos</a> · <a href="caso.html">el caso VecinGo</a></p>''')
-FOOT_C=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Todos los sistemas que hacemos</a> · <a href="caso.html">El caso VecinGo</a></p>
+FOOT_C=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida. <a href="/">Todos los sistemas que hacemos</a> · <a href="caso.html">El caso VecinGo</a></p>
   <p>Esta página es para administradores de conjuntos residenciales y propiedad horizontal. ¿Tiene una tienda, un consultorio o una empresa? <a href="/">La página principal es la suya</a>.</p>''')
-FOOT_K=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida, hechos en Colombia. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>''')
+FOOT_K=foot('''<p><strong style="color:#fff">Appximo</strong> — plataformas y sistemas a la medida. <a href="/">Página principal</a> · <a href="conjuntos.html">Software para conjuntos</a></p>''')
 # ============================================================ index.html
 m=dict(
  M_MENU=wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (menú).'),
@@ -288,7 +288,7 @@ m=dict(
  CTA_FINAL=cta(wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (final).')),
  CTA_CEL=cta(wa('Hola, quiero una demostración gratis para mi negocio. Los vi en appximo.com (celular).')),
 )
-JSONLD='{"@context":"https://schema.org","@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","description":"Sistemas y plataformas a la medida para negocios, hechos en Colombia: tienda, ERP, agenda, administración de conjuntos. Demostración gratis por WhatsApp.","telephone":"+57 311 517 5472","areaServed":[{"@type":"City","name":"Pereira"},{"@type":"City","name":"Dosquebradas"},{"@type":"Country","name":"Colombia"}],"address":{"@type":"PostalAddress","addressLocality":"Pereira","addressRegion":"Risaralda","addressCountry":"CO"},"sameAs":["https://github.com/appximo/appximo","https://appximo.github.io/appximo/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+57 311 517 5472","availableLanguage":"es","url":"https://wa.me/573115175472"}}'
+JSONLD='{"@context":"https://schema.org","@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","description":"Sistemas y plataformas a la medida para negocios: tienda, ERP, agenda, administración de conjuntos. Demostración gratis por WhatsApp.","telephone":"+57 311 517 5472","sameAs":["https://github.com/appximo/appximo","https://appximo.github.io/appximo/"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+57 311 517 5472","availableLanguage":"es","url":"https://wa.me/573115175472"}}'
 index=f'''<!doctype html>
 <html lang="es-CO">
 <head>
@@ -368,7 +368,7 @@ index=f'''<!doctype html>
 
 <template id="hero-retador">
   <span class="v-h1">No le pedimos que nos crea: <em>véalo funcionando</em> ahora mismo.</span>
-  <span class="v-sub">Dos sistemas hechos con nuestra tecnología están abiertos en internet: una tienda y una agenda veterinaria. Éntreles sin registrarse y mire cómo cargan al instante. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-sub">Sistemas hechos con nuestra tecnología están abiertos en internet: una plataforma completa, un conjunto, una tienda. Éntreles sin registrarse y mire cómo cargan. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
 </template>
 <template id="hero-idea">
   <span class="v-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
@@ -443,7 +443,7 @@ index=f'''<!doctype html>
 </div></section>
 
 <section class="band s-zinc" id="pruebe" style="border-top:1px solid var(--zinc-200);border-bottom:1px solid var(--zinc-200)"><div class="container-x">
-  <p class="strip reveal"><b>¿Prefiere tocar antes de hablar?</b> <span>Dos sistemas abiertos, sin registro:</span> <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">la tienda ↗</a> <span class="sep">·</span> <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">la agenda veterinaria ↗</a> <span class="sep">·</span> <a href="https://demovecingo.appximo.com" rel="noopener" target="_blank">el conjunto ↗</a></p>
+  <p class="strip reveal"><b>¿Prefiere tocar antes de hablar?</b> <span>Sistemas abiertos, sin registro:</span> <a href="https://atina.appximo.com" rel="noopener" target="_blank">atina ↗</a> <span class="sep">·</span> <a href="https://demovecingo.appximo.com" rel="noopener" target="_blank">el conjunto ↗</a> <span class="sep">·</span> <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">la tienda ↗</a></p>
 </div></section>
 
 <section class="section s-ink" id="como"><div class="container-x">
@@ -491,20 +491,19 @@ index=f'''<!doctype html>
   <h2 class="t-4xl reveal">No somos una promesa: ya funciona</h2>
   <div class="team-grid">
     <div class="reveal">
-      <p class="lead">Le responde directamente <strong>el equipo que construye su sistema</strong>, no un robot ni un centro de llamadas. Un equipo de ingeniería en Pereira y Dosquebradas — <strong>desde Pereira, Colombia, para todo el país</strong>, por videollamada donde haga falta.</p>
+      <p class="lead">Le responde directamente <strong>el equipo que construye su sistema</strong>, no un robot ni un centro de llamadas — por WhatsApp y por videollamada, esté donde esté.</p>
       <div class="creds">
         <div class="card cred"><span class="k">10+</span><b>años en sistemas complejos y automatización de procesos</b><span>banca incluida — donde un error cuesta dinero de verdad</span></div>
         <div class="card cred" style="--d:.12s"><span class="k">Abierta</span><b>tecnología propia, de código abierto</b><span>pública y documentada: nadie queda amarrado</span></div>
       </div>
       <div class="contact">
         <div><b>WhatsApp</b><a href="$M_TEL">+57 311 517 5472</a></div>
-        <div><b>Alcance</b><span>Desde Pereira, Colombia — para todo el país</span></div>
       </div>
     </div>
     <div class="reveal" style="--d:.1s">
       <figure class="bframe media-skel" data-pendiente="FOTO-PENDIENTE">{bbar('atina.appximo.com')}<img src="assets/poster-atina.webp" alt="Trabajo real: el panel de procesos de una plataforma hecha con nuestra tecnología, con sus candidaturas por fase" width="1280" height="720" loading="lazy"><figcaption style="padding:.7rem .95rem;font-size:.84rem;color:var(--text-2);background:var(--white)">Trabajo real, no de archivo: el panel de una plataforma construida con nuestra tecnología.</figcaption></figure>
       <ul class="cred-list" style="margin-top:1rem">
-        <li><strong>Rápido de verdad:</strong> la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> y la <a href="https://petfriendly.appximo.com" rel="noopener" target="_blank">agenda</a> abren al instante.</li>
+        <li><strong>Rápido de verdad:</strong> <a href="https://atina.appximo.com" rel="noopener" target="_blank">atina</a> y la <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">tienda</a> abren al instante.</li>
         <li><strong>Seguro por diseño:</strong> estándares OWASP — contraseñas cifradas, archivos verificados, permisos por usuario.</li>
         <li><strong>Se monitorea solo:</strong> vigila su salud y deja registro — incluido.</li>
         <li><strong>Suyo de verdad:</strong> queda en un servidor a su nombre, con sus claves.</li>
@@ -552,7 +551,7 @@ index=f'''<!doctype html>
     <h2 class="t-5xl">Cuéntenos qué se le volvió un problema</h2>
     <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos y agendamos su demostración gratis.</p>
     <div class="cta-row">$CTA_FINAL
-      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p></div>
+      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · <a href="$M_TEL">+57 311 517 5472</a></p></div>
   </div>
 </div></section>
 
@@ -603,7 +602,7 @@ conj=f'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software para administración de conjuntos residenciales — asambleas por coeficiente, cartera y PQRS | Appximo</title>
-<meta name="description" content="Sistema a la medida para administradores de propiedad horizontal en Pereira, Dosquebradas y toda Colombia: asambleas con quórum por coeficiente, cartera y mora, PQRS con radicado, parqueaderos y comunicados. Demostración gratis por WhatsApp.">
+<meta name="description" content="Sistema a la medida para administradores de propiedad horizontal: asambleas con quórum por coeficiente, cartera y mora, PQRS con radicado, parqueaderos y comunicados. Demostración gratis por WhatsApp.">
 <link rel="canonical" href="https://appximo.com/conjuntos.html">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:title" content="Software para administración de conjuntos residenciales — Appximo">
@@ -613,7 +612,7 @@ conj=f'''<!doctype html>
 <meta property="og:url" content="https://appximo.com/conjuntos.html">
 <meta property="og:locale" content="es_CO">
 {HEAD}
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service","name":"Software para administración de conjuntos residenciales","serviceType":"Sistema de administración de propiedad horizontal a la medida","provider":{{"@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","telephone":"+57 311 517 5472","address":{{"@type":"PostalAddress","addressLocality":"Pereira","addressRegion":"Risaralda","addressCountry":"CO"}}}},"areaServed":[{{"@type":"City","name":"Pereira"}},{{"@type":"City","name":"Dosquebradas"}},{{"@type":"Country","name":"Colombia"}}],"audience":{{"@type":"Audience","audienceType":"Administradores de propiedad horizontal"}},"url":"https://appximo.com/conjuntos.html","offers":{{"@type":"Offer","description":"Demostración gratis con datos de ejemplo; precio cerrado por escrito antes de empezar","url":"https://wa.me/573115175472"}}}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service","name":"Software para administración de conjuntos residenciales","serviceType":"Sistema de administración de propiedad horizontal a la medida","provider":{{"@type":"ProfessionalService","name":"Appximo","url":"https://appximo.com/","telephone":"+57 311 517 5472"}},"audience":{{"@type":"Audience","audienceType":"Administradores de propiedad horizontal"}},"url":"https://appximo.com/conjuntos.html","offers":{{"@type":"Offer","description":"Demostración gratis con datos de ejemplo; precio cerrado por escrito antes de empezar","url":"https://wa.me/573115175472"}}}}</script>
 {PAGE_CSS}
 <style>
   .pains{{display:grid;gap:1rem;margin-top:1.6rem}}
@@ -645,7 +644,7 @@ conj=f'''<!doctype html>
       <p class="sub">Quórum por coeficiente calculado al instante, cartera con la mora a la vista, PQRS con radicado y respuesta en plazo. <strong>Lo ve funcionando antes de pagar</strong>, con los datos de un conjunto de ejemplo.</p>
       <div class="cta-row">
         $CTA_HERO
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p>
+        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> <a href="$M_TEL">+57 311 517 5472</a></p>
       </div>
     </div>
     <div class="stats">
@@ -720,7 +719,7 @@ conj=f'''<!doctype html>
     <h2 class="t-5xl">Cuéntenos qué se le volvió un problema en su conjunto</h2>
     <p class="lead" style="margin-top:1rem">Con eso alcanza: le preguntamos lo demás y agendamos su demostración gratis.</p>
     <div class="cta-row">$CTA_END
-      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p></div>
+      <p class="cta-trust">Le responde directamente el equipo que construye su sistema · <a href="$M_TEL">+57 311 517 5472</a></p></div>
   </div>
 </div></section>
 

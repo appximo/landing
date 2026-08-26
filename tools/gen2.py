@@ -335,7 +335,7 @@ index=f'''<!doctype html>
 
 <header class="hero grain">
   <div class="hero-tex" aria-hidden="true"></div>
-  <video class="hero-vid" id="hero-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-webm="assets/atina-landing.webm" data-mp4="assets/atina-landing.mp4"></video>
+  <video class="hero-vid" id="hero-vid" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" data-webm="assets/atina-kanban.webm" data-mp4="assets/atina-kanban.mp4"></video>
   <div class="hero-veil" aria-hidden="true"></div>
   <div class="container-x">
     <div class="hero-layout">
@@ -352,7 +352,7 @@ index=f'''<!doctype html>
         <div class="fl-arrow fl-after"><span>en días, y después solo</span></div>
         <div class="fl-step fl-after"><span class="fl-k">Su plataforma, trabajando sola</span>
           <div class="plat">
-            <div class="plat-kpis"><div><b class="tnum">$$ <span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo</span></div></div>
+            <div class="plat-kpis"><div><b class="tnum">$$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo</span></div></div>
             <div class="card-dark co-notif" style="margin-top:.6rem"><div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Cobrado y avisado, sin que usted haga nada</span></span></div></div>
           </div>
           <div class="fl-chips"><span class="chip chip-ghost">2.000 consultas/segundo</span><span class="chip chip-ghost">Seguro · OWASP</span><span class="chip chip-ghost">En días</span></div></div>
@@ -365,7 +365,7 @@ index=f'''<!doctype html>
       <div class="fl-step fl-after"><span class="fl-k">2 · Su plataforma, andando</span>
         <div class="plat">
           <div class="plat-tabs"><span class="on">Pedidos</span><span>Clientes</span><span>Inventario</span><span>Cuentas</span></div>
-          <div class="plat-kpis"><div><b class="tnum">$$ <span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
+          <div class="plat-kpis"><div><b class="tnum">$$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
           <div class="co-order">
             <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Ruana de lana</b><span class="t-xs muted" style="display:block">1 unidad · envío a domicilio</span></span><span class="price tnum" style="margin:0">$$ 220.000</span></div>
             <div class="row"><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span><span class="t-xs muted">IVA incluido</span></div>

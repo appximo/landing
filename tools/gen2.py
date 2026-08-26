@@ -136,12 +136,13 @@ PAGE_CSS='''<style>
   .plat-kpis span{display:block;font-size:.68rem;color:var(--text-3);line-height:1.2}
   .plat .co-order{box-shadow:none;border:1px solid var(--zinc-200);padding:.7rem .8rem}
   .fl-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
-  .fl-caret{display:inline-block;width:2px;height:1em;background:var(--color-brand-400);vertical-align:-.15em;margin-left:2px;opacity:0}
+  .fl-caret{display:none;width:2px;height:1em;background:var(--color-brand-400);vertical-align:-.15em;margin-left:2px}
+  html.js .flow.typing .fl-caret{display:inline-block}
   @media (prefers-reduced-motion:no-preference){
     @keyframes coIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     @keyframes caret{0%,100%{opacity:0}50%{opacity:1}}
     html.js .flow>.fl-step:first-child{animation:coIn .5s var(--ease) both;animation-delay:.2s}
-    html.js .flow.typing .fl-caret{opacity:1;animation:caret .9s steps(1) infinite}
+    html.js .flow.typing .fl-caret{animation:caret .9s steps(1) infinite}
     html.js .flow:not(.typed) .fl-after{opacity:0}
     html.js .flow.typed .fl-after{animation:coIn .6s var(--ease) both}
     html.js .flow.typed .fl-after:nth-of-type(2){animation-delay:.05s}html.js .flow.typed .fl-after:nth-of-type(3){animation-delay:.25s}html.js .flow.typed .fl-after:nth-of-type(4){animation-delay:.5s}html.js .flow.typed .fl-after:nth-of-type(5){animation-delay:.7s}
@@ -319,11 +320,11 @@ index=f'''<!doctype html>
     <div class="hero-copy">
       <p class="eyebrow">Sistemas a la medida · IA nativa · Tecnología propia</p>
       <h1 id="hero-h1">Deje de perder pedidos, citas y cuentas: su negocio entero <em>en un solo lugar</em>.</h1>
-      <p class="sub" id="hero-sub">Hecho a su medida, no un programa genérico. Lo difícil ya está construido — diez años de oficio en sistemas bancarios — y queda andando en días. Y queda <strong>trabajando solo</strong>: avisa, cobra y recuerda por usted. <strong>Lo ve funcionando antes de pagar</strong>.</p>
+      <p class="sub" id="hero-sub">Hecho a su medida, andando en días, y <strong>trabajando solo</strong>: avisa, cobra y recuerda por usted. <strong>Lo ve funcionando antes de pagar</strong>.</p>
       <div class="cta-row">
         $CTA_INICIO
-        <p class="cta-trust">Gratis y sin compromiso · Sin claves ni pagos por adelantado<br><b>Le responde directamente el equipo que construye su sistema, no un robot ni un centro de llamadas.</b> Desde Pereira, Colombia — para todo el país · <a href="$M_TEL">+57 311 517 5472</a></p>
-        <p class="cta-alt">¿Prefiere mirar antes de escribir? <a href="#pruebe">Abra un sistema funcionando, sin registrarse ↓</a></p>
+        <p class="cta-trust">Gratis y sin compromiso · <b>Le responde el equipo, no un robot</b> · <a href="$M_TEL">+57 311 517 5472</a></p>
+        <p class="cta-alt"><a href="#pruebe">¿Prefiere mirar antes de escribir? Abra un sistema, sin registrarse ↓</a></p>
       </div>
       <div class="flow flow-m" id="flow-m" aria-hidden="true">
         <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-text="Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.">Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.</span><span class="fl-caret"></span></div></div>
@@ -371,7 +372,7 @@ index=f'''<!doctype html>
 </template>
 <template id="hero-idea">
   <span class="v-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
-  <span class="v-sub">Una tienda, su ERP a la medida, procesamiento pesado de datos y archivos, o una plataforma de miles de consultas por segundo. <strong>Rápido</strong>, <strong>seguro</strong> (OWASP), con monitoreo — y <strong>lo ve funcionando antes de pagar</strong>.</span>
+  <span class="v-sub">De la tienda al ERP o la plataforma de alto tráfico: <strong>rápido</strong>, <strong>seguro</strong>, y <strong>lo ve funcionando antes de pagar</strong>.</span>
   <span class="v-chip"><details class="ia" id="ia"><summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#como">véalo abajo: la idea se vuelve sistema ↓</a></p></div></details></span>
 </template>
 <template id="hero-puente">
@@ -555,31 +556,19 @@ index=f'''<!doctype html>
   </div>
 </div></section>
 
-<section class="section s-ink" id="tecnico"><div class="container-x">
-  <p class="eyebrow reveal">Para empresas con equipo técnico</p>
-  <h2 class="t-4xl reveal" style="max-width:20ch">¿Tiene ingenieros? Mejor: la tecnología es abierta y aguanta plataformas completas</h2>
-  <p class="lead reveal" style="margin-top:1rem">Su ERP o plataforma va sobre una tecnología propia, pública y documentada: <strong>su gente la administra, la audita y la extiende</strong> — y si nosotros no estamos, cualquier ingeniero puede seguir. La prueba más fuerte que tenemos no la hicimos nosotros:</p>
-  <div class="tec-grid">
-    <div class="reveal">
-      <div class="card-dark card-pad">
-        <p class="eyebrow">La prueba: atina, contada en su contrato público</p>
-        <p style="margin-bottom:.9rem">Una plataforma completa <strong style="color:#fff">construida por un desarrollador externo con la documentación pública</strong>, sin nuestra dirección — <a href="#casos">arriba, en los casos</a>, o <a href="https://atina.appximo.com" rel="noopener" target="_blank">abierta en internet ↗</a>.</p>
-        <div class="bars">
-          {bar('Módulos (tablas de datos)','32',67,d=0)}
-          {bar('Funciones propias, además de lo generado','48',100,d=.1)}
-          {bar('Pantallas: portal, candidato, panel y consola','30+',63,d=.2)}
-        </div>
-      </div>
-    </div>
-    <div class="reveal" style="--d:.12s">
-      <ul class="tec-args" style="margin-top:0">
-        <li><strong>Suyo de verdad:</strong> servidor a su nombre, PostgreSQL, copia y restauración probadas.</li>
-        <li><strong>Seguridad alineada con OWASP:</strong> argon2id, validación de archivos por contenido, RBAC por rol, aislamiento por inquilino.</li>
-        <li><strong>Observabilidad nativa:</strong> métricas, trazas y alertas de anomalías, sin servicios externos.</li>
-        <li><strong>API documentada</strong> (REST, GraphQL y OpenAPI) y rendimiento publicado: p50 1,58 ms a 2.000 RPS.</li>
-        <li><strong>Pensada para IA:</strong> generar o desplegar la base no quema tokens — el motor la trae.</li>
-      </ul>
-      <p style="margin-top:1.2rem">$CTA_TEC</p>
+<section class="section-tight s-ink" id="tecnico"><div class="container-x">
+  <p class="eyebrow reveal">Para su equipo técnico</p>
+  <h2 class="t-3xl reveal" style="max-width:24ch">Lo que su ingeniero va a preguntar — y la respuesta corta</h2>
+  <div class="tec-grid" style="margin-top:1.4rem">
+    <ul class="tec-args reveal" style="margin-top:0">
+      <li><strong>Tecnología propia, pública y documentada:</strong> su gente la administra, la audita y la extiende; si nosotros no estamos, cualquier ingeniero puede seguir.</li>
+      <li><strong>Suyo de verdad:</strong> servidor a su nombre, PostgreSQL, copia y restauración probadas.</li>
+      <li><strong>Seguridad alineada con OWASP:</strong> argon2id, validación de archivos por contenido, RBAC por rol, aislamiento por inquilino.</li>
+      <li><strong>Observabilidad nativa:</strong> métricas, trazas y alertas de anomalías, sin servicios externos.</li>
+      <li><strong>API documentada</strong> (REST, GraphQL y OpenAPI) y rendimiento publicado: p50 1,58 ms a 2.000 RPS. <strong>Pensada para IA:</strong> generar o desplegar la base no quema tokens.</li>
+    </ul>
+    <div class="reveal" style="--d:.1s">
+      <p style="margin-top:0">$CTA_TEC</p>
       <p class="tec-foot">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
     </div>
   </div>

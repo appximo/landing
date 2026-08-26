@@ -119,12 +119,13 @@
   .plat-kpis span{display:block;font-size:.68rem;color:var(--text-3);line-height:1.2}
   .plat .co-order{box-shadow:none;border:1px solid var(--zinc-200);padding:.7rem .8rem}
   .fl-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}
-  .fl-caret{display:inline-block;width:2px;height:1em;background:var(--color-brand-400);vertical-align:-.15em;margin-left:2px;opacity:0}
+  .fl-caret{display:none;width:2px;height:1em;background:var(--color-brand-400);vertical-align:-.15em;margin-left:2px}
+  html.js .flow.typing .fl-caret{display:inline-block}
   @media (prefers-reduced-motion:no-preference){
     @keyframes coIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     @keyframes caret{0%,100%{opacity:0}50%{opacity:1}}
     html.js .flow>.fl-step:first-child{animation:coIn .5s var(--ease) both;animation-delay:.2s}
-    html.js .flow.typing .fl-caret{opacity:1;animation:caret .9s steps(1) infinite}
+    html.js .flow.typing .fl-caret{animation:caret .9s steps(1) infinite}
     html.js .flow:not(.typed) .fl-after{opacity:0}
     html.js .flow.typed .fl-after{animation:coIn .6s var(--ease) both}
     html.js .flow.typed .fl-after:nth-of-type(2){animation-delay:.05s}html.js .flow.typed .fl-after:nth-of-type(3){animation-delay:.25s}html.js .flow.typed .fl-after:nth-of-type(4){animation-delay:.5s}html.js .flow.typed .fl-after:nth-of-type(5){animation-delay:.7s}

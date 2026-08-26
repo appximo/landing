@@ -358,9 +358,9 @@ index=f'''<!doctype html>
         <div class="fl-chips"><span class="chip chip-ghost">2.000 consultas por segundo · probado</span><span class="chip chip-ghost">Seguro · OWASP</span><span class="chip chip-ghost">Andando en días</span></div></div>
     </div>
     <div class="stats">
-      <div class="stat"><b>3½<span class="u">h</span></b><span>en que quedó andando una plataforma de 18 módulos</span><span class="stat-x"><a href="caso.html">el caso, documentado paso a paso</a></span></div>
-      <div class="stat"><b><span data-count="18" data-dec="0">18</span></b><span>módulos en un solo sistema: asambleas, cartera, PQRS, parqueaderos, reservas…</span><span class="stat-x"><a href="#casos">véalo por dentro</a></span></div>
-      <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>del equipo en sistemas bancarios</span></div>
+      <div class="stat"><b>Días</b><span>no meses: su sistema queda andando en días — y lo ve funcionando antes de pagar</span></div>
+      <div class="stat"><b>Solo</b><span>trabaja sin usted: avisa, cobra y recuerda por usted, y le deja las cuentas claras</span></div>
+      <div class="stat"><b><span data-count="10" data-dec="0" data-suf="+">10+</span><span class="u">años</span></b><span>construyendo sistemas complejos y automatizando procesos — donde un error cuesta dinero de verdad</span></div>
     </div>
   </div>
 </header>
@@ -492,7 +492,7 @@ index=f'''<!doctype html>
     <div class="reveal">
       <p class="lead">Le responde directamente <strong>el equipo que construye su sistema</strong>, no un robot ni un centro de llamadas. Un equipo de ingeniería en Pereira y Dosquebradas — <strong>desde Pereira, Colombia, para todo el país</strong>, por videollamada donde haga falta.</p>
       <div class="creds">
-        <div class="card cred"><span class="k">10+</span><b>años en sistemas bancarios</b><span>donde un error cuesta dinero de verdad</span></div>
+        <div class="card cred"><span class="k">10+</span><b>años en sistemas complejos y automatización de procesos</b><span>banca incluida — donde un error cuesta dinero de verdad</span></div>
         <div class="card cred" style="--d:.12s"><span class="k">Abierta</span><b>tecnología propia, de código abierto</b><span>pública y documentada: nadie queda amarrado</span></div>
       </div>
       <div class="contact">

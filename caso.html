@@ -245,6 +245,36 @@
   .notif .ci svg{width:.9rem;height:.9rem}
   .notif b{display:block;font-size:.84rem;line-height:1.2}
   .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
+  section[id]{scroll-margin-top:4.6rem}
+  /* ── el escenario blanco de «Cómo funciona» ── */
+  .build{background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:1rem 1.1rem 1.1rem;position:relative;overflow:hidden}
+  .b-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem}
+  .b-time{font-size:.78rem;color:var(--text-3);font-weight:600}
+  .b-chat{display:flex;gap:.6rem;align-items:flex-start}
+  .b-who{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);padding-top:.5rem;flex:none}
+  .b-bubble{background:var(--zinc-100);border-radius:var(--radius-xl) var(--radius-xl) var(--radius-xl) .3rem;padding:.7rem .9rem;font-size:.92rem;line-height:1.45;color:var(--text);min-height:2.6rem;flex:1}
+  .b-caret{display:none;width:2px;height:1em;background:var(--color-brand-ink);vertical-align:-.15em;margin-left:2px}
+  .b-proc{list-style:none;margin:.9rem 0 0;display:grid;gap:.45rem;padding-left:0}
+  .b-proc li{display:flex;align-items:center;gap:.6rem;font-size:.86rem;color:var(--text-3)}
+  .b-proc li i{width:1rem;height:1rem;border-radius:50%;border:2px solid var(--zinc-300);flex:none;position:relative;transition:border-color .3s,background .3s}
+  .b-proc li.on{color:var(--text)}
+  .b-proc li.on i{border-color:var(--color-brand-500)}
+  .b-proc li.done{color:var(--text-2)}
+  .b-proc li.done i{background:var(--color-brand-500);border-color:var(--color-brand-500)}
+  .b-proc li.done i::after{content:"";position:absolute;left:.28rem;top:.1rem;width:.28rem;height:.5rem;border:solid var(--color-on-brand);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .b-out{margin-top:.9rem;border-radius:14px;overflow:hidden;border:1px solid var(--zinc-200);box-shadow:var(--shadow-soft)}
+  .b-out .bbar{background:var(--color-ink-800)}
+  .b-plat{border-radius:0;box-shadow:none}
+  .b-plat::after{border-radius:0}
+  html.js .build:not(.p3) .b-out{display:none}
+  html.js .build:not(.p2) .b-proc{opacity:.45}
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes procPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--color-brand) 45%,transparent)}70%{box-shadow:0 0 0 .5rem transparent}}
+    html.js .build.p1 .b-caret{display:inline-block;animation:caret .9s steps(1) infinite}
+    html.js .b-proc li.on i{animation:procPulse 1s ease-out infinite}
+    html.js .build.p3 .b-out{animation:platIn .7s var(--ease) both}
+    html.js .build.p3 .b-plat::after{animation:sweep 1.5s var(--ease) .3s 1 both}
+  }
   /* ── la franja de demos ── */
   .strip{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;font-size:.95rem;color:var(--text-2)}
   .strip b{color:var(--text)}

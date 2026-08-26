@@ -247,6 +247,36 @@
   .notif .ci svg{width:.9rem;height:.9rem}
   .notif b{display:block;font-size:.84rem;line-height:1.2}
   .notif span{display:block;font-size:.72rem;color:var(--ink-text-mute)}
+  section[id]{scroll-margin-top:4.6rem}
+  /* ── el escenario blanco de «Cómo funciona» ── */
+  .build{background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:1rem 1.1rem 1.1rem;position:relative;overflow:hidden}
+  .b-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem}
+  .b-time{font-size:.78rem;color:var(--text-3);font-weight:600}
+  .b-chat{display:flex;gap:.6rem;align-items:flex-start}
+  .b-who{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);padding-top:.5rem;flex:none}
+  .b-bubble{background:var(--zinc-100);border-radius:var(--radius-xl) var(--radius-xl) var(--radius-xl) .3rem;padding:.7rem .9rem;font-size:.92rem;line-height:1.45;color:var(--text);min-height:2.6rem;flex:1}
+  .b-caret{display:none;width:2px;height:1em;background:var(--color-brand-ink);vertical-align:-.15em;margin-left:2px}
+  .b-proc{list-style:none;margin:.9rem 0 0;display:grid;gap:.45rem;padding-left:0}
+  .b-proc li{display:flex;align-items:center;gap:.6rem;font-size:.86rem;color:var(--text-3)}
+  .b-proc li i{width:1rem;height:1rem;border-radius:50%;border:2px solid var(--zinc-300);flex:none;position:relative;transition:border-color .3s,background .3s}
+  .b-proc li.on{color:var(--text)}
+  .b-proc li.on i{border-color:var(--color-brand-500)}
+  .b-proc li.done{color:var(--text-2)}
+  .b-proc li.done i{background:var(--color-brand-500);border-color:var(--color-brand-500)}
+  .b-proc li.done i::after{content:"";position:absolute;left:.28rem;top:.1rem;width:.28rem;height:.5rem;border:solid var(--color-on-brand);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .b-out{margin-top:.9rem;border-radius:14px;overflow:hidden;border:1px solid var(--zinc-200);box-shadow:var(--shadow-soft)}
+  .b-out .bbar{background:var(--color-ink-800)}
+  .b-plat{border-radius:0;box-shadow:none}
+  .b-plat::after{border-radius:0}
+  html.js .build:not(.p3) .b-out{display:none}
+  html.js .build:not(.p2) .b-proc{opacity:.45}
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes procPulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--color-brand) 45%,transparent)}70%{box-shadow:0 0 0 .5rem transparent}}
+    html.js .build.p1 .b-caret{display:inline-block;animation:caret .9s steps(1) infinite}
+    html.js .b-proc li.on i{animation:procPulse 1s ease-out infinite}
+    html.js .build.p3 .b-out{animation:platIn .7s var(--ease) both}
+    html.js .build.p3 .b-plat::after{animation:sweep 1.5s var(--ease) .3s 1 both}
+  }
   /* ── la franja de demos ── */
   .strip{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;font-size:.95rem;color:var(--text-2)}
   .strip b{color:var(--text)}
@@ -412,7 +442,7 @@
 </div></section>
 
 <section class="band s-zinc" id="pruebe" style="border-top:1px solid var(--zinc-200);border-bottom:1px solid var(--zinc-200)"><div class="container-x">
-  <p class="strip reveal"><b>¿Prefiere tocar antes de hablar?</b> <span>Sistemas abiertos, sin registro:</span> <a href="https://atina.appximo.com" rel="noopener" target="_blank">atina ↗</a> <span class="sep">·</span> <a href="https://demovecingo.appximo.com" rel="noopener" target="_blank">el conjunto ↗</a> <span class="sep">·</span> <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">la tienda ↗</a></p>
+  <p class="strip"><b>¿Prefiere tocar antes de hablar?</b> <span>Sistemas abiertos, sin registro:</span> <a href="https://atina.appximo.com" rel="noopener" target="_blank">atina ↗</a> <span class="sep">·</span> <a href="https://demovecingo.appximo.com" rel="noopener" target="_blank">el conjunto ↗</a> <span class="sep">·</span> <a href="https://tiendita.appximo.com" rel="noopener" target="_blank">la tienda ↗</a></p>
 </div></section>
 
 <section class="section s-ink" id="como"><div class="container-x">
@@ -426,7 +456,29 @@
     <div class="step reveal" style="--d:.24s"><div class="step-n">04</div><h3>Solo entonces, el precio</h3><p>Cerrado y por escrito. Si sigue, queda en internet con sus claves.</p></div>
   </div>
   <div class="how-grid">
-    <figure class="media reveal"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Ver · 45 s</span></button></div><figcaption>Así <strong>empieza</strong> la demostración gratis: su idea, en español, funcionando. Grabación real, sin acelerar. <a href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20video%20de%20la%20idea%20que%20se%20vuelve%20sistema%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20%28appximo.com%20%C2%B7%20video%29">¿Quiere verlo con los datos de su negocio? Pídalo por WhatsApp →</a></figcaption></figure>
+    <div>
+      <div class="build" id="build" aria-hidden="true">
+        <div class="b-head"><span class="chip"><i class="dot"></i>Así se construye</span><span class="b-time tnum">00:00</span></div>
+        <div class="b-chat"><span class="b-who">Usted</span><div class="b-bubble"><span class="b-type" data-text="Quiero un sistema para mi ferretería: mis productos con precio e inventario, mis clientes y sus pedidos.">Quiero un sistema para mi ferretería: mis productos con precio e inventario, mis clientes y sus pedidos.</span><span class="b-caret"></span></div></div>
+        <ol class="b-proc">
+          <li><i></i><span>Entendiendo su negocio</span></li>
+          <li><i></i><span>Armando la base: productos, clientes, pedidos, permisos</span></li>
+          <li><i></i><span>Creando las pantallas y los avisos</span></li>
+          <li><i></i><span>Publicando en internet, con su clave</span></li>
+        </ol>
+        <div class="b-out">
+          <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl"><svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>ferreteria — su sistema</span></div>
+          <div class="plat b-plat">
+            <div class="plat-tabs"><span class="on">Pedidos</span><span>Clientes</span><span>Inventario</span><span>Cuentas</span></div>
+            <div class="plat-kpis"><div><b class="tnum">$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
+            <div class="co-order">
+              <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Martillo de uña 16 oz</b><span class="t-xs muted" style="display:block">2 unidades · recoge en tienda</span></span><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figure class="media reveal" style="margin-top:.9rem"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Véalo de verdad · 45 s</span></button></div><figcaption>Grabación real, sin acelerar: la misma idea, funcionando. <a href="https://wa.me/573115175472?text=Hola%2C%20vi%20el%20video%20de%20la%20idea%20que%20se%20vuelve%20sistema%20y%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20%28appximo.com%20%C2%B7%20video%29">¿Quiere verlo con los datos de su negocio? Pídalo por WhatsApp →</a></figcaption></figure>
+    </div>
     <div class="reveal" style="--d:.1s">
       <div class="card-dark card-pad">
         <p class="eyebrow">Por qué en días y no en meses</p>

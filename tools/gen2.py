@@ -130,13 +130,13 @@ PAGE_CSS='''<style>
   .co-notif{width:100%;padding:.8rem .95rem}
   .stage{position:relative;display:none;margin-left:auto;max-width:25rem;padding:1.1rem;border-radius:var(--radius-3xl);background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 30px 80px -30px rgba(0,0,0,.6)}
   .stage::before{content:"";position:absolute;inset:-18%;z-index:-1;background:radial-gradient(closest-side,color-mix(in srgb,var(--color-brand-700) 45%,transparent),transparent 70%);pointer-events:none}
-  @media(min-width:1000px){.stage{display:block}.flow{display:flex;max-width:none;margin:0}}
+  @media(min-width:1000px){.stage{display:block}.stage .flow{display:flex;max-width:none;margin:0}.flow-m{display:none}}
   .plat{position:relative;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:.8rem .9rem .9rem}
   .plat::after{content:"";position:absolute;inset:-2px;border-radius:calc(var(--radius-2xl) + 2px);padding:2px;background:conic-gradient(from var(--sweep,0deg),transparent 0 70%,var(--color-brand-400) 85%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;pointer-events:none}
   .plat-tabs{display:flex;gap:.9rem;font-size:.74rem;font-weight:600;color:var(--text-3);border-bottom:1px solid var(--zinc-100);padding-bottom:.5rem;margin-bottom:.6rem}
   .plat-tabs .on{color:var(--color-brand-ink);border-bottom:2px solid var(--color-brand);margin-bottom:-.55rem;padding-bottom:.45rem}
   .plat-kpis{display:grid;grid-template-columns:repeat(3,auto);gap:.9rem;justify-content:start;margin-bottom:.7rem}
-  .plat-kpis b{display:block;font-weight:800;font-size:1.02rem;letter-spacing:-.03em;line-height:1.1}
+  .plat-kpis b{display:block;font-weight:800;font-size:1.02rem;letter-spacing:-.03em;line-height:1.1;white-space:nowrap}
   .plat-kpis span{display:block;font-size:.68rem;color:var(--text-3);line-height:1.2}
   .plat .co-order{box-shadow:none;border:1px solid var(--zinc-200);padding:.7rem .8rem}
   .fl-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.6rem}

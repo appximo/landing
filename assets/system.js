@@ -36,6 +36,18 @@
     setTimeout(function () { if (!flow.classList.contains('typed')) { t.textContent = full; flow.classList.remove('typing'); flow.classList.add('typed'); } }, 9000);
   });
 
+  /* el fondo del hero: atina en video silencioso SOLO en escritorio, después del load, nunca con reduced-motion ni save-data */
+  var hv = document.getElementById('hero-vid');
+  if (hv && !reduce && matchMedia('(min-width:1000px)').matches && !(navigator.connection && navigator.connection.saveData)) {
+    addEventListener('load', function () { setTimeout(function () {
+      var w = document.createElement('source'); w.src = hv.getAttribute('data-webm'); w.type = 'video/webm';
+      var m = document.createElement('source'); m.src = hv.getAttribute('data-mp4'); m.type = 'video/mp4';
+      hv.appendChild(w); hv.appendChild(m); hv.load();
+      hv.addEventListener('playing', function () { hv.classList.add('is-on'); }, { once: true });
+      var pr = hv.play(); if (pr && pr.catch) pr.catch(function () {});
+    }, 800); });
+  }
+
   /* skeleton → imagen cargada */
   document.querySelectorAll('.media-skel > img').forEach(function (img) {
     var done = function () { img.classList.add('is-loaded'); };

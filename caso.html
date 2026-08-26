@@ -14,7 +14,7 @@
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/system.css?v=f416f9df">
+<link rel="stylesheet" href="assets/system.css?v=51310427">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2325d366'/%3E%3Ctext x='32' y='45' font-family='Inter,Arial,sans-serif' font-size='38' font-weight='900' fill='%23062b16' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <style>
   .hero-float{position:absolute;right:var(--gutter);top:clamp(4.5rem,9vw,7rem);z-index:3;display:none;width:15.5rem}
@@ -86,22 +86,6 @@
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
   /* ── chip IA (solo en la variante ?hero=idea) ── */
-  /* ── el bombillo que se enciende (una pasada) ── */
-  .bulb{display:inline-block;width:.78em;height:.78em;vertical-align:-.06em;margin-right:.12em;overflow:visible}
-  .bulb path{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-  .bulb .bulb-ray{stroke:var(--color-brand-400)}
-  /* el bombillo se anima siempre (una pasada de 2 s: trazo → destello → rayos); no es un bucle */
-  @keyframes bulbDraw{from{stroke-dashoffset:60;opacity:.35}to{stroke-dashoffset:0;opacity:1}}
-  @keyframes bulbOn{0%{opacity:0;transform:scale(.4)}60%{opacity:1;transform:scale(1.25)}100%{opacity:1;transform:scale(1)}}
-  @keyframes bulbFlash{0%{opacity:0;transform:scale(.3)}40%{opacity:.9;transform:scale(1.6)}100%{opacity:0;transform:scale(2.4)}}
-  @keyframes bulbGlow{0%{filter:drop-shadow(0 0 0 transparent)}50%{filter:drop-shadow(0 0 14px color-mix(in srgb,var(--color-brand) 90%,transparent))}100%{filter:drop-shadow(0 0 5px color-mix(in srgb,var(--color-brand) 60%,transparent))}}
-  .bulb{position:relative}
-  .bulb::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--color-brand) 70%,transparent),transparent 65%);opacity:0;pointer-events:none}
-  html.js .bulb .bulb-glass{stroke-dasharray:60;animation:bulbDraw 1.1s var(--ease) .3s both}
-  html.js .bulb .bulb-ray{transform-origin:center;transform-box:fill-box;opacity:0;animation:bulbOn .55s cubic-bezier(.34,1.56,.64,1) 1.45s both}
-  html.js .bulb::before{animation:bulbFlash .9s ease-out 1.35s both}
-  html.js .bulb{animation:bulbGlow 1.3s var(--ease) 1.4s both}
-  html.js .bulb.lit .bulb-glass{stroke:var(--color-brand-300)}
   /* ── palabras clave: se resaltan al escribirse y encienden su pestaña ── */
   .k{font-weight:600;color:inherit;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%);border-radius:2px;padding:0 .08em}
   .b-bubble .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
@@ -145,7 +129,14 @@
   .stage .plat{box-shadow:var(--shadow-soft);border:1px solid var(--zinc-200)}
   .stage .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
   .stage .fl-chips .chip-ghost{border-color:var(--zinc-200);background:var(--zinc-50);color:var(--zinc-700)}
-  @media(min-width:1000px){.stage{display:block}.stage .flow{display:flex;max-width:none;margin:0}.flow-m{display:none}}
+  .stage .flow{display:flex;max-width:none;margin:0}
+  @media(min-width:1000px){.stage{display:block}.flow-m{display:none}}
+  @media(max-width:999px){
+    .hero-layout{display:flex;flex-direction:column}
+    .stage{display:block;order:-1;max-width:none;margin:0 0 1.6rem;padding:.9rem;border-radius:var(--radius-2xl)}
+    .flow-m{display:none}
+    .hero-copy{padding-top:0}
+  }
   .plat{position:relative;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift);padding:.8rem .9rem .9rem}
   .plat::after{content:"";position:absolute;inset:-2px;border-radius:calc(var(--radius-2xl) + 2px);padding:2px;background:conic-gradient(from var(--sweep,0deg),transparent 0 70%,var(--color-brand-400) 85%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;pointer-events:none}
   .plat-tabs{display:flex;gap:.9rem;font-size:.74rem;font-weight:600;color:var(--text-3);border-bottom:1px solid var(--zinc-100);padding-bottom:.5rem;margin-bottom:.6rem}

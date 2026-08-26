@@ -26,14 +26,33 @@
     setTimeout(function () { document.querySelectorAll('.reveal, .bar, .ring').forEach(function (el) { el.classList.add('in'); }); }, 2500);
   } else { rv.forEach(function (el) { el.classList.add('in'); }); document.querySelectorAll('.bar, .ring').forEach(function (el) { el.classList.add('in'); }); }
 
+  /* escritura por segmentos: las palabras clave nacen resaltadas; al final, sus pestañas se encienden en orden */
+  var typeSegs = function (el, onDone) {
+    var segs; try { segs = JSON.parse(el.getAttribute('data-segs')); } catch (e) { segs = [{ t: el.textContent }]; }
+    el.textContent = ''; var si = 0, ci = 0, cur = null;
+    (function step() {
+      if (si >= segs.length) { onDone && onDone(); return; }
+      var sg = segs[si];
+      if (ci === 0) { cur = document.createElement('span'); if (sg.k) { cur.className = 'k'; cur.setAttribute('data-k', sg.k); } el.appendChild(cur); }
+      ci += 1; cur.textContent = sg.t.slice(0, ci);
+      if (ci >= sg.t.length) { si += 1; ci = 0; }
+      setTimeout(step, 26 + Math.random() * 28);
+    })();
+  };
+  var lightTabs = function (scope, delay) {
+    var keys = []; scope.querySelectorAll('.k[data-k]').forEach(function (k) { if (keys.indexOf(k.getAttribute('data-k')) < 0) keys.push(k.getAttribute('data-k')); });
+    keys.forEach(function (k, i) { setTimeout(function () { scope.querySelectorAll('.plat-tabs [data-k="' + k + '"]').forEach(function (t) { t.classList.add('lit'); }); }, (delay || 0) + i * 380); });
+  };
+  var fullText = function (el) { var segs; try { segs = JSON.parse(el.getAttribute('data-segs')); } catch (e) { return; } el.innerHTML = segs.map(function (sg) { return sg.k ? '<span class="k" data-k="' + sg.k + '">' + sg.t + '</span>' : sg.t; }).join(''); };
+
   /* el hero: la idea se ESCRIBE una vez; después se arma la plataforma (sin JS o con reduced-motion: todo visible, quieto) */
   document.querySelectorAll('.flow').forEach(function (flow) {
     var t = flow.querySelector('.fl-type'); if (!t) return;
     if (reduce || getComputedStyle(flow).display === 'none') { flow.classList.add('typed'); return; }
-    var full = t.getAttribute('data-text') || t.textContent, i = 0; t.textContent = ''; flow.classList.add('typing');
-    var start = function () { (function step() { i += 1; t.textContent = full.slice(0, i); if (i < full.length) setTimeout(step, 28 + Math.random() * 30); else { flow.classList.remove('typing'); flow.classList.add('typed'); setTimeout(function () { flow.querySelectorAll('.late-count').forEach(runCount); }, 500); } })(); };
+    flow.classList.add('typing');
+    var start = function () { typeSegs(t, function () { flow.classList.remove('typing'); flow.classList.add('typed'); setTimeout(function () { flow.querySelectorAll('.late-count').forEach(runCount); }, 500); lightTabs(flow, 900); }); };
     setTimeout(start, 700);
-    setTimeout(function () { if (!flow.classList.contains('typed')) { t.textContent = full; flow.classList.remove('typing'); flow.classList.add('typed'); } }, 9000);
+    setTimeout(function () { if (!flow.classList.contains('typed')) { fullText(t); flow.classList.remove('typing'); flow.classList.add('typed'); lightTabs(flow, 300); } }, 9000);
   });
 
   /* el fondo del hero: atina en video silencioso SOLO en escritorio, después del load, nunca con reduced-motion ni save-data */
@@ -52,16 +71,16 @@
   var build = document.getElementById('build');
   if (build) {
     var bt = build.querySelector('.b-type'), steps = build.querySelectorAll('.b-proc li'), clock = build.querySelector('.b-time');
-    var finish = function () { build.classList.add('p2', 'p3'); steps.forEach(function (li) { li.classList.add('done'); }); if (bt) bt.textContent = bt.getAttribute('data-text'); build.querySelectorAll('.late-count').forEach(function (el) { el.textContent = parseFloat(el.dataset.count).toLocaleString('es-CO'); }); };
+    var finish = function () { build.classList.add('p2', 'p3'); steps.forEach(function (li) { li.classList.add('done'); }); if (bt) fullText(bt); build.querySelectorAll('.late-count').forEach(function (el) { el.textContent = parseFloat(el.dataset.count).toLocaleString('es-CO'); }); };
     if (reduce || !('IntersectionObserver' in window)) finish();
     else {
       var started = false, t0 = 0, tick = null;
       var startBuild = function () {
         if (started) return; started = true; t0 = performance.now();
         tick = setInterval(function () { var s = Math.floor((performance.now() - t0) / 1000); clock.textContent = '00:' + (s < 10 ? '0' : '') + s; }, 250);
-        var full = bt.getAttribute('data-text'), i = 0; bt.textContent = ''; build.classList.add('p1');
-        (function type() { i += 1; bt.textContent = full.slice(0, i); if (i < full.length) setTimeout(type, 26 + Math.random() * 28); else { build.classList.remove('p1'); build.classList.add('p2'); proc(0); } })();
-        function proc(k) { if (k > 0) steps[k - 1].classList.replace('on', 'done'); if (k >= steps.length) { build.classList.add('p3'); clearInterval(tick); setTimeout(function () { build.querySelectorAll('.late-count').forEach(runCount); }, 600); return; } steps[k].classList.add('on'); setTimeout(function () { proc(k + 1); }, 650 + k * 120); }
+        build.classList.add('p1');
+        typeSegs(bt, function () { build.classList.remove('p1'); build.classList.add('p2'); proc(0); });
+        function proc(k) { if (k > 0) steps[k - 1].classList.replace('on', 'done'); if (k >= steps.length) { build.classList.add('p3'); clearInterval(tick); setTimeout(function () { build.querySelectorAll('.late-count').forEach(runCount); }, 600); lightTabs(build, 900); return; } steps[k].classList.add('on'); setTimeout(function () { proc(k + 1); }, 650 + k * 120); }
       };
       var bo = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { bo.disconnect(); startBuild(); } }); }, { threshold: .35 });
       bo.observe(build);

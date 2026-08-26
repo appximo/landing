@@ -8,9 +8,11 @@ WA='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12
 LOCK='<svg viewBox="0 0 12 14" fill="none" aria-hidden="true"><rect x="1" y="6" width="10" height="7" rx="1.6" fill="currentColor"/><path d="M3.5 6V4.2a2.5 2.5 0 0 1 5 0V6" stroke="currentColor" stroke-width="1.6"/></svg>'
 PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
 ICON='<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 64 64\'%3E%3Crect width=\'64\' height=\'64\' rx=\'14\' fill=\'%2325d366\'/%3E%3Ctext x=\'32\' y=\'45\' font-family=\'Inter,Arial,sans-serif\' font-size=\'38\' font-weight=\'900\' fill=\'%23062b16\' text-anchor=\'middle\'%3EA%3C/text%3E%3C/svg%3E">'
+import hashlib
+def _v(p): return hashlib.sha256(open(OUT+p,'rb').read()).hexdigest()[:8]
 HEAD='''<meta name="theme-color" content="#0b1512">
 <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/system.css?v='''+_v('assets/system.css')+'''">
 '''+ICON
 def bbar(url): return f'<div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">{LOCK}{url}</span></div>'
 def cta(href,label='Pedir mi demostración gratis',extra=''): return f'<a class="btn btn-wa{extra}" href="{href}">{WA}{label}</a>'
@@ -34,7 +36,7 @@ def foot(extra=''):
   <span class="foot-mark" aria-hidden="true">appximo</span>
 </div></footer>'''
 SCRIPTS='''<script>document.documentElement.classList.add('js');</script>
-<script src="assets/system.js" defer></script>'''
+<script src="assets/system.js?v='''+_v('assets/system.js')+'''" defer></script>'''
 PAGE_CSS='''<style>
   .hero-float{position:absolute;right:var(--gutter);top:clamp(4.5rem,9vw,7rem);z-index:3;display:none;width:15.5rem}
   @media(min-width:1000px){.hero-float{display:block}}
@@ -52,6 +54,7 @@ PAGE_CSS='''<style>
   .case p{color:var(--text-2);font-size:1rem}
   .case-media{display:grid;gap:.9rem}
   .case-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem}
+  .bframe video.loop{display:block;width:100%}
   .case-panel{margin-top:1.1rem;padding:1.1rem 1.2rem}
   .case-panel .eyebrow{margin-bottom:.6rem}
   .meaning{margin-top:1rem;background:var(--color-brand-50);border:1px solid var(--color-brand-200);border-left:4px solid var(--color-brand-500);border-radius:var(--radius-xl);padding:.85rem 1rem;color:var(--color-ink);font-size:.95rem}
@@ -104,6 +107,23 @@ PAGE_CSS='''<style>
   .autom-visual{margin:0 auto;max-width:20rem;width:100%}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}}
   /* ── chip IA (solo en la variante ?hero=idea) ── */
+  /* ── el bombillo que se enciende (una pasada) ── */
+  .bulb{display:inline-block;width:.78em;height:.78em;vertical-align:-.06em;margin-right:.12em;overflow:visible}
+  .bulb path{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .bulb .bulb-ray{stroke:var(--color-brand-400);opacity:0}
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes bulbDraw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+    @keyframes bulbOn{0%{opacity:0;transform:scale(.6)}60%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
+    @keyframes bulbGlow{0%{filter:drop-shadow(0 0 0 transparent)}50%{filter:drop-shadow(0 0 10px color-mix(in srgb,var(--color-brand) 80%,transparent))}100%{filter:drop-shadow(0 0 4px color-mix(in srgb,var(--color-brand) 55%,transparent))}}
+    html.js .bulb .bulb-glass{stroke-dasharray:60;animation:bulbDraw 1.1s var(--ease) .3s both}
+    html.js .bulb .bulb-ray{transform-origin:center;transform-box:fill-box;animation:bulbOn .5s cubic-bezier(.34,1.56,.64,1) 1.3s both}
+    html.js .bulb{animation:bulbGlow 1.2s var(--ease) 1.3s both}
+  }
+  /* ── palabras clave: se resaltan al escribirse y encienden su pestaña ── */
+  .k{font-weight:600;color:inherit;background:linear-gradient(180deg,transparent 64%,color-mix(in srgb,var(--color-brand) 38%,transparent) 64%);border-radius:2px;padding:0 .08em}
+  .b-bubble .k{background:linear-gradient(180deg,transparent 64%,var(--color-brand-200) 64%)}
+  .plat-tabs span{transition:background .35s var(--ease),color .35s var(--ease),padding .35s var(--ease)}
+  .plat-tabs span.lit{background:var(--color-brand-100);color:var(--color-brand-ink);border-radius:999px;padding:.1rem .5rem}
   .ia{margin:1rem 0 0;max-width:34rem}
   .ia summary{list-style:none;display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-size:.88rem;font-weight:700;color:#fff;background:rgba(255,255,255,.06);border:1px solid color-mix(in srgb,var(--color-brand) 45%,transparent);border-radius:999px;padding:.5rem 1rem;transition:border-color .18s}
   .ia summary::-webkit-details-marker{display:none}
@@ -379,7 +399,7 @@ index=f'''<!doctype html>
         <p class="cta-alt"><a href="#pruebe">¿Prefiere mirar antes de escribir? Abra un sistema, sin registrarse ↓</a></p>
       </div>
       <div class="flow flow-m" id="flow-m" aria-hidden="true">
-        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-text="Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.">Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.</span><span class="fl-caret"></span></div></div>
+        <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span><div class="fl-bubble"><span class="fl-type" data-segs='[{"t": "Quiero un sistema para mi negocio: mis "}, {"t": "productos con inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": ", que me avise cuando "}, {"t": "paguen", "k": "cuentas"}, {"t": "."}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
         <div class="fl-arrow fl-after"><span>en días, y después solo</span></div>
         <div class="fl-step fl-after"><span class="fl-k">Su plataforma, trabajando sola</span>
           <div class="plat">
@@ -391,11 +411,11 @@ index=f'''<!doctype html>
     </div>
     <div class="stage" aria-hidden="true"><div class="flow" id="flow">
       <div class="fl-step"><span class="fl-k">1 · Su idea, en sus palabras</span>
-        <div class="fl-bubble"><span class="fl-type" data-text="Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.">Quiero un sistema para mi negocio: mis productos con inventario, mis clientes y sus pedidos, que me avise cuando paguen.</span><span class="fl-caret"></span></div></div>
+        <div class="fl-bubble"><span class="fl-type" data-segs='[{"t": "Quiero un sistema para mi negocio: mis "}, {"t": "productos con inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": ", que me avise cuando "}, {"t": "paguen", "k": "cuentas"}, {"t": "."}]'>Quiero un sistema para mi negocio: mis <span class="k">productos con inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>, que me avise cuando <span class="k">paguen</span>.</span><span class="fl-caret"></span></div></div>
       <div class="fl-arrow"><span>en días</span></div>
       <div class="fl-step fl-after"><span class="fl-k">2 · Su plataforma, andando</span>
         <div class="plat">
-          <div class="plat-tabs"><span class="on">Pedidos</span><span>Clientes</span><span>Inventario</span><span>Cuentas</span></div>
+          <div class="plat-tabs"><span class="on" data-k="pedidos">Pedidos</span><span data-k="clientes">Clientes</span><span data-k="inventario">Inventario</span><span data-k="cuentas">Cuentas</span></div>
           <div class="plat-kpis"><div><b class="tnum">$$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
           <div class="co-order">
             <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Ruana de lana</b><span class="t-xs muted" style="display:block">1 unidad · envío a domicilio</span></span><span class="price tnum" style="margin:0">$$ 220.000</span></div>
@@ -423,7 +443,7 @@ index=f'''<!doctype html>
   <span class="v-sub">Sistemas hechos con nuestra tecnología están abiertos en internet: una plataforma completa, un conjunto, una tienda. Éntreles sin registrarse y mire cómo cargan. El suyo se hace igual — rápido, seguro y a su medida — y <strong>lo ve funcionando antes de pagar</strong>.</span>
 </template>
 <template id="hero-idea">
-  <span class="v-h1">Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
+  <span class="v-h1"><svg class="bulb" viewBox="0 0 24 24" aria-hidden="true"><path class="bulb-glass" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1.1 2V17h5v-1.2c.1-.8.5-1.5 1.1-2A6 6 0 0 0 12 3Z"/><path class="bulb-ray" d="M12 0v1.6M3.5 3.6l1.2 1.2M20.5 3.6l-1.2 1.2M1 11h1.8M21.2 11H23"/></svg>Cualquier idea se convierte en un sistema a su medida — que <em>trabaja solo</em>.</span>
   <span class="v-sub">Una tienda, su ERP o CRM a la medida, el Excel que hoy lo sostiene convertido en sistema, o una plataforma para miles de usuarios: <strong>rápido</strong>, <strong>seguro</strong>, y <strong>lo ve funcionando antes de pagar</strong>.</span>
   <span class="v-chip"><details class="ia" id="ia"><summary><span class="ia-dot" aria-hidden="true"></span>Trabaja con IA de forma nativa<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="ia-body"><p>El motor se construyó desde cero para la IA: la base no quema tokens. Construir sistemas complejos con IA nunca fue tan barato — <a href="#como">véalo abajo: la idea se vuelve sistema ↓</a></p></div></details></span>
 </template>
@@ -452,7 +472,7 @@ index=f'''<!doctype html>
 
   <article class="case" style="margin-top:clamp(2.4rem,6vw,4rem)">
     <div class="case-media">
-      <div class="bframe reveal media-skel">{bbar('atina.appximo.com')}<img src="assets/atina-portal.webp" alt="El portal público de atina: nueve ofertas de empleo con filtros por provincia, área y contrato" width="1280" height="640" loading="lazy"></div>
+      <div class="bframe reveal">{bbar('atina.appximo.com')}<video class="loop" autoplay muted loop playsinline preload="metadata" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="atina por dentro: el kanban de candidaturas moviéndose entre fases"><source src="assets/atina-kanban.webm" type="video/webm"><source src="assets/atina-kanban.mp4" type="video/mp4"></video></div>
       <figure class="media reveal" style="--d:.1s"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-atina.webp" width="1280" height="720" aria-label="Video: recorrido de 57 segundos por la plataforma atina — portal, matching, kanban y marca propia"><source src="assets/atina-57.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el recorrido de atina"><span class="vplay-btn">{PLAY}Ver por dentro · 57 s</span></button></div><figcaption>Grabado sobre la plataforma real. Datos de demostración.</figcaption></figure>
     </div>
     <div class="reveal" style="--d:.15s">
@@ -512,7 +532,7 @@ index=f'''<!doctype html>
     <div>
       <div class="build" id="build" aria-hidden="true">
         <div class="b-head"><span class="chip"><i class="dot"></i>Así se construye</span><span class="b-time tnum">00:00</span></div>
-        <div class="b-chat"><span class="b-who">Usted</span><div class="b-bubble"><span class="b-type" data-text="Quiero un sistema para mi ferretería: mis productos con precio e inventario, mis clientes y sus pedidos.">Quiero un sistema para mi ferretería: mis productos con precio e inventario, mis clientes y sus pedidos.</span><span class="b-caret"></span></div></div>
+        <div class="b-chat"><span class="b-who">Usted</span><div class="b-bubble"><span class="b-type" data-segs='[{"t": "Quiero un sistema para mi ferretería: mis "}, {"t": "productos con precio e inventario", "k": "inventario"}, {"t": ", mis "}, {"t": "clientes", "k": "clientes"}, {"t": " y sus "}, {"t": "pedidos", "k": "pedidos"}, {"t": "."}]'>Quiero un sistema para mi ferretería: mis <span class="k">productos con precio e inventario</span>, mis <span class="k">clientes</span> y sus <span class="k">pedidos</span>.</span><span class="b-caret"></span></div></div>
         <ol class="b-proc">
           <li><i></i><span>Entendiendo su negocio</span></li>
           <li><i></i><span>Armando la base: productos, clientes, pedidos, permisos</span></li>
@@ -522,7 +542,7 @@ index=f'''<!doctype html>
         <div class="b-out">
           <div class="bbar" aria-hidden="true"><span class="bdots"><i></i><i></i><i></i></span><span class="burl">{LOCK}ferreteria — su sistema</span></div>
           <div class="plat b-plat">
-            <div class="plat-tabs"><span class="on">Pedidos</span><span>Clientes</span><span>Inventario</span><span>Cuentas</span></div>
+            <div class="plat-tabs"><span class="on" data-k="pedidos">Pedidos</span><span data-k="clientes">Clientes</span><span data-k="inventario">Inventario</span><span data-k="cuentas">Cuentas</span></div>
             <div class="plat-kpis"><div><b class="tnum">$$&nbsp;<span class="late-count" data-count="2379570" data-dec="0">2.379.570</span></b><span>ventas confirmadas</span></div><div><b class="tnum late-count" data-count="13" data-dec="0">13</b><span>pedidos</span></div><div><b>IVA</b><span>listo para el contador</span></div></div>
             <div class="co-order">
               <div class="row" style="margin-top:0"><span><b style="font-size:.95rem">Martillo de uña 16 oz</b><span class="t-xs muted" style="display:block">2 unidades · recoge en tienda</span></span><span class="chip chip-brand"><i class="dot"></i>Pago confirmado</span></div>

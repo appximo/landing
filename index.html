@@ -141,6 +141,19 @@
   .tech p{color:var(--text-2);font-size:.93rem;max-width:46rem;margin-bottom:.5rem}
   .tech p:last-child{margin-bottom:0}
   @media(max-width:759px){.hero .cta-row .btn-wa{font-size:.95rem;padding:.8rem 1.25rem;gap:.5rem}.case-nums{grid-template-columns:repeat(3,1fr);gap:.8rem}}
+  /* coreografía del hero en CSS (antes GSAP): termina siempre visible; quieta con reduced-motion */
+  @media (prefers-reduced-motion:no-preference){
+    @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    @keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+    @keyframes riseScale{from{opacity:0;transform:translateY(28px) scale(.96)}to{opacity:1;transform:none}}
+    .hero .eyebrow,#hero-h1,.hero .ia,#hero-sub,.hero .cta-row,.stats .stat,.stat-foot{animation:rise .7s var(--ease) both}
+    #hero-h1{animation-delay:.12s}.hero .ia{animation-delay:.24s}#hero-sub{animation-delay:.32s}.hero .cta-row{animation-delay:.42s}
+    .hero-visual{animation:riseScale .9s var(--ease) .3s both}
+    .hero .chip-float{animation:pop .45s cubic-bezier(.34,1.56,.64,1) both}.chip-1{animation-delay:.9s}.chip-2{animation-delay:1.05s}
+    .stats .stat:nth-child(1){animation-delay:.7s}.stats .stat:nth-child(2){animation-delay:.8s}.stats .stat:nth-child(3){animation-delay:.9s}.stat-foot{animation-delay:1s}
+    html.js .h-rule:not(.in)::after{transform:scaleX(0)}
+    .ia[open] .ia-body p{animation:rise .35s var(--ease) both}
+  }
 </style>
 </head>
 <body>
@@ -350,7 +363,7 @@
       <h3>Sistemas que trabajan solos</h3>
       <p>El pedido entra y el aviso sale solo. <strong style="color:var(--ink-text)">Automatizamos lo repetitivo</strong> — chat, correo, entre sistemas — y su operación cuesta menos horas.</p>
     </div>
-    <figure class="autom-visual" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
+    <figure class="autom-visual reveal reveal-x" aria-label="Ilustración: el sistema envía avisos automáticos al celular">
       <svg viewBox="0 0 520 340" role="img" xmlns="http://www.w3.org/2000/svg">
         <rect x="16" y="128" width="150" height="84" rx="14" fill="#0d221a"/>
         <text x="91" y="164" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="19" fill="#f2efe3">Su sistema</text>
@@ -480,29 +493,6 @@
 <div class="mobile-cta"><a class="btn btn-wa" href="https://wa.me/573115175472?text=Hola%2C%20quiero%20una%20demostraci%C3%B3n%20gratis%20para%20mi%20negocio.%20Los%20vi%20en%20appximo.com%20%28celular%29."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.53 14.9L2 22l5.25-1.47A9.9 9.9 0 1 0 12.04 2Zm0 1.67a8.22 8.22 0 1 1-4.2 15.3l-.3-.18-3.12.87.84-3.04-.2-.31a8.22 8.22 0 0 1 6.98-12.64Zm-3.3 4.42c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27 0 1.34.97 2.63 1.11 2.81.13.18 1.87 3 4.63 4.08 2.3.9 2.77.72 3.27.68.5-.05 1.62-.66 1.85-1.3.23-.65.23-1.2.16-1.31-.07-.11-.25-.18-.52-.32-.27-.13-1.62-.8-1.87-.9-.25-.09-.43-.13-.61.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.4-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.6-1.46-.83-2-.2-.46-.4-.44-.61-.45h-.53Z"/></svg>Pedir mi demostración gratis</a></div>
 
 <script>document.documentElement.classList.add('js');</script>
-<script src="assets/gsap.min.js" defer></script>
-<script src="assets/ScrollTrigger.min.js" defer></script>
 <script src="assets/system.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  if (!window.gsap || !window.ScrollTrigger) return;
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', function(){
-    gsap.timeline({defaults:{ease:'power3.out'}})
-      .from('.hero .eyebrow',{y:16,opacity:0,duration:.5})
-      .from('#hero-h1',{y:26,opacity:0,duration:.7},'-=.25')
-      .from('#hero-sub',{y:20,opacity:0,duration:.6},'-=.42')
-      .from('.hero .cta-row',{y:16,opacity:0,duration:.5},'-=.35')
-      .from('.hero-visual',{y:28,opacity:0,scale:.96,duration:.9,ease:'power2.out'},'-=.45')
-      .from('.hero .chip-float',{scale:.5,opacity:0,stagger:.14,duration:.45,ease:'back.out(1.8)'},'-=.5')
-      .from('.stats .stat',{y:16,opacity:0,stagger:.09,duration:.5},'-=.35')
-      .from('.stat-foot',{opacity:0,duration:.5},'-=.2');
-    gsap.utils.toArray('h2.h-rule').forEach(function(h){ gsap.fromTo(h,{'--rw':0},{'--rw':1,duration:.7,ease:'power2.out',scrollTrigger:{trigger:h,start:'top 90%',once:true}}); });
-    gsap.from('.autom-visual svg',{x:26,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:'.autom',start:'top 80%',once:true}});
-  });
-  var ia=document.getElementById('ia');
-  if (ia && !matchMedia('(prefers-reduced-motion: reduce)').matches) ia.addEventListener('toggle',function(){ if(ia.open) gsap.from('.ia-body p',{y:-8,opacity:0,duration:.35,ease:'power2.out'}); });
-});
-</script>
 </body>
 </html>

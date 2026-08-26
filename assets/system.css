@@ -164,9 +164,9 @@ html.js .bar:not(.in) .fill{transform:scaleX(0)}
 .hero-copy{max-width:44rem;padding-top:0}
 .hero-layout{display:grid;gap:2.2rem;align-items:center}
 @media(min-width:1000px){.hero-layout{grid-template-columns:11fr 9fr;gap:3rem}}
-.hero h1{max-width:15ch;font-size:clamp(2.3rem,5.6vw,3.7rem)}
+.hero h1{max-width:16ch;font-size:clamp(2rem,4.6vw,3.1rem)}
 .hero h1 em{font-style:normal;color:var(--color-brand-400)}
-.hero .sub{margin:1.2rem 0 0;color:var(--ink-text-dim);max-width:38rem;font-size:clamp(1.02rem,1.7vw,1.15rem)}
+.hero .sub{margin:1.1rem 0 0;color:var(--ink-text-dim);max-width:36rem;font-size:clamp(.98rem,1.4vw,1.06rem)}
 .hero .sub strong{color:#fff;font-weight:600}
 .cta-row{margin-top:1.8rem}
 .stats{display:grid;gap:1.4rem;margin-top:clamp(2.4rem,6vw,3.6rem);padding:1.8rem 0 2.2rem;border-top:1px solid var(--ink-line)}

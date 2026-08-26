@@ -31,7 +31,7 @@
     var t = flow.querySelector('.fl-type'); if (!t) return;
     if (reduce || getComputedStyle(flow).display === 'none') { flow.classList.add('typed'); return; }
     var full = t.getAttribute('data-text') || t.textContent, i = 0; t.textContent = ''; flow.classList.add('typing');
-    var start = function () { (function step() { i += 1; t.textContent = full.slice(0, i); if (i < full.length) setTimeout(step, 28 + Math.random() * 30); else { flow.classList.remove('typing'); flow.classList.add('typed'); } })(); };
+    var start = function () { (function step() { i += 1; t.textContent = full.slice(0, i); if (i < full.length) setTimeout(step, 28 + Math.random() * 30); else { flow.classList.remove('typing'); flow.classList.add('typed'); setTimeout(function () { flow.querySelectorAll('.late-count').forEach(runCount); }, 500); } })(); };
     setTimeout(start, 700);
     setTimeout(function () { if (!flow.classList.contains('typed')) { t.textContent = full; flow.classList.remove('typing'); flow.classList.add('typed'); } }, 9000);
   });
@@ -55,8 +55,9 @@
   });
 
   /* count-up de cifras: una sola vez, apagado con reduced-motion */
-  var els = document.querySelectorAll('[data-count]');
-  if (els.length) {
+  var els = document.querySelectorAll('[data-count]:not(.late-count)');
+  var runCount = null;
+  if (true) {
     var fmt = function (v, dec, suf) { return v.toLocaleString('es-CO', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf; };
     var run = function (el) {
       var target = parseFloat(el.dataset.count), dec = (el.dataset.dec | 0), suf = el.dataset.suf || '', dur = 1400;
@@ -64,11 +65,13 @@
       var t0 = null;
       (function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1); p = 1 - Math.pow(1 - p, 3); el.textContent = fmt(target * p, dec, suf); if (p < 1) requestAnimationFrame(step); })(performance.now());
     };
-    if ('IntersectionObserver' in window) {
+    runCount = run;
+    if (els.length && 'IntersectionObserver' in window) {
       var io2 = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { run(e.target); io2.unobserve(e.target); } }); }, { threshold: .6 });
       els.forEach(function (el) { io2.observe(el); });
     } else els.forEach(run);
   }
+  if (reduce) document.querySelectorAll('.late-count').forEach(function (el) { el.textContent = parseFloat(el.dataset.count).toLocaleString('es-CO'); });
 
   /* barra móvil: aparece cuando el CTA del hero sale de vista */
   var cta = document.querySelector('.hero .cta-row');

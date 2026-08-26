@@ -569,7 +569,7 @@ index=f'''<!doctype html>
     </ul>
     <div class="reveal" style="--d:.1s">
       <p style="margin-top:0">$CTA_TEC</p>
-      <p class="tec-foot">Proyecto y documentación: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a> · Código: <a href="https://github.com/appximo/appximo" rel="noopener">github.com/appximo/appximo</a></p>
+      <p class="tec-foot">Documentación técnica: <a href="https://appximo.github.io/appximo/" rel="noopener">appximo.github.io/appximo</a></p>
     </div>
   </div>
 </div></section>

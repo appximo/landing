@@ -549,7 +549,7 @@ index=f'''<!doctype html>
           </div>
         </div>
       </div>
-      <figure class="media reveal" style="margin-top:.9rem"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn">{PLAY}Véalo de verdad · 45 s</span></button></div><figcaption>Grabación real, sin acelerar: la misma idea, funcionando. <a href="$M_VIDEO">¿Quiere verlo con los datos de su negocio? Pídalo por WhatsApp →</a></figcaption></figure>
+      <figure class="media reveal" style="margin-top:.9rem"><div class="vframe"><video class="demovid" controls muted playsinline preload="none" poster="assets/poster-idea.webp" width="1280" height="800" aria-label="Video: una idea escrita en español se convierte en un sistema funcionando, en tiempo real"><source src="assets/idea-a-sistema.mp4" type="video/mp4"></video><button class="vplay" aria-label="Reproducir el video"><span class="vplay-btn">{PLAY}Véalo de verdad · 58 s</span></button></div><figcaption>Grabación real, sin acelerar: la misma idea, funcionando. <a href="$M_VIDEO">¿Quiere verlo con los datos de su negocio? Pídalo por WhatsApp →</a></figcaption></figure>
     </div>
     <div class="reveal" style="--d:.1s">
       <div class="card-dark card-pad">

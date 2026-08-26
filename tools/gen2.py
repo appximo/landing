@@ -126,17 +126,21 @@ PAGE_CSS='''<style>
   .co-ring{left:2.5rem;bottom:0;width:20rem;padding:.9rem 1rem 1rem;display:flex;align-items:center;gap:.9rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
   .co-ring b{display:block;font-size:.9rem;line-height:1.25}
   .co-ring span{display:block;font-size:.76rem;color:var(--text-2);margin-top:.15rem}
-  .co-stat{right:0;bottom:.4rem;text-align:right;width:8.5rem}
+  .co-cuentas{left:2.5rem;bottom:0;width:21rem;padding:.9rem 1.1rem 1rem;background:var(--white);color:var(--text);border-radius:var(--radius-2xl);box-shadow:var(--shadow-lift)}
+  .co-cuentas .eyebrow{margin-bottom:.4rem}
+  .co-cuentas .row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.4rem 0;border-top:1px solid var(--zinc-100);font-size:.86rem;color:var(--text-2)}
+  .co-cuentas .row:first-of-type{border-top:none}
+  .co-cuentas .row b{color:var(--text);font-size:1rem}
+  .collage-m .co-cuentas{position:static;width:auto}
   .co-stat b{display:block;font-weight:800;font-size:2.6rem;line-height:1;letter-spacing:-.04em;color:var(--color-brand-400);font-variant-numeric:tabular-nums}
   .co-stat span{display:block;font-size:.78rem;color:var(--ink-text-dim);max-width:11rem}
   .collage-m{display:grid;gap:.8rem;margin-top:1.8rem}
   @media(min-width:1000px){.collage-m{display:none}}
-  .collage-m .co-ring{position:static;padding:.8rem .9rem}
   .collage-m .co-notif{position:static;width:auto}
   @media (prefers-reduced-motion:no-preference){
     @keyframes coIn{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
     html.js .collage>*,html.js .collage-m>*{animation:coIn .7s var(--ease) both}
-    html.js .co-order{animation-delay:.25s}html.js .co-notif{animation-delay:.45s}html.js .co-ring{animation-delay:.65s}html.js .co-stat{animation-delay:.85s}
+    html.js .co-order{animation-delay:.25s}html.js .co-notif{animation-delay:.45s}html.js .co-cuentas{animation-delay:.65s}
     html.js .collage-m>*:nth-child(1){animation-delay:.3s}html.js .collage-m>*:nth-child(2){animation-delay:.5s}
   }
   .notif{display:flex;align-items:center;gap:.7rem;padding:.55rem 0;border-top:1px solid var(--ink-line)}
@@ -236,7 +240,11 @@ index=f'''<!doctype html>
           <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12 20 5l-5 14-3.5-5.5L4 12Z" fill="#062b16"/></svg></span><span><b>Pedido nuevo</b><span>Marta · 2 tortas</span></span></div>
           <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
         </div>
-        <div class="co-ring">{ring(58.2,'quórum','5rem')}<div><b>Asamblea en curso</b><span>Quórum por coeficiente, en tiempo real</span></div></div>
+        <div class="co-cuentas">
+          <p class="eyebrow">Cuentas del mes</p>
+          <div class="row"><span>Ventas confirmadas</span><b class="tnum">$ 2.379.570</b></div>
+          <div class="row"><span>IVA calculado</span><span class="chip chip-brand">Listo para el contador</span></div>
+        </div>
       </div>
     </div>
     <div class="collage" aria-hidden="true">
@@ -252,8 +260,12 @@ index=f'''<!doctype html>
         <div class="notif"><span class="ci"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 5L19 7" stroke="#062b16" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Pago confirmado</b><span>Aviso al cliente, solo</span></span></div>
         <div class="notif"><span class="ci" style="background:var(--color-ink-500)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v6l4 2" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2.2"/></svg></span><span><b>Cita de mañana</b><span>Recordatorio enviado</span></span></div>
       </div>
-      <div class="co-ring">{ring(58.2,'quórum','5.5rem')}<div><b>Asamblea en curso</b><span>Quórum por coeficiente, en tiempo real</span></div></div>
-      <div class="co-stat"><b>18</b><span>módulos en un solo sistema</span></div>
+      <div class="co-cuentas">
+        <p class="eyebrow">Cuentas del mes</p>
+        <div class="row"><span>Ventas confirmadas</span><b class="tnum">$ 2.379.570</b></div>
+        <div class="row"><span>IVA calculado</span><span class="chip chip-brand">Listo para el contador</span></div>
+        <div class="row"><span>Pendientes de pago</span><b class="tnum">2</b></div>
+      </div>
     </div>
     </div>
     <div class="stats">
@@ -279,7 +291,7 @@ index=f'''<!doctype html>
 </template>
 <script>
   (function(){{
-    var HERO_DEFAULT = 'control'; // ← CAMBIAR AQUÍ para publicar otro hero
+    var HERO_DEFAULT = 'idea'; // ← CAMBIAR AQUÍ para publicar otro hero (control | idea | retador | puente)
     var v = new URLSearchParams(location.search).get('hero') || HERO_DEFAULT;
     if (v === 'control') return;
     var t = document.getElementById('hero-' + v); if (!t) return;
